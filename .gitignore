@@ -3,3 +3,4 @@ obj/
 *.d
 build/
 __pycache__/
+*.pyc
