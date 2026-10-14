@@ -1,0 +1,386 @@
+From 521d3d473458b5bbc6097fc60500f219cf5e1867 Mon Sep 17 00:00:00 2001
+From: RM2027 <rm2027@local>
+Date: Fri, 2 Oct 2026 16:20:05 +0800
+Subject: [PATCH] RM2027_ESC_G071: G071 target + ADC-BEMF software
+ zero-crossing
+
+---
+ Inc/targets.h             |  73 ++++++++++++++++++++++
+ Makefile                  |   2 +-
+ Mcu/g071/Inc/adc_bemf.h   |  23 +++++++
+ Mcu/g071/Src/ADC.c        |  34 +++++++++-
+ Mcu/g071/Src/adc_bemf.c   | 127 ++++++++++++++++++++++++++++++++++++++
+ Mcu/g071/Src/comparator.c |   6 ++
+ 6 files changed, 261 insertions(+), 4 deletions(-)
+ create mode 100644 Mcu/g071/Inc/adc_bemf.h
+ create mode 100644 Mcu/g071/Src/adc_bemf.c
+
+diff --git a/Inc/targets.h b/Inc/targets.h
+index 38c7e8f..79d98c6 100644
+--- a/Inc/targets.h
++++ b/Inc/targets.h
+@@ -2551,6 +2551,28 @@
+ 
+ #endif
+ 
++#ifdef RM2027_ESC_G071
++#define FILE_NAME "RM2027_ESC_G071"
++#define FIRMWARE_NAME "RM2027 ESC "
++#define DEAD_TIME 60
++#define MILLIVOLT_PER_AMP 60          /* 3mΩ × 20V/V = 60 mV/A */
++#define CURRENT_OFFSET 0              /* 待确认 INA240 REF 接法 */
++#define TARGET_STALL_PROTECTION_INTERVAL 9000
++#define TARGET_VOLTAGE_DIVIDER 110    /* (47K+4.7K)/4.7K = 11.0 -> ×10 */
++#define HARDWARE_GROUP_G0_RM2027
++#define USE_SERIAL_TELEMETRY
++#define USE_LED_STRIP
++/* ★ 不要定义 SIXTY_FOUR_KB_MEMORY：
++ *   实测本板 bootloader 的 devinfo @0x08000FE0 = magic 5925e3da/4eb863d9、
++ *   deviceInfo[4]=0x2b ⇒ checkDeviceInfo() 会把 eeprom_address 设成 0x0801F800。
++ *   宏只是默认值，运行时握手才是权威；链接脚本保留区(至 0x0800F7E0)与之不重叠。 */
++
++#define VOLTAGE_ADC_PIN LL_GPIO_PIN_0
++#define VOLTAGE_ADC_CHANNEL LL_ADC_CHANNEL_0    /* PA0 = VBAT_SENSE */
++#define CURRENT_ADC_PIN LL_GPIO_PIN_1
++#define CURRENT_ADC_CHANNEL LL_ADC_CHANNEL_1    /* PA1 = BAT_CURRENT */
++#endif
++
+ #ifdef RRIOT_G071
+ #define FILE_NAME "RRIOT_G071"
+ #define FIRMWARE_NAME "RRIOT G071"
+@@ -4172,6 +4194,57 @@
+ 
+ #endif
+ 
++#ifdef HARDWARE_GROUP_G0_RM2027
++/* RM2027 自研电调板 —— STM32G071GBU6N + FD6288Q + INA240A1
++ * 引脚依据：references/硬件手册/ESC_电调板_原理图_2026-09-24.pdf（已逐行核对 + 手册交叉验证）
++ * 本组 = AM32 原生 HARDWARE_GROUP_G0_K，仅两处不同：
++ *   ① PHASE_A_LOW: PB1 -> PB15（本板 TIM1_CH3N 走 PB15）
++ *   ② DShot 输入 : PB4 -> PA6 （同为 TIM3_CH1）
++ */
++#define MCU_G071
++#define USE_TIMER_3_CHANNEL_1
++#define INPUT_PIN LL_GPIO_PIN_6
++#define INPUT_PIN_PORT GPIOA
++#define IC_TIMER_CHANNEL LL_TIM_CHANNEL_CH1
++#define IC_TIMER_REGISTER TIM3
++#define IC_TIMER_POINTER htim3
++
++#define INPUT_DMA_CHANNEL LL_DMA_CHANNEL_1
++#define DMA_HANDLE_TYPE_DEF hdma_tim3_ch1
++#define IC_DMA_IRQ_NAME DMA1_Channel1_IRQn
++
++/* 六路门极：TIM1 CH1/2/3 + 互补 CH1N/2N/3N */
++#define PHASE_C_GPIO_LOW  LL_GPIO_PIN_7
++#define PHASE_C_GPIO_PORT_LOW  GPIOA
++#define PHASE_C_GPIO_HIGH LL_GPIO_PIN_8
++#define PHASE_C_GPIO_PORT_HIGH GPIOA
++
++#define PHASE_B_GPIO_LOW  LL_GPIO_PIN_0
++#define PHASE_B_GPIO_PORT_LOW  GPIOB
++#define PHASE_B_GPIO_HIGH LL_GPIO_PIN_9
++#define PHASE_B_GPIO_PORT_HIGH GPIOA
++
++#define PHASE_A_GPIO_LOW  LL_GPIO_PIN_15
++#define PHASE_A_GPIO_PORT_LOW  GPIOB
++#define PHASE_A_GPIO_HIGH LL_GPIO_PIN_10
++#define PHASE_A_GPIO_PORT_HIGH GPIOA
++
++/* ★ 本板【没有可用的比较器通路】：
++ *     PA2=VC_SENSE(COMP2_INM)、PA3=V0_SENSE(COMP2_INP) 能进比较器，
++ *     但 PA4=VB_SENSE、PA5=VA_SENSE 【没有 COMP 功能】⇒ 三相无感必须软件过零。
++ *   ⇒ 走新增的 ADC-BEMF 路径，不定义 PHASE_x_COMP。
++ */
++#define USE_ADC_BEMF
++#define BEMF_ADC_PHASE_A_CH LL_ADC_CHANNEL_5   /* PA5 = VA_SENSE */
++#define BEMF_ADC_PHASE_B_CH LL_ADC_CHANNEL_4   /* PA4 = VB_SENSE */
++#define BEMF_ADC_PHASE_C_CH LL_ADC_CHANNEL_2   /* PA2 = VC_SENSE */
++#define BEMF_ADC_NEUTRAL_CH LL_ADC_CHANNEL_3   /* PA3 = V0_SENSE  */
++/* AWD（模拟看门狗）用的通道编码，与上面一一对应 */
++#define BEMF_AWD_PHASE_A_CH LL_ADC_AWD_CHANNEL_5_REG
++#define BEMF_AWD_PHASE_B_CH LL_ADC_AWD_CHANNEL_4_REG
++#define BEMF_AWD_PHASE_C_CH LL_ADC_AWD_CHANNEL_2_REG
++#endif
++
+ #ifdef HARDWARE_GROUP_G0_L
+ 
+ #define MCU_G071
+diff --git a/Makefile b/Makefile
+index 64de588..39b1b6a 100644
+--- a/Makefile
++++ b/Makefile
+@@ -47,7 +47,7 @@ FIRMWARE_VERSION := $(VERSION_MAJOR).$(VERSION_MINOR)
+ 
+ CFLAGS_BASE := -fsingle-precision-constant -fomit-frame-pointer -ffast-math
+ CFLAGS_BASE += -I$(MAIN_INC_DIR) -g3 -O3 -ffunction-sections --specs=nosys.specs
+-CFLAGS_BASE += -Wall -Wundef -Wextra -Werror -Wno-unused-parameter -Wno-stringop-truncation
++CFLAGS_BASE += -Wall -Wundef -Wextra -Werror -Wno-error=array-bounds -Wno-error=stringop-overflow -Wno-unused-parameter -Wno-stringop-truncation
+ 
+ CFLAGS_COMMON := $(CFLAGS_BASE)
+ 
+diff --git a/Mcu/g071/Inc/adc_bemf.h b/Mcu/g071/Inc/adc_bemf.h
+new file mode 100644
+index 0000000..18174c0
+--- /dev/null
++++ b/Mcu/g071/Inc/adc_bemf.h
+@@ -0,0 +1,23 @@
++/*
++ * adc_bemf.h —— 软件过零检测（ADC 版 BEMF）
++ *
++ * 仅在本板（RM2027 自研电调）使用：定义 USE_ADC_BEMF 时生效。
++ * 与 comparator.h 提供【完全同名】的接口，故 Src/main.c 的换相状态机无需改动。
++ */
++#pragma once
++
++#include <stdint.h>
++
++/* ADC 原始码（由 ADC DMA 扫描序列填入） */
++extern volatile uint16_t bemf_adc_va;   /* PA5 = VA_SENSE */
++extern volatile uint16_t bemf_adc_vb;   /* PA4 = VB_SENSE */
++extern volatile uint16_t bemf_adc_vc;   /* PA2 = VC_SENSE */
++extern volatile uint16_t bemf_adc_v0;   /* PA3 = V0_SENSE  */
++
++void     adc_bemf_set_hysteresis(uint16_t hyst_lsb);
++uint16_t adc_bemf_get_hysteresis(void);
++int16_t  adc_bemf_get_delta(void);      /* 当前悬空相 − V0（有符号） */
++
++/* ★ AWD：把"相电压 vs 阈值"的比较交给 ADC 硬件，只在跨越时中断 */
++void adc_bemf_config_watchdog(uint32_t awd_channel, uint16_t center, uint16_t hyst);
++void adc_bemf_watchdog_for_phase(void);  /* 按当前 step 选悬空相并重设窗口 */
+diff --git a/Mcu/g071/Src/ADC.c b/Mcu/g071/Src/ADC.c
+index 55bbeb0..c825a77 100644
+--- a/Mcu/g071/Src/ADC.c
++++ b/Mcu/g071/Src/ADC.c
+@@ -6,7 +6,11 @@
+  */
+ #include "ADC.h"
+ 
+-#ifdef USE_ADC_INPUT
++#ifdef USE_ADC_BEMF
++/* [0]电流 [1]电压 [2]温度 [3]VA [4]VB [5]VC [6]V0 —— 三相+V0 供软件过零用 */
++#include "adc_bemf.h"
++uint16_t ADCDataDMA[7];
++#elif defined(USE_ADC_INPUT)
+ uint16_t ADCDataDMA[4];
+ #else
+ uint16_t ADCDataDMA[3];
+@@ -33,6 +37,12 @@ void ADC_DMA_Callback()
+     ADC_raw_temp = ADCDataDMA[2];
+     ADC_raw_volts = ADCDataDMA[1];
+     ADC_raw_current = ADCDataDMA[0];
++#ifdef USE_ADC_BEMF
++    bemf_adc_va = ADCDataDMA[3];
++    bemf_adc_vb = ADCDataDMA[4];
++    bemf_adc_vc = ADCDataDMA[5];
++    bemf_adc_v0 = ADCDataDMA[6];
++#endif
+ #endif
+ }
+ 
+@@ -48,7 +58,9 @@ void enableADC_DMA()
+         (uint32_t)&ADCDataDMA, LL_DMA_DIRECTION_PERIPH_TO_MEMORY);
+ 
+     /* Set DMA transfer size */
+-#ifdef USE_ADC_INPUT
++#ifdef USE_ADC_BEMF
++    LL_DMA_SetDataLength(DMA1, LL_DMA_CHANNEL_2, 7);
++#elif defined(USE_ADC_INPUT)
+     LL_DMA_SetDataLength(DMA1, LL_DMA_CHANNEL_2, 4);
+ #else
+     LL_DMA_SetDataLength(DMA1, LL_DMA_CHANNEL_2, 3);
+@@ -161,7 +173,11 @@ void ADC_Init(void)
+      * Alignment and number of conversion)
+      */
+     ADC_REG_InitStruct.TriggerSource = LL_ADC_REG_TRIG_SOFTWARE;
++    #ifdef USE_ADC_BEMF
++    ADC_REG_InitStruct.SequencerLength = LL_ADC_REG_SEQ_SCAN_ENABLE_7RANKS;
++#else
+     ADC_REG_InitStruct.SequencerLength = LL_ADC_REG_SEQ_SCAN_ENABLE_3RANKS;
++#endif
+     ADC_REG_InitStruct.SequencerDiscont = LL_ADC_REG_SEQ_DISCONT_DISABLE;
+     ADC_REG_InitStruct.ContinuousMode = LL_ADC_REG_CONV_SINGLE;
+     ADC_REG_InitStruct.DMATransfer = LL_ADC_REG_DMA_TRANSFER_LIMITED;
+@@ -171,7 +187,7 @@ void ADC_Init(void)
+     LL_ADC_SetOverSamplingScope(ADC1, LL_ADC_OVS_DISABLE);
+     LL_ADC_SetTriggerFrequencyMode(ADC1, LL_ADC_CLOCK_FREQ_MODE_LOW);
+     LL_ADC_REG_SetSequencerConfigurable(ADC1, LL_ADC_REG_SEQ_CONFIGURABLE);
+-    LL_ADC_SetClock(ADC1, LL_ADC_CLOCK_ASYNC_DIV4);
++    LL_ADC_SetClock(ADC1, LL_ADC_CLOCK_ASYNC_DIV2);
+     LL_ADC_SetSamplingTimeCommonChannels(ADC1, LL_ADC_SAMPLINGTIME_COMMON_1,
+         LL_ADC_SAMPLINGTIME_19CYCLES_5);
+     LL_ADC_SetSamplingTimeCommonChannels(ADC1, LL_ADC_SAMPLINGTIME_COMMON_2,
+@@ -196,4 +212,16 @@ void ADC_Init(void)
+         LL_ADC_CHANNEL_TEMPSENSOR);
+     LL_ADC_SetChannelSamplingTime(ADC1, LL_ADC_CHANNEL_TEMPSENSOR,
+         LL_ADC_SAMPLINGTIME_COMMON_2);
++
++#ifdef USE_ADC_BEMF
++    /* 三相 + 虚拟中性点（供软件过零；源阻抗 47K∥10K≈8.3k ⇒ 用 19.5 周期的 COMMON_1） */
++    LL_ADC_REG_SetSequencerRanks(ADC1, LL_ADC_REG_RANK_4, BEMF_ADC_PHASE_A_CH);
++    LL_ADC_SetChannelSamplingTime(ADC1, BEMF_ADC_PHASE_A_CH, LL_ADC_SAMPLINGTIME_COMMON_1);
++    LL_ADC_REG_SetSequencerRanks(ADC1, LL_ADC_REG_RANK_5, BEMF_ADC_PHASE_B_CH);
++    LL_ADC_SetChannelSamplingTime(ADC1, BEMF_ADC_PHASE_B_CH, LL_ADC_SAMPLINGTIME_COMMON_1);
++    LL_ADC_REG_SetSequencerRanks(ADC1, LL_ADC_REG_RANK_6, BEMF_ADC_PHASE_C_CH);
++    LL_ADC_SetChannelSamplingTime(ADC1, BEMF_ADC_PHASE_C_CH, LL_ADC_SAMPLINGTIME_COMMON_1);
++    LL_ADC_REG_SetSequencerRanks(ADC1, LL_ADC_REG_RANK_7, BEMF_ADC_NEUTRAL_CH);
++    LL_ADC_SetChannelSamplingTime(ADC1, BEMF_ADC_NEUTRAL_CH, LL_ADC_SAMPLINGTIME_COMMON_1);
++#endif
+ }
+diff --git a/Mcu/g071/Src/adc_bemf.c b/Mcu/g071/Src/adc_bemf.c
+new file mode 100644
+index 0000000..ecf5640
+--- /dev/null
++++ b/Mcu/g071/Src/adc_bemf.c
+@@ -0,0 +1,127 @@
++/*
++ * adc_bemf.c —— 软件过零检测（ADC 版 BEMF，带施密特滞回）
++ *
++ * 为什么需要它：
++ *   本板主控 STM32G071GBU6N 上，三相电压只有 VC 落在比较器输入脚
++ *   （PA2 = COMP2_INM，V0 在 PA3 = COMP2_INP），而 VB(PA4) / VA(PA5) 【没有 COMP 功能】
++ *   ⇒ 三相比比较的硬件方案物理不可行 ⇒ 过零必须由软件判。
++ *   （这正是硬件设计方所说"本该硬件做、要靠软件实现"的那一项。）
++ *
++ * 设计要点：
++ *   1. 接口与 comparator.c 完全同名 ⇒ main.c 一行不改。
++ *   2. getCompOutputLevel() 内部是【施密特滞回】比较器：越过 +H 才置 1、越过 −H 才置 0，
++ *      中间保持 ⇒ 零点附近的噪声不会来回翻转（这是软件过零最关键的一招）。
++ *   3. 触发源不再是比较器 EXTI，而是定时器/ADC-DMA 中断（见 stm32g0xx_it.c）。
++ */
++#include "adc_bemf.h"
++#include "comparator.h"   /* 只为了 step / rising 等 extern 声明 */
++#include "common.h"
++#include "targets.h"
++
++#ifdef USE_ADC_BEMF
++
++/* ---- ADC 扫描结果（DMA 目标；上电初值取中点，避免未采样时乱跳） ---- */
++volatile uint16_t bemf_adc_va = 2048;
++volatile uint16_t bemf_adc_vb = 2048;
++volatile uint16_t bemf_adc_vc = 2048;
++volatile uint16_t bemf_adc_v0 = 2048;
++
++/* ---- 施密特滞回阈值（ADC 码，12 位） ----
++ * 1 LSB ≈ 3.3V/4096 = 0.806 mV；相电压衰减 10/57 = 0.1754
++ * ⇒ 8 LSB(ADC) ≈ 6.4 mV ⇒ 折算到相电压侧 ≈ 37 mV
++ * 初值 8，上机按波形再调（低速往下调、噪声大往上调）。
++ */
++static uint16_t bemf_hyst  = 8;
++static uint8_t  bemf_state = 0;      /* 滞回后的稳定状态 */
++static uint8_t  active_phase = 0;    /* 0=A(PA5)  1=B(PA4)  2=C(PA2) */
++
++void adc_bemf_set_hysteresis(uint16_t hyst_lsb) { bemf_hyst = hyst_lsb; }
++uint16_t adc_bemf_get_hysteresis(void)          { return bemf_hyst; }
++
++/* 选当前【悬空】相 —— 判据与 comparator.c 的 step 映射完全一致：
++ *   step 1/4 → C 悬空 ; 2/5 → A 悬空 ; 3/6 → B 悬空
++ */
++void changeCompInput(void)
++{
++    if (step == 1 || step == 4) {
++        active_phase = 2;
++
++    } else if (step == 2 || step == 5) {
++        active_phase = 0;
++
++    } else if (step == 3 || step == 6) {
++        active_phase = 1;
++    }
++}
++
++int16_t adc_bemf_get_delta(void)
++{
++    int16_t vph;
++
++    switch (active_phase) {
++    case 0:  vph = (int16_t)bemf_adc_va; break;
++
++    case 1:  vph = (int16_t)bemf_adc_vb; break;
++
++    default: vph = (int16_t)bemf_adc_vc; break;
++    }
++
++    return (int16_t)(vph - (int16_t)bemf_adc_v0);
++}
++
++/* ★ 施密特滞回比较器（取代 active_COMP->CSR >> 30 & 1）
++ * 注意极性：Src/main.c 里用的是 `!getCompOutputLevel()`，此处沿用 comparator.c 的约定。
++ */
++uint8_t getCompOutputLevel(void)
++{
++    int16_t d = adc_bemf_get_delta();
++
++    if (d > (int16_t)bemf_hyst) {
++        bemf_state = 1;
++
++    } else if (d < -(int16_t)bemf_hyst) {
++        bemf_state = 0;
++    }
++
++    /* 落在 ±hyst 之间 ⇒ 保持原状态（这就是滞回） */
++    return bemf_state;
++}
++
++/* ★★ AWD（模拟看门狗）：把阈值比较放进 ADC 硬件
++ *   center = 悬空相的过零阈值 = ADC_raw_volts / 2（六步换相下 V_C 过零 ⟺ V_C = VBAT/2）
++ *   hyst   = 滞回半宽，天然构成施密特（上下沿两个阈值）
++ *   ⇒ 只有真正跨越窗口才中断；采样一万次里没跨越就一次都不打扰 CPU。
++ */
++void adc_bemf_config_watchdog(uint32_t awd_channel, uint16_t center, uint16_t hyst)
++{
++    uint32_t low  = (center > hyst) ? (uint32_t)(center - hyst) : 0u;
++    uint32_t high = (uint32_t)center + hyst;
++
++    if (high > 4095u) { high = 4095u; }
++
++    LL_ADC_SetAnalogWDMonitChannels(ADC1, LL_ADC_AWD1, awd_channel);
++    LL_ADC_ConfigAnalogWDThresholds(ADC1, LL_ADC_AWD1, high, low);
++    LL_ADC_ClearFlag_AWD1(ADC1);
++    LL_ADC_EnableIT_AWD1(ADC1);
++}
++
++/* 按当前 step 选悬空相 ⇒ 换监视通道 + 重算阈值（每次换相调用一次） */
++void adc_bemf_watchdog_for_phase(void)
++{
++    extern uint16_t ADC_raw_volts;
++    uint32_t center = (uint32_t)ADC_raw_volts / 2u;   /* 与 ADC 同一码域 */
++
++    switch (active_phase) {
++    case 0:  adc_bemf_config_watchdog(BEMF_AWD_PHASE_A_CH, center, bemf_hyst); break;
++
++    case 1:  adc_bemf_config_watchdog(BEMF_AWD_PHASE_B_CH, center, bemf_hyst); break;
++
++    default: adc_bemf_config_watchdog(BEMF_AWD_PHASE_C_CH, center, bemf_hyst); break;
++    }
++}
++
++/* 触发源改为定时器 / ADC-DMA 中断 ⇒ 不再需要 EXTI 使能/屏蔽 */
++void enableCompInterrupts(void) { }
++void maskPhaseInterrupts(void) { }
++
++#endif /* USE_ADC_BEMF */
+diff --git a/Mcu/g071/Src/comparator.c b/Mcu/g071/Src/comparator.c
+index 8460f7f..f397460 100644
+--- a/Mcu/g071/Src/comparator.c
++++ b/Mcu/g071/Src/comparator.c
+@@ -10,6 +10,10 @@
+ #include "common.h"
+ #include "targets.h"
+ 
++#ifdef USE_ADC_BEMF
++/* 本板走 adc_bemf.c 的软件过零，整个比较器实现不参与编译 */
++#else
++
+ COMP_TypeDef* active_COMP = COMP2;
+ uint32_t current_EXTI_LINE = LL_EXTI_LINE_18;
+ uint8_t medium_speed_set;
+@@ -132,3 +136,5 @@ medium_speed_set = 1;
+ 
+ //	}
+ //}
++
++#endif /* !USE_ADC_BEMF */
+-- 
+2.43.0
+

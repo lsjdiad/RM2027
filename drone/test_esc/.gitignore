@@ -1,0 +1,21 @@
+# ---- 构建产物 ----
+build/
+cmake-build-*/
+*.o
+*.elf
+*.bin
+*.hex
+*.map
+*.list
+*.su
+
+# ---- 编辑器 / 系统 ----
+.vscode/
+.idea/
+*.swp
+*~
+Thumbs.db
+.DS_Store
+
+# ---- 调试产物 ----
+*.log

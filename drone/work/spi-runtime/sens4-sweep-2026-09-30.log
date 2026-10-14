@@ -1,0 +1,78 @@
+Open On-Chip Debugger 0.12.0
+Licensed under GNU GPL v2
+For bug reports, read
+	http://openocd.org/doc/doxygen/bugs.html
+Info : The selected transport took over low-level target control. The results might differ compared to plain JTAG/SWD
+Info : clock speed 1000 kHz
+Info : STLINK V2J46S7 (API v2) VID:PID 0483:3748
+Info : Target voltage: 3.232490
+Info : [stm32h7x.cpu0] Cortex-M7 r1p1 processor detected
+Info : [stm32h7x.cpu0] target has 8 breakpoints, 4 watchpoints
+Info : starting gdb server for stm32h7x.cpu0 on 3333
+Info : Listening on port 3333 for gdb connections
+[stm32h7x.cpu0] halted due to breakpoint, current mode: Thread 
+xPSR: 0x01000000 pc: 0x0802c390 psp: 0x2400cfd8
+### SENS4 BEGIN ###
+进入时: 0x40=AC 0x41=03 0x42=A9 0x43=00 0x45=88 0x7D=0E 0x0B=07 0x08=80 0x6D=00 0x0A=00
+闸门: WHO_AM_I=6A  (需 6A)
+
+== A. 0x70~0x7F 逆序读（验 0x71~0x73 的值是不是真绑在地址上）==
+  逆序 00 00 0E 03 00 C8 2E 00 2E C8 2E 00 2E C8 F5 00 
+  正序 00 F5 C8 2E 00 2E C8 2E 00 2E C8 00 03 0E 00 00 
+
+== B. ACC_CONF 扫描（±16g，手册 2048 counts/g）==
+  BWP010 ODR1600 (基线)            写AC 回AC ERR=0 |a|= 1173.3 sd=  5.8 ratio=0.5729
+  BWP000 OSR4_AVG1               写8C 回8C ERR=0 |a|= 1174.6 sd=  2.6 ratio=0.5735
+  BWP001 OSR2_AVG2               写9C 回9C ERR=0 |a|= 1174.7 sd=  6.4 ratio=0.5736
+  BWP010 NORM_AVG4               写AC 回AC ERR=0 |a|= 1178.2 sd=  7.2 ratio=0.5753
+  BWP011 CIC_AVG8                写BC 回BC ERR=0 |a|= 1175.6 sd=  8.1 ratio=0.5740
+  -- 手册 Reserved（高功耗模式下非法）--
+  BWP100 RES_AVG16               写CC 回CC ERR=1 |a|= 2296.6 sd=  5.0 ratio=1.1214
+  BWP101 RES_AVG32               写DC 回DC ERR=1 |a|= 2299.7 sd=  2.9 ratio=1.1229
+  BWP110 RES_AVG64               写EC 回EC ERR=1 |a|= 2297.1 sd=  3.1 ratio=1.1216
+  BWP111 RES_AVG128              写FC 回FC ERR=1 |a|= 2297.1 sd=  2.4 ratio=1.1216
+  -- ACC_ODR 扫描（BWP=010）--
+  ODR=5                          写A5 回A5 ERR=0 |a|= 1623.6 sd=563.2 ratio=0.7928
+  ODR=6                          写A6 回A6 ERR=0 |a|= 1176.0 sd=  2.0 ratio=0.5742
+  ODR=7                          写A7 回A7 ERR=0 |a|= 1175.7 sd=  0.9 ratio=0.5741
+  ODR=8                          写A8 回A8 ERR=0 |a|= 1175.6 sd=  1.8 ratio=0.5740
+  ODR=9                          写A9 回A9 ERR=0 |a|= 1175.4 sd=  3.3 ratio=0.5739
+  ODR=A                          写AA 回AA ERR=0 |a|= 1173.9 sd=  3.3 ratio=0.5732
+  ODR=B                          写AB 回AB ERR=0 |a|= 1178.1 sd=  6.9 ratio=0.5752
+  ODR=C                          写AC 回AC ERR=0 |a|= 1174.1 sd=  6.4 ratio=0.5733
+  -- FILTER_PERF=0 低功耗 --
+  PERF0 BWP000 ODR100            写08 回08 ERR=0 |a|= 1175.5 sd=  9.0 ratio=0.5740
+  PERF0 BWP000 ODR800            写0B 回0B ERR=0 |a|= 1175.1 sd=  8.3 ratio=0.5738
+  PERF0 BWP010 ODR100            写28 回28 ERR=0 |a|= 1176.4 sd=  3.9 ratio=0.5744
+  PERF0 BWP010 ODR800            写2B 回2B ERR=1 |a|= 2300.8 sd=  3.1 ratio=1.1235
+  PERF0 BWP010 ODR1600(非法)       写2C 回2C ERR=1 |a|= 2298.9 sd=  3.1 ratio=1.1225
+
+== C. 0x08 HPF&LPF_CFG 扫描（BWP010 ODR1600 ±16g）==
+  0x08 写80 回80  FDS=0 DLPF_EN=0 HPCF=2  |a|= 1177.3 ratio=0.5748
+  0x08 写00 回00  FDS=0 DLPF_EN=0 HPCF=0  |a|= 1179.3 ratio=0.5758
+  0x08 写40 回40  FDS=0 DLPF_EN=0 HPCF=1  |a|= 1177.3 ratio=0.5748
+  0x08 写C0 回C0  FDS=0 DLPF_EN=0 HPCF=3  |a|= 1178.1 ratio=0.5753
+  0x08 写84 回84  FDS=0 DLPF_EN=1 HPCF=2  |a|= 1174.9 ratio=0.5737
+  0x08 写87 回87  FDS=0 DLPF_EN=1 HPCF=2  |a|= 1176.7 ratio=0.5746
+  0x08 写A0 回A0  FDS=1 DLPF_EN=0 HPCF=2  |a|=   28.8 ratio=0.0141
+  -- ★ HPF 判决：写 0xB0(FDS=1+HP_RESET) 再 0xA0(FDS=1)，随后每 100ms 采一次，共 40 次 --
+  |a| 序列: 21 41 28 35 38 39 20 23 34 26 38 34 37 24 15 47 23 34 38 28 27 34 35 31 21 25 36 40 21 30 32 36 37 52 44 44 33 33 16 25 
+  恢复 0x80 后 mean=(-38.5, 61.4, 1172.0) sd=(6.0, 40.3, 5.1) |a|=1175.0 sd|a|=5.2
+
+== D. FIFO_DOWNS(0x45) 扫描（BWP010 ODR1600）==
+  0x45 写88 回88  |a|= 1171.7 ratio=0.5721
+  0x45 写00 回00  |a|= 1175.1 ratio=0.5738
+  0x45 写07 回07  |a|= 1173.4 ratio=0.5730
+  0x45 写80 回80  |a|= 1176.3 ratio=0.5744
+  0x45 写FF 回FF  |a|= 1175.0 ratio=0.5737
+
+== E. 量程阶梯（每档 20 样本）==
+  0x41 写00 回00  |a|=  9210.2  手册应 16384 counts/g ⇒ ratio=0.5621
+  0x41 写01 回01  |a|=  4631.4  手册应  8192 counts/g ⇒ ratio=0.5654
+  0x41 写02 回02  |a|=  2297.5  手册应  4096 counts/g ⇒ ratio=0.5609
+  0x41 写03 回03  |a|=  1173.7  手册应  2048 counts/g ⇒ ratio=0.5731
+
+恢复后: 0x40=AC 0x41=03 0x42=A9 0x43=00 0x45=88 0x7D=0E 0x0B=07 0x08=80 0x6D=00 0x0A=00
+恢复后 mean=(-36.9, 46.5, 1172.3) sd=(7.4, 35.4, 7.0) |a|=1174.3 sd|a|=7.4
+### SENS4 END ###
+shutdown command invoked

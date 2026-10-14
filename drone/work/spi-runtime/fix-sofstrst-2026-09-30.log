@@ -1,0 +1,39 @@
+Open On-Chip Debugger 0.12.0
+Licensed under GNU GPL v2
+For bug reports, read
+	http://openocd.org/doc/doxygen/bugs.html
+Info : The selected transport took over low-level target control. The results might differ compared to plain JTAG/SWD
+Info : clock speed 1000 kHz
+Info : STLINK V2J46S7 (API v2) VID:PID 0483:3748
+Info : Target voltage: 3.232490
+Info : [stm32h7x.cpu0] Cortex-M7 r1p1 processor detected
+Info : [stm32h7x.cpu0] target has 8 breakpoints, 4 watchpoints
+Info : starting gdb server for stm32h7x.cpu0 on 3333
+Info : Listening on port 3333 for gdb connections
+[stm32h7x.cpu0] halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x080239d4 psp: 0x2400cfd8
+### FIX BEGIN ###
+WHO_AM_I=6A  PWR_CTRL(0x7D)=01  DATA_STAT(0x0B)=02
+-- 诊断：逐寄存器单读 0x0C~0x17（5 组）--
+  single FFD6FFFD0482FFF90011FFFA
+  single FFD6FFFD0482FFF90011FFFA
+  single FFD6FFFD0482FFF90011FFFA
+  single FFD6FFFD0482FFF90011FFFA
+  single FFD6FFFD0482FFF90011FFFA
+-- 诊断：12 字节突发 0x0C~0x17（3 次）--
+  burst  FFFFFFFFFFFFFFFFFFFFFFFF
+  burst  FFFFFFFFFFFFFFFFFFFFFFFF
+  burst  FFFFFFFFFFFFFFFFFFFFFFFF
+
+-- 手册 §5.42 SOFT_RST(0x4A)=0xA5（文档化寄存器）--
+复位后 WHO_AM_I=6A  PWR_CTRL=00  0x40=00
+-- 复位后：12 字节突发 3 次 --
+  burst  000000000000000000000000
+  burst  000000000000000000000000
+  burst  000000000000000000000000
+-- 复位后：逐寄存器单读 3 组 --
+  single 000000000000000000000000
+  single 000000000000000000000000
+  single 000000000000000000000000
+### FIX END ###
+shutdown command invoked

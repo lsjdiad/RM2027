@@ -1,0 +1,1 @@
+seq,ts_frame,delta,step,wait,duty,cur,stage,iov,startup_max,curlim_adj,ci,thiszctime,lastzctime,average_interval,advance,duty_setpoint,duty_max,bemf_timeout,zc_reject,input,stall_adj,desync

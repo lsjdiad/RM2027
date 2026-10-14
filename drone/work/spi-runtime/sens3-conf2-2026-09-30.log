@@ -1,0 +1,63 @@
+Open On-Chip Debugger 0.12.0
+Licensed under GNU GPL v2
+For bug reports, read
+	http://openocd.org/doc/doxygen/bugs.html
+Info : The selected transport took over low-level target control. The results might differ compared to plain JTAG/SWD
+Info : clock speed 1000 kHz
+Info : STLINK V2J46S7 (API v2) VID:PID 0483:3748
+Info : Target voltage: 3.234088
+Info : [stm32h7x.cpu0] Cortex-M7 r1p1 processor detected
+Info : [stm32h7x.cpu0] target has 8 breakpoints, 4 watchpoints
+Info : starting gdb server for stm32h7x.cpu0 on 3333
+Info : Listening on port 3333 for gdb connections
+[stm32h7x.cpu0] halted due to breakpoint, current mode: Thread 
+xPSR: 0x01000000 pc: 0x080239d4 psp: 0x2400cfd8
+### SENS3 BEGIN ###
+进入时配置: 0x40=AC 0x41=03 0x42=A9 0x43=00 0x45=88 0x7D=0E 0x0B=07 0x08=80 0x6D=00 0x0A=00
+
+== 0. 健全性闸门 ==
+  WHO_AM_I(0x01)=6A  (尝试 1 次)
+  ±4g 基线 mean=(-1.0, -1.0, -1.0) sd=(0.0, 0.0, 0.0) |a|=1.7 sd|a|=-nan
+  ACC_RANGE(0x41)=03
+
+== 0b. 0x70~0x7F 连读 3 遍（验证 0x71~0x73 的非零值是真的、不是读串了）==
+  P1 00 F5 C8 2E 00 2E C8 2E 00 2E C8 00 03 0E 00 00 
+  P2 00 F5 C8 2E 00 2E C8 2E 00 2E C8 00 03 0E 00 00 
+  P3 00 F5 C8 2E 00 2E C8 2E 00 2E C8 00 03 0E 00 00 
+
+== 1. 量程设为 ±16g：0x41 写03 回读03（手册 2048 counts/g）==
+-- a) 基线 --
+  PERF1 BWP010 NORM_AVG4 ODR1600   写AC 回读AC ERR=0 |a|=    1.7 sd= -nan counts/g=1.7 实测/手册=0.0008
+-- b) ACC_BWP sweep (FILTER_PERF=1, ODR=0xC) --
+  BWP000 OSR4_AVG1                 写8C 回读8C ERR=0 |a|=    1.7 sd= -nan counts/g=1.7 实测/手册=0.0008
+  BWP001 OSR2_AVG2                 写9C 回读9C ERR=0 |a|=    1.7 sd= -nan counts/g=1.7 实测/手册=0.0008
+  BWP010 NORM_AVG4                 写AC 回读AC ERR=0 |a|=    1.7 sd= -nan counts/g=1.7 实测/手册=0.0008
+  BWP011 CIC_AVG8                  写BC 回读BC ERR=0 |a|=    1.7 sd= -nan counts/g=1.7 实测/手册=0.0008
+-- b2) 手册说高性能模式下 Reserved 的 BWP（应回落 0xA8 且 ERR=1）--
+  BWP100 RES_AVG16                 写CC 回读CC ERR=1 |a|=    1.7 sd= -nan counts/g=1.7 实测/手册=0.0008
+  BWP101 RES_AVG32                 写DC 回读DC ERR=1 |a|=    1.7 sd= -nan counts/g=1.7 实测/手册=0.0008
+  BWP110 RES_AVG64                 写EC 回读EC ERR=1 |a|=    1.7 sd= -nan counts/g=1.7 实测/手册=0.0008
+  BWP111 RES_AVG128                写FC 回读FC ERR=1 |a|=    1.7 sd= -nan counts/g=1.7 实测/手册=0.0008
+-- c) ACC_ODR sweep (FILTER_PERF=1, BWP=010) --
+  ODR 12.5Hz                       写A5 回读A5 ERR=0 |a|=    1.7 sd= -nan counts/g=1.7 实测/手册=0.0008
+  ODR 25Hz                         写A6 回读A6 ERR=0 |a|=    1.7 sd= -nan counts/g=1.7 实测/手册=0.0008
+  ODR 50Hz                         写A7 回读A7 ERR=0 |a|=    1.7 sd= -nan counts/g=1.7 实测/手册=0.0008
+  ODR 100Hz (缺省)                   写A8 回读A8 ERR=0 |a|=    1.7 sd= -nan counts/g=1.7 实测/手册=0.0008
+  ODR 200Hz                        写A9 回读A9 ERR=0 |a|=    1.7 sd= -nan counts/g=1.7 实测/手册=0.0008
+  ODR 400Hz                        写AA 回读AA ERR=0 |a|=    1.7 sd= -nan counts/g=1.7 实测/手册=0.0008
+  ODR 800Hz                        写AB 回读AB ERR=0 |a|=    1.7 sd= -nan counts/g=1.7 实测/手册=0.0008
+  ODR 1600Hz                       写AC 回读AC ERR=0 |a|=    1.7 sd= -nan counts/g=1.7 实测/手册=0.0008
+-- d) ACC_FILTER_PERF=0 低功耗模式 --
+  PERF0 BWP000 ODR100              写08 回读08 ERR=0 |a|=    1.7 sd= -nan counts/g=1.7 实测/手册=0.0008
+  PERF0 BWP000 ODR800              写0B 回读0B ERR=0 |a|=    1.7 sd= -nan counts/g=1.7 实测/手册=0.0008
+  PERF0 BWP010 ODR100              写28 回读28 ERR=0 |a|=    1.7 sd= -nan counts/g=1.7 实测/手册=0.0008
+  PERF0 BWP010 ODR800              写2B 回读2B ERR=1 |a|=    1.7 sd= -nan counts/g=1.7 实测/手册=0.0008
+  PERF0 BWP010 ODR1600(非法)         写2C 回读2C ERR=1 |a|=    1.7 sd= -nan counts/g=1.7 实测/手册=0.0008
+-- e) 回到 ±4g 用最佳/基线再看一次（排除量程本身的影响）--
+  ±4g PERF1 BWP010 ODR1600 mean=(-1.0, -1.0, -1.0) sd=(0.0, 0.0, 0.0) |a|=1.7 sd|a|=-nan
+  ±4g PERF1 BWP010 ODR100 mean=(-1.0, -1.0, -1.0) sd=(0.0, 0.0, 0.0) |a|=1.7 sd|a|=-nan
+
+恢复后配置: 0x40=AC 0x41=03 0x42=A9 0x43=00 0x45=88 0x7D=0E 0x0B=07 0x08=80 0x6D=00 0x0A=00
+恢复后 mean=(-1.0, -1.0, -1.0) sd=(0.0, 0.0, 0.0) |a|=1.7 sd|a|=-nan
+### SENS3 END ###
+shutdown command invoked

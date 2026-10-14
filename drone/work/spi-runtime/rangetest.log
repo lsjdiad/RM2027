@@ -1,0 +1,12 @@
+# ⚠️ 这是一次【失败的重复运行】的日志（不是有效数据），仅作留痕：
+#   运行时间 2026-09-30，此时 ST-Link 已从 USB 总线掉线，openocd 直接 "Error: open failed"。
+#   ★ 真正的原始输出请只看：rangetest-2026-09-30.log
+Open On-Chip Debugger 0.12.0
+Licensed under GNU GPL v2
+For bug reports, read
+	http://openocd.org/doc/doxygen/bugs.html
+Info : The selected transport took over low-level target control. The results might differ compared to plain JTAG/SWD
+Info : clock speed 1000 kHz
+Error: open failed
+
+

@@ -1,0 +1,62 @@
+# bwptest.tcl 的原始输出（2026-09-30，ST-Link 手工驱动 SPI1，CPU halted）
+#
+# ⚠️ 说明：这次运行的输出是从会话记录转录的（当时没有重定向到文件；之后 ST-Link 掉线，
+#    已无法重跑）。datadump.log / cfgtest.log 是当时直接落盘的原件。
+#    命令：openocd -f bwptest.tcl
+#    目的：判定"静止 1g 只读到 ~1180 counts"是不是 ACC_CONF(0x40) 滤波配置的伪影
+#          （如果是，改配置就能修好；如果与滤波无关，就是硅片绝对增益偏低）。
+#
+### BWPTEST BEGIN ###
+基线: 0x40=0C  0x41=03  Z均值=2303.33333333
+-- 扫描 ACC_CONF 高半字节 (bwp) 0x0..0xF，低半字节固定 0xC(ODR 1600Hz) --
+  bwp=0x0  write=0x0C readback=0x0C  Zavg=2302.33333333
+  bwp=0x1  write=0x1C readback=0x1C  Zavg=2305.0
+  bwp=0x2  write=0x2C readback=0x2C  Zavg=2306.33333333
+  bwp=0x3  write=0x3C readback=0x3C  Zavg=2306.66666667
+  bwp=0x4  write=0x4C readback=0x4C  Zavg=2303.33333333
+  bwp=0x5  write=0x5C readback=0x5C  Zavg=2303.33333333
+  bwp=0x6  write=0x6C readback=0x6C  Zavg=2304.0
+  bwp=0x7  write=0x7C readback=0x7C  Zavg=2302.33333333
+  bwp=0x8  write=0x8C readback=0x8C  Zavg=1177.33333333
+  bwp=0x9  write=0x9C readback=0x9C  Zavg=1177.0
+  bwp=0xA  write=0xAC readback=0xAC  Zavg=1172.33333333
+  bwp=0xB  write=0xBC readback=0xBC  Zavg=1171.66666667
+  bwp=0xC  write=0xCC readback=0xCC  Zavg=2305.66666667
+  bwp=0xD  write=0xDC readback=0xDC  Zavg=2303.0
+  bwp=0xE  write=0xEC readback=0xEC  Zavg=2306.66666667
+  bwp=0xF  write=0xFC readback=0xFC  Zavg=2305.66666667
+-- 扫描 ODR 半字节 0x0..0xF，高半字节固定 0xA --
+  odr=0x0  write=0xA0 readback=0xA0  Zavg=2302.0
+  odr=0x1  write=0xA1 readback=0xA1  Zavg=2302.33333333
+  odr=0x2  write=0xA2 readback=0xA2  Zavg=2302.0
+  odr=0x3  write=0xA3 readback=0xA3  Zavg=2300.66666667
+  odr=0x4  write=0xA4 readback=0xA4  Zavg=2302.66666667
+  odr=0x5  write=0xA5 readback=0xA5  Zavg=2306.0
+  odr=0x6  write=0xA6 readback=0xA6  Zavg=1177.66666667
+  odr=0x7  write=0xA7 readback=0xA7  Zavg=1177.33333333
+  odr=0x8  write=0xA8 readback=0xA8  Zavg=1178.0
+  odr=0x9  write=0xA9 readback=0xA9  Zavg=1178.33333333
+  odr=0xA  write=0xAA readback=0xAA  Zavg=1177.66666667
+  odr=0xB  write=0xAB readback=0xAB  Zavg=1174.0
+  odr=0xC  write=0xAC readback=0xAC  Zavg=1177.0
+  odr=0xD  write=0xAD readback=0xAD  Zavg=2301.66666667
+  odr=0xE  write=0xAE readback=0xAE  Zavg=2313.33333333
+  odr=0xF  write=0xAF readback=0xAF  Zavg=2300.0
+-- 恢复 0x40=0xAC --
+  0x40=AC 0x41=03 0x42=EC  0x7D=0E Zavg=1172.66666667
+### BWPTEST END ###
+#
+# 结论：
+#  1) 读数只有两个离散档位：~1177 和 ~2302（后者恰好是前者的 ~1.96x，且三轴等比例 ⇒
+#     整体增益/量程档位变化，不是某轴故障）。
+#  2) PX4 原配置 0xAC（bwp=0xA + ODR=0xC）落在【低档 ~1177】，也就是本次标定用的那个档。
+#  3) 规律（bwp 扫描，ODR 固定 0xC）：只有 bwp 高半字节 0x8~0xB 落低档，其余落高档；
+#     ODR 扫描（bwp 固定 0xA）只有 ODR 0x6~0xC 落低档，其余落高档
+#     —— 但 readback 始终等于写入值，说明 0x40 的回读可能是"影子寄存器"，
+#     兼容件内部真实的滤波/增益解码与正品不同，机制**未查清**。
+#  4) 因此本改动【不动 ACC_CONF】，保持 PX4 原配置 0xAC，只用实测系数做单点增益标定。
+#  5) 注意：这两档都不等于手册值 2048（低档 -42%，高档 +12%），
+#     所以"绝对灵敏度偏低 1.73x"这个结论对 bwp=0xAC 这个 PX4 实际使用的配置是成立的。
+#  6) 另有一处观察（cfgtest.log）：ACC_CONF 的非 0xAC 取值会让 ACC_RANGE 看起来"失效"
+#     （写 0x41=0x00/0x03 读数一样），进一步说明这颗兼容件的配置解码与正品不同 ——
+#     这也是不去动 ACC_CONF 的另一个理由。

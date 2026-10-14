@@ -1,0 +1,62 @@
+==== h104cap report ====
+SOF假设=5A A5  HI91数据域=76 整帧=82  CRC=CRC-16/XMODEM
+[0] now=3572815 us  port=/dev/ttyS0  baud_default=115200
+   tcsetattr(115200) OK: CSIZE=3(3=CS8) ispeed=115200 ospeed=115200
+[1] @115200 先静默观察 300ms：2461 字节 —— ≈8200B/s 有连续数据流(HI91@100Hz?)
+    发 LOG DISABLE（读到 76 B，应答=....7x...E.<...:MM.?.F.<!_.=.................Gw....=^."<...?`9.:c.....8OK）后 300ms：0 字节
+    ⇒ ✅ 数据流被停住了 ⇒ **模块听懂了 115200 的 ASCII 命令**
+[2] ASCII 查询 @115200（每问间隔 600ms）
+   tcsetattr(115200) OK: CSIZE=3(3=CS8) ispeed=115200 ospeed=115200
+  > LOG VERSION
+    收到 84 B  np=0 nl=6 score=78
+      | PNAME=HI04M0-000BUILD=Nov 18 2024UUID=15856EB9556F271DAPP_VER=159BL_VER=110OK
+   tcsetattr(115200) OK: CSIZE=3(3=CS8) ispeed=115200 ospeed=115200
+  > LOG COMCONFIG
+    收到 102 B  np=0 nl=7 score=48
+      | COM=COM1BAUD=115200MSG=HI43, ONTIME=0MSG=HI92, ONTIME=0MSG=HI91, ONTIME=10MSG=HI90, ONTIME=0OK
+   tcsetattr(115200) OK: CSIZE=3(3=CS8) ispeed=115200 ospeed=115200
+  > LOG USRCONFIG
+    收到 79 B  np=0 nl=5 score=38
+      | MODBUS_ID=0x50KF_EN_MAG=0URFR=1,0,0,0,1,0,0,0,1QOFS=1.00,0.00,0.00,0.00OK
+   tcsetattr(115200) OK: CSIZE=3(3=CS8) ispeed=115200 ospeed=115200
+  > LOG MCAL STAT
+    收到 5 B  np=0 nl=1 score=15
+      | ERR
+[3] 波特率扫描（每个档先发 LOG DISABLE 闸住数据，再发 LOG VERSION）
+   tcsetattr(4800) OK: CSIZE=3(3=CS8) ispeed=4800 ospeed=4800
+    4800    : LOG_DISABLE读到0     B | LOG_VERSION读到0     B np=0    nl=0   score=0   
+   tcsetattr(9600) OK: CSIZE=3(3=CS8) ispeed=9600 ospeed=9600
+    9600    : LOG_DISABLE读到0     B | LOG_VERSION读到0     B np=0    nl=0   score=0   
+   tcsetattr(19200) OK: CSIZE=3(3=CS8) ispeed=19200 ospeed=19200
+    19200   : LOG_DISABLE读到0     B | LOG_VERSION读到0     B np=0    nl=0   score=0   
+   tcsetattr(38400) OK: CSIZE=3(3=CS8) ispeed=38400 ospeed=38400
+    38400   : LOG_DISABLE读到0     B | LOG_VERSION读到0     B np=0    nl=0   score=0   
+   tcsetattr(57600) OK: CSIZE=3(3=CS8) ispeed=57600 ospeed=57600
+    57600   : LOG_DISABLE读到0     B | LOG_VERSION读到0     B np=0    nl=0   score=0   
+   tcsetattr(115200) OK: CSIZE=3(3=CS8) ispeed=115200 ospeed=115200
+    115200  : LOG_DISABLE读到0     B | LOG_VERSION读到84    B np=0    nl=6   score=78  ★ 像应答
+        ⇒ 应答摘录: PNAME=HI04M0-000BUILD=Nov 18 2024UUID=15856EB9556F271DAPP_VER=159BL_VER=110OK
+   tcsetattr(230400) OK: CSIZE=3(3=CS8) ispeed=230400 ospeed=230400
+    230400  : LOG_DISABLE读到0     B | LOG_VERSION读到0     B np=0    nl=0   score=0   
+   tcsetattr(256000) OK: CSIZE=3(3=CS8) ispeed=256000 ospeed=256000
+    256000  : LOG_DISABLE读到0     B | LOG_VERSION读到0     B np=0    nl=0   score=0   
+   tcsetattr(460800) OK: CSIZE=3(3=CS8) ispeed=460800 ospeed=460800
+    460800  : LOG_DISABLE读到0     B | LOG_VERSION读到0     B np=0    nl=0   score=0   
+   tcsetattr(921600) OK: CSIZE=3(3=CS8) ispeed=921600 ospeed=921600
+    921600  : LOG_DISABLE读到0     B | LOG_VERSION读到0     B np=0    nl=0   score=0   
+    ⇒ 最像应答的波特率 = 115200（score=78）
+[3b] 115200 本来就有数据流（2461 B/300ms）⇒ 维持 115200（扫描结果 115200 仅作参考）
+   tcsetattr(115200) OK: CSIZE=3(3=CS8) ispeed=115200 ospeed=115200
+[4] 发 LOG ENABLE（读到 3203 B，应答=OKZ.L...... ........16.<...:...?...=;..=$g.=..............w....=...<...? ..:......8Z.L...... ...........<9..:...?..=Ne.=l..<...）
+[5] 抓 3 秒原始字节 @115200 到 g_h104_cap_buf（8192 字节上限）
+   tcsetattr(115200) OK: CSIZE=3(3=CS8) ispeed=115200 ospeed=115200
+    抓到 8192 字节 / 996 ms
+[6] 帧统计
+    bytes=8192  5A=106  A5=114  5A-A5相邻=99
+    候选帧=98  长度错=0  重同步跳过=80
+    CRC好=98  CRC坏=0  HI91帧=98  main_status=0x0A41
+    0x5A 占比 1.3%（HI91 理论值约 1.2%）
+[7] 结论提示
+    sof_pairs≈候选帧 且 CRC好≈HI91帧 ⇒ 就是 HI91，协议坐实
+    sof_pairs=0 且 5A占比≫1.2% ⇒ PA10 上不是 HI91 流
+==== end (cap_len=8192 report_len=4091) ====

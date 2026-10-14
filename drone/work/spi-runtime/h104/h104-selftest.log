@@ -1,0 +1,38 @@
+# h104_parse.py --selftest  （用手册 §帧解析示例 的 82 字节帧自检）
+# 生成时间: 2026-09-30 16:15:16 CST
+# 解释器: Python 3.12.3
+
+== 手册示例帧结构 ==
+  total_bytes            got=82               want=82               OK
+  sof                    got=5A A5            want=5A A5            OK
+  len_field              got=76               want=76               OK
+  payload_bytes          got=76               want=76               OK
+== CRC-16/XMODEM ==
+  crc_calc               got=0xbb14           want=0xbb14           OK
+  frames_found           got=1                want=1                OK
+== HI91 字段（对手册标注解析值）==
+  tag                    got=145              want=145              OK
+  main_status            got=5384             want=5384             OK
+  temperature_c          got=35               want=35               OK
+  air_pressure_pa        got=100676           want=100676           OK
+  system_time_ms         got=1840392          want=1840392          OK
+  acc_b_g                got=-0.2206          want=-0.2206          OK
+  acc_b_g                got=0.2092           want=0.2092           OK
+  acc_b_g                got=0.9489           want=0.9489           OK
+  gyr_b_dps              got=-0.0617          want=-0.0617          OK
+  gyr_b_dps              got=-0.006           want=-0.006           OK
+  gyr_b_dps              got=-0.0101          want=-0.0101          OK
+  mag_b_ut               got=7.892            want=7.892            OK
+  mag_b_ut               got=14.625           want=14.625           OK
+  mag_b_ut               got=-60.042          want=-60.042          OK
+  quat_wxyz              got=-0.4859          want=-0.4859          OK
+  quat_wxyz              got=-0.1498          want=-0.1498          OK
+  quat_wxyz              got=0.0381           want=0.0381           OK
+  quat_wxyz              got=0.8602           want=0.8602           OK
+  roll_deg               got=13.052           want=13.052           OK
+  pitch_deg              got=12.188           want=12.188           OK
+  yaw_deg                got=-122.477         want=-122.477         OK
+
+结果： 全部通过 ✅
+
+EXIT=0

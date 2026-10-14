@@ -1,0 +1,70 @@
+字节数        : 8192
+扫到帧        : 98（CRC 好 98 / 坏 0）
+其中 HI91 帧  : 98
+帧率估算      : 100.0 Hz（按 system_time）
+扫描告警      : [{'off': 8116, 'reason': 'truncated frame (need 82, have 76)'}]
+
+--- 帧 @80  len=76  CRC=0xA8D4 ---
+  main_status  : 0x0677  MAG_DIST,ACC_SAT,GYR_SAT,STATIC,MAG_AIDING
+  temperature  : 32 °C
+  air_pressure : 0.0 Pa
+  system_time  : 1943159 ms
+  acc_b  [G]   : ['0.0167', '0.0025', '1.0034']
+  gyr_b  [dps] : ['-0.0004', '-0.0705', '-0.0165']
+  mag_b  [uT]  : ['0.0000', '0.0000', '0.0000']
+  rpy    [deg] : -0.969 / 0.118 / 0.009
+  quat wxyz    : ['0.99996', '0.00103', '-0.00846', '0.00007']
+
+--- 帧 @162  len=76  CRC=0x9E36 ---
+  main_status  : 0x0681  ATT_CONV,STATIC,MAG_AIDING
+  temperature  : 32 °C
+  air_pressure : 0.0 Pa
+  system_time  : 1943169 ms
+  acc_b  [G]   : ['0.0175', '0.0034', '1.0024']
+  gyr_b  [dps] : ['-0.0915', '-0.0148', '-0.0590']
+  mag_b  [uT]  : ['0.0000', '0.0000', '0.0000']
+  rpy    [deg] : -0.970 / 0.118 / 0.009
+  quat wxyz    : ['0.99996', '0.00103', '-0.00846', '0.00007']
+
+--- 帧 @244  len=76  CRC=0xA67E ---
+  main_status  : 0x068B  WB_CONV,ATT_CONV,STATIC,MAG_AIDING
+  temperature  : 32 °C
+  air_pressure : 0.0 Pa
+  system_time  : 1943179 ms
+  acc_b  [G]   : ['0.0188', '0.0030', '1.0033']
+  gyr_b  [dps] : ['-0.1219', '-0.0086', '0.0020']
+  mag_b  [uT]  : ['0.0000', '0.0000', '0.0000']
+  rpy    [deg] : -0.970 / 0.118 / 0.009
+  quat wxyz    : ['0.99996', '0.00103', '-0.00846', '0.00007']
+
+--- 帧 @326  len=76  CRC=0xED6F ---
+  main_status  : 0x0695  MAG_DIST,ATT_CONV,STATIC,MAG_AIDING
+  temperature  : 32 °C
+  air_pressure : 0.0 Pa
+  system_time  : 1943189 ms
+  acc_b  [G]   : ['0.0195', '0.0021', '1.0042']
+  gyr_b  [dps] : ['0.0303', '-0.0279', '0.0567']
+  mag_b  [uT]  : ['0.0000', '0.0000', '0.0000']
+  rpy    [deg] : -0.970 / 0.118 / 0.009
+  quat wxyz    : ['0.99996', '0.00103', '-0.00847', '0.00007']
+
+--- 帧 @408  len=76  CRC=0x5DA2 ---
+  main_status  : 0x069F  WB_CONV,MAG_DIST,ATT_CONV,STATIC,MAG_AIDING
+  temperature  : 32 °C
+  air_pressure : 0.0 Pa
+  system_time  : 1943199 ms
+  acc_b  [G]   : ['0.0188', '0.0012', '1.0048']
+  gyr_b  [dps] : ['0.0486', '-0.0157', '0.0201']
+  mag_b  [uT]  : ['0.0000', '0.0000', '0.0000']
+  rpy    [deg] : -0.970 / 0.118 / 0.009
+  quat wxyz    : ['0.99996', '0.00103', '-0.00846', '0.00007']
+
+=== 流统计 / SOF 假设检验 ===
+  n_bytes                  8192
+  byte_5a_count            106
+  byte_a5_count            114
+  sof_5aa5_count           99
+  expected_5a_if_hi91      99.90243902439025
+  observed_over_expected   1.06103515625
+  top_bytes                [('0x0', 1810), ('0x3c', 255), ('0x3f', 216), ('0x3d', 187), ('0xbc', 156), ('0x3a', 139), ('0x91', 123), ('0x80', 114), ('0xa', 114), ('0xa5', 114), ('0x4c', 114), ('0x1d', 113)]
+  gap_5a_histogram         [(24, 2), (26, 1), (27, 4), (55, 4), (56, 1), (58, 2), (82, 91)]

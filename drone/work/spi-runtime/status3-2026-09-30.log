@@ -1,0 +1,23 @@
+Open On-Chip Debugger 0.12.0
+Licensed under GNU GPL v2
+For bug reports, read
+	http://openocd.org/doc/doxygen/bugs.html
+Info : The selected transport took over low-level target control. The results might differ compared to plain JTAG/SWD
+Info : clock speed 1000 kHz
+Info : STLINK V2J46S7 (API v2) VID:PID 0483:3748
+Info : Target voltage: 3.232490
+Info : [stm32h7x.cpu0] Cortex-M7 r1p1 processor detected
+Info : [stm32h7x.cpu0] target has 8 breakpoints, 4 watchpoints
+Info : starting gdb server for stm32h7x.cpu0 on 3333
+Info : Listening on port 3333 for gdb connections
+[stm32h7x.cpu0] halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x0802c390 psp: 0x2400cfd8
+### STATUS3 BEGIN ###
+SPI1 CR1=00001001 CFG1=30070007 CFG2=87400000 SR=00001802
+  尝试1: WHO_AM_I(0x01)=6A  SR=00001002
+WHO_AM_I 自检: ✓ 通过
+配置: 0x40=AC 0x41=01 0x42=A9 0x43=00 0x45=88 0x7D=0E 0x0B=07 0x08=80 0x6D=00 0x0A=00
+TEMP(0x22/0x23) = 1D73
+BASE20 mean=(-105.9, 137.7, 4625.2) sd=(26.8, 129.5, 16.0) |a|=4630.3 sd|a|=17.5
+### STATUS3 END ###
+shutdown command invoked

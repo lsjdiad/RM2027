@@ -1,0 +1,230 @@
+{
+  "main": {
+    "id": "26b8776d489cb961",
+    "type": "split",
+    "children": [
+      {
+        "id": "725799f8c5f76a2f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "6a4e5f6011ae8a3b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "03_moc/00-build-walkthrough.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "00-build-walkthrough"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "9c0493dc10ec9d70",
+    "type": "split",
+    "children": [
+      {
+        "id": "a619d905790dee26",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ffdc532205bbf32c",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "5df6aa4127f9d53a",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "f248c3d487cdbcb0",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "dcdb9afcb2eecc3a",
+    "type": "split",
+    "children": [
+      {
+        "id": "cac93651f61dbccc",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d7d9356c25921ec6",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "03_moc/01-poweron-walkthrough.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "反向链接"
+            }
+          },
+          {
+            "id": "7b167bed0b2ca7e9",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "03_moc/01-poweron-walkthrough.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "出链"
+            }
+          },
+          {
+            "id": "539b7a3620dcae99",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "9637d297ae8ab1df",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "添加笔记属性"
+            }
+          },
+          {
+            "id": "90c8ea579de8c345",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "03_moc/01-poweron-walkthrough.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "大纲"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "bases:新建数据库": false
+    }
+  },
+  "active": "6a4e5f6011ae8a3b",
+  "lastOpenFiles": [
+    "03_moc/01-poweron-walkthrough.md",
+    "03_moc/00-build-walkthrough.md",
+    "03_moc/03-module-map.md",
+    "02_code_twin/build/CMakeLists.md",
+    "02_code_twin/build/cmake-kconfig.md",
+    "02_code_twin/drivers/rc_input.md",
+    "02_code_twin/drivers/loose.md",
+    "02_code_twin/framework/work-queue.md",
+    "02_code_twin/framework",
+    "02_code_twin/uorb/msg-build.md",
+    "02_code_twin/uorb/uorb-internals.md",
+    "02_code_twin/uorb",
+    "02_code_twin/build/Makefile.md",
+    "02_code_twin/build/romfs-and-tools.md",
+    "02_code_twin/build/others.md",
+    "02_code_twin/build/nuttx-build.md",
+    "02_code_twin/build/drivers-build.md",
+    "02_code_twin/build/board-build.md",
+    "02_code_twin/build/artifacts.md",
+    "tools/split-moc-annotations.py",
+    "tools/obsidianize-anchors.py",
+    "tools/README.md",
+    "tools/collapse-nested-links.py",
+    "tools/self-audit.py",
+    "tools/check-annotated-code.py",
+    "01_extracted/cmake/px4-global-variables.md",
+    "tools/anchorize-sources.py",
+    "01_extracted/stm32/startup-and-crt.md",
+    "01_extracted/c/px4-c-macros.md",
+    "01_extracted/c",
+    "01_extracted/uorb/uorb-mechanism.md",
+    "01_extracted/uorb",
+    "01_extracted/make/gnu-make-syntax.md",
+    "01_extracted/cmake/cmake-syntax.md",
+    "04_notes/语法盲点审计.md",
+    "02_code_twin/bootloader/bl-h.md"
+  ]
+}

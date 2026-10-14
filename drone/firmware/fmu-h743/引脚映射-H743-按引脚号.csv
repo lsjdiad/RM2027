@@ -1,0 +1,101 @@
+﻿引脚号,MCU引脚名,图上网络名,用途,状态
+1,PE2,（图上无网络名，疑 ✗）,未连接,待核
+2,PE3,（图上无网络名，疑 ✗）,未连接,待核
+3,PE4,TIM15_CH1N,备用定时器,已分配
+4,PE5,TIM15_CH1,备用定时器,已分配
+5,PE6,（图上无网络名，疑 ✗）,未连接,待核
+6,VBAT,VBAT（接 3.3V_H7 域）,电源/地,电源
+7,PC13,（图上无网络名，疑 ✗）,未连接,待核
+8,PC14-OSC32_IN,（图上无网络名，疑 ✗）,未连接,待核
+9,PC15-OSC32_OUT,（图上无网络名，疑 ✗）,未连接,待核
+10,VSS,GND,电源/地,电源
+11,VDD,3.3V_H7,电源/地,电源
+12,PH0-OSC_IN,OSC7_IN,25MHz 晶振,已分配
+13,PH1-OSC_OUT,OSC7_OUT,25MHz 晶振,已分配
+14,NRST,NRST7,复位（含复位按钮 SW5）,已分配
+15,PC0,ADC1_IN10,★ESC1 电流 BAT_CURRENT1,已分配
+16,PC1,ADC1_IN11,★ESC2 电流 BAT_CURRENT2,已分配
+17,PC2_C,SPI2_MISO,SPI2（空闲）,已分配
+18,PC3_C,SPI2_MOSI,SPI2（空闲）,已分配
+19,VSSA,GND(VSSA),电源/地,电源
+20,VREF+,VREF+,电源/地,电源
+21,VDDA,3.3V_H7(VDDA),电源/地,电源
+22,PA0,TIM5_CH1,备用定时器,已分配
+23,PA1,TIM5_CH2,备用定时器,已分配
+24,PA2,TIM5_CH3,备用定时器,已分配
+25,PA3,USART2_RX,→F103 伴生 MCU,已分配
+26,VSS,GND,电源/地,电源
+27,VDD,3.3V_H7,电源/地,电源
+28,PA4,（图上无网络名，疑 ✗）,未连接,待核
+29,PA5,（图上无网络名，疑 ✗）,未连接,待核
+30,PA6,SPI1_MISO,ICM-42688 SPI1 主入从出,已分配
+31,PA7,（图上无网络名，疑 ✗）,未连接,待核
+32,PC4,ADC1_IN4,★ESC3 电流 BAT_CURRENT3,已分配
+33,PC5,ADC2_IN8,★ESC4 电流 BAT_CURRENT4,已分配
+34,PB0,（图上无网络名，疑 ✗）,未连接,待核
+35,PB1,TIM3_CH4,备用定时器,已分配
+36,PB2,SPI3_MOSI,SPI3（空闲）,已分配
+37,PE7,UART7_RX,ESC 遥测 3 RX,已分配
+38,PE8,UART7_TX,ESC 遥测 3 TX,已分配
+39,PE9,（图上无网络名，疑 ✗）,未连接,待核
+40,PE10,（图上无网络名，疑 ✗）,未连接,待核
+41,PE11,TIM1_CH2,★ESC2 DShot,已分配
+42,PE12,（图上无网络名，疑 ✗）,未连接,待核
+43,PE13,TIM1_CH3,★ESC3 DShot,已分配
+44,PE14,TIM1_CH4,★ESC4 DShot,已分配
+45,PE15,SPA_INT,SPA06 气压计 中断,已分配
+46,PB10,IIC2_SCL,SPA06 气压计 时钟,已分配
+47,PB11,IIC2_SDA,SPA06 气压计 数据,已分配
+48,VCAP,VCAP(2.2uF),电源/地,电源
+49,VSS,GND,电源/地,电源
+50,VDD,3.3V_H7,电源/地,电源
+51,PB12,CAN2_RX,CAN2（空闲）,已分配
+52,PB13,CAN2_TX,CAN2（空闲）,已分配
+53,PB14,（图上无网络名，疑 ✗）,未连接,待核
+54,PB15,（图上无网络名，疑 ✗）,未连接,待核
+55,PD8,USART3_TX,USART3（空闲）,已分配
+56,PD9,USART3_RX,USART3（空闲）,已分配
+57,PD10,（图上无网络名，疑 ✗）,未连接,待核
+58,PD11,（图上无网络名，疑 ✗）,未连接,待核
+59,PD12,IIC4_SCL,IST8310 磁罗盘 时钟,已分配
+60,PD13,IIC4_SDA,IST8310 磁罗盘 数据,已分配
+61,PD14,MAG_OUT,IST8310 数据就绪 DRDY,已分配
+62,PD15,MAG_RSTN,IST8310 复位,已分配
+63,PC6,USART6_TX,ESC 遥测 2 TX,已分配
+64,PC7,USART6_RX,ESC 遥测 2 RX,已分配
+65,PC8,TIM8_CH3,ESC 备用通道,已分配
+66,PC9,TIM8_CH4,ESC 备用通道,已分配
+67,PA8,TIM1_CH1,★ESC1 DShot,已分配
+68,PA9,SYNC_IN,H104 同步输入/PPS,已分配
+69,PA10,USART1_RX,H104 备用串口,已分配
+70,PA11,UART4_RX,ESC 遥测 1 RX,已分配
+71,PA12,UART4_TX,ESC 遥测 1 TX,已分配
+72,PA13,SWDIO,调试 SWD,已分配
+73,VCAP,VCAP(2.2uF),电源/地,电源
+74,VSS,GND,电源/地,电源
+75,VDD,3.3V_H7,电源/地,电源
+76,PA14,SWCLK,调试 SWD,已分配
+77,PA15,SYNC_OUT,H104 同步输出,已分配
+78,PC10,SPI3_SCK,SPI3（空闲）,已分配
+79,PC11,SPI3_MISO,SPI3（空闲）,已分配
+80,PC12,UART5_TX,DBUS 遥控器 TX,已分配
+81,PD0,CAN1_RX,H104 外置陀螺 CAN,已分配
+82,PD1,CAN1_TX,H104 外置陀螺 CAN,已分配
+83,PD2,UART5_RX,DBUS 遥控器 RX,已分配
+84,PD3,SPI2_SCK,SPI2（空闲）,已分配
+85,PD4,（图上无网络名，疑 ✗）,未连接,待核
+86,PD5,USART2_TX,→F103 伴生 MCU,已分配
+87,PD6,GYRO_INT1,ICM-42688 中断,已分配
+88,PD7,SPI1_MOSI,ICM-42688 SPI1 主出从入,已分配
+89,PB3,SPI1_SCK,ICM-42688 SPI1 时钟,已分配
+90,PB4,GYRO_CS,ICM-42688 片选,已分配
+91,PB5,（图上无网络名，疑 ✗）,未连接,待核
+92,PB6,USART1_TX,H104 备用串口,已分配
+93,PB7,TIM17_CH1N,备用定时器,已分配
+94,BOOT0,BOOT0,BOOT0（10K 下拉）,已分配
+95,PB8,TIM16_CH1,备用定时器,已分配
+96,PB9,（图上无网络名，疑 ✗）,未连接,待核
+97,PE0,UART8_RX,ESC 遥测 4 RX,已分配
+98,PE1,UART8_TX,ESC 遥测 4 TX,已分配
+99,VSS,GND,电源/地,电源
+100,VDD,3.3V_H7,电源/地,电源

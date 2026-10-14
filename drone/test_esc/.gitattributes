@@ -1,0 +1,13 @@
+# 统一行尾规范
+#   git add 时会自动把工作区的 CRLF 归一成 LF 存入仓库，
+#   所以 CubeMX 重新 Generate（默认写 CRLF）不会造成行尾噪声。
+#   本项目在 Linux 侧开发，统一用 LF。
+* text=auto eol=lf
+
+# 二进制文件不做任何转换
+*.png  binary
+*.jpg  binary
+*.zip  binary
+*.pdf  binary
+*.a    binary
+*.so   binary
