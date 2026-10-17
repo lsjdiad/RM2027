@@ -1,0 +1,41 @@
+# 临时产物区（不入库）
+_tmp/
+
+# 大文件可按需再放开
+references/RM2027-规则发布-青工会PPT.pdf
+
+# 厂商 datasheet 大 PDF：可随时从厂商官网重新下载，不入库（省 ~9.4MB）
+# 保留：2 份原理图（团队产出，不可再得）+ 全部 *_extract.md 文本提取
+references/硬件手册/INA240_datasheet.pdf
+references/硬件手册/TLV755P_datasheet.pdf
+references/硬件手册/TLV767_datasheet.pdf
+
+# 2026-10-01：HiPNUC 选型手册 13.4 MB，同样可随时重下 ⇒ 不入库
+#   （但 HI04 规格书 2.8 MB 与其文本提取入库 —— 它是本板 H104 的器件手册，查得最勤）
+references/硬件手册/hipnuc_product_catalog_2026.pdf
+
+# 系统文件
+Thumbs.db
+
+# ── 2026-10-04 追加：编译产物与 IDE 本地状态 ──────────────────
+# 理由：test_esc 是子模块，它自己的 .gitignore 已排除 build/；
+#       但主仓层面也加一道，防止将来把构建目录或本地调试状态提交进来。
+build/
+build_*/
+cmake-build-*/
+*.o
+*.elf
+*.bin
+*.hex
+*.map
+*.list
+*.su
+
+# Ozone/J-Link：.jdebug 是工程（可移植，该入库）；
+# .jdebug.user 只存"我当前打开了哪个文件第几行"，带绝对路径 ⇒ 不入库
+*.jdebug.user
+*.jdebug.user.*
+
+# 编辑器
+.vscode/
+.idea/

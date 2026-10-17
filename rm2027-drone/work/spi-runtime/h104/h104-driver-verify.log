@@ -1,0 +1,77 @@
+# H104 驱动上板验证取证（2026-09-30）
+
+> 目的：证明 `h104_imu` 驱动不只是"能编译"，而是**在板上真的解析出帧、真的发到了 uORB**。
+> 方法：复位板子 → 在驱动打完自检行的时刻用 ST-Link `halt` → 把 console 环形缓冲整块
+>       dump 下来 grep（**注意**：QGC 的 MAVLink console 会把 tail→head 的"未读窗口"抽干，
+>       所以不能只看窗口，要看**整块 4096 字节缓冲**——被消费掉的数据在被覆盖前还在里面）。
+> 复现脚本：`h104-dump-console.sh`
+
+---
+
+## 1. 驱动自己的自检行（每次启动只打这两行）
+
+```text
+INFO  [h104_imu] h104_imu: 已调度周期读取 /dev/ttyS0（端口将在工作队列里打开）
+INFO  [h104_imu] h104_imu: 打开 /dev/ttyS0 @115200 8N1（device_id=0x6400000d）
+INFO  [h104_imu] h104_imu: 第一帧 OK  device_id=0x6400000d  uORB 实例 accel=1 gyro=1
+INFO  [h104_imu] h104_imu: 已发布 300 帧  解析 bytes=24600 帧=300 CRC好=300 CRC坏=0 长度错=0
+```
+
+逐条含义：
+
+| 行 | 证明了什么 |
+|---|---|
+| 已调度周期读取 | 模块入口跑起来了，工作队列已挂上 |
+| 打开 /dev/ttyS0 @115200 8N1 | `tcsetattr` 成功（`CSIZE==CS8` 那条硬校验过了），串口可用 |
+| **第一帧 OK … uORB 实例 accel=1 gyro=1** | **解析出真实帧 + 已 advertise/publish 到 uORB**；accel 与 gyro **同实例（都是 1）** ⇒ sensors 会把它配对成一路 IMU |
+| 已发布 300 帧 / CRC好=300 / CRC坏=0 | 持续运行 3 s、100 Hz、**零坏帧**；`24600 / 300 = 82.0` 字节/帧，与 HI91 定长 82 完全吻合 |
+
+`device_id = 0x6400000d` ⇒ 按 `DeviceStructure` 布局解：devtype=`0x64`(DRV_IMU_DEVTYPE_HIPNUC_HI04)、
+address=0、bus=1(USART1)、bus_type=5(SERIAL)。**accel 与 gyro 用的是同一个 device_id**（任务要求）。
+
+## 2. 旁证：`sensors` / 健康检查确实看到了这路新 IMU
+
+```text
+WARN  [health_and_arming_checks] Preflight Fail: Accel 1 uncalibrated
+WARN  [health_and_arming_checks] Preflight Fail: No valid data from Accel 0
+WARN  [health_and_arming_checks] Preflight Fail: No valid data from Gyro 0
+```
+
+- `Accel 1 uncalibrated` ⇒ **存在 accel 实例 1**（=H104），且**有数据**、只是还没标定。
+- 没有 "No valid data from Accel 1 / Gyro 1" ⇒ **H104 这路数据是有效的**。
+- 报"无数据"的 `Accel 0 / Gyro 0` 是**板载 BMI270 那条线**的老问题（不是本次引入）。
+
+⇒ 端到端：`H104 → 驱动解析 → sensor_accel/sensor_gyro(实例1) → sensors 配对 → sensor_combined → EKF2`。
+（EKF2 最终是否吃进去，还要等标定完在 QGC 里看姿态；本文只证到"数据进了 uORB 并被 sensors 看见"。）
+
+## 3. 本次踩到并修掉的坑
+
+### 3.1 ★ NuttX 的 fd 表是**按任务**的
+
+第一版在模块任务里 `open()`、却在 INS0 工作队列线程里 `read()`：
+
+```text
+INFO  [h104_imu] h104_imu: 打开 /dev/ttyS0 @115200 8N1（device_id=0x6400000d）
+ERROR [h104_imu] h104_imu: read 失败 9 (EBADF)          ← 同一个 fd，换个任务就无效
+INFO  [h104_imu] h104_imu: 打开 /dev/ttyS0 @115200 8N1（device_id=0x6400000d）
+INFO  [h104_imu] h104_imu: 第一帧 OK  ...               ← 靠错误分支关掉重开才偶然好了
+```
+
+**修法**：端口只在**真正读它的那个任务**（工作队列）里打开；`Start()` 只负责挂调度。
+这类 bug 很阴——它**自己会"自愈"**（错误分支重开后就好了），日志里只留一行 ERROR。
+
+### 3.2 NuttX `tcsetattr` 要求 `CSIZE==CS8`
+
+`arch/arm/src/stm32h7/stm32_serial.c` 的 `case TCSETS` 里有硬校验：
+`if (((termiosp->c_cflag & CSIZE) != CS8) ...) return -EINVAL;`
+早前抓包工具漏了 `CS8` ⇒ 10 个波特率全 EINVAL，看起来像"H104 没在答"。
+
+## 4. 复现方式
+
+```bash
+# 离线（不用板子）：解析器三层回归
+work/spi-runtime/h104/run-regression.sh
+
+# 上板取证：复位 → 停在自检行 → 整块 dump console 并 grep
+work/spi-runtime/h104/h104-dump-console.sh
+```

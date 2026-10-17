@@ -1,70 +1,19 @@
-# RM2027 自研电调（STM32G071 · AM32 衍生）
+# ~/RM2027 —— PX4 / QGC 学习与仿真环境
 
-无感六步（BLDC）闭环电调的完整工程：**固件源码 + 测量/判分工具链 + 逐轮实验数据 + 全部结论与留档**。
-本仓库是为了"别人能直接拉下来复现"而整编的：**代码、工具、数据、图、结论都在一处**。
-
-> 上游：AM32（AlkaMotors，GPL-3.0）。本工程在其上做了大量改造，**改动清单见 `交接/`**。
-
-## 目录
-
-| 路径 | 内容 |
+| 路径 | 是什么 |
 |---|---|
-| `firmware/` | 固件源码（`Src/` `Inc/` `Mcu/g071/` + Makefile）。**改造点集中在 `Inc/targets.h`（30 余个 `RM2027_*` 开关）与 `Src/main.c`** |
-| `firmware/tools/` | 全部 PC 侧工具：采集、判分、画图、SWD 读数（见下"工具"） |
-| `交接/` | ★ **先看这里**：`00_交接说明.md`（现状/硬结论/安全红线/文件地图/实验流程）、`01_分支索引.md`、`02_数据索引.md`（含逐轮台账）、`03_图索引.md`、`04_工具索引.md` |
-| `一切为了校准/` | 校准工作区：`03_本轮结论.md`（§十六~§二十二 = 本阶段全部结论）、开环数据筛选、ADC 增益表、**`固件留档/`（永久留档的 bin + README：分支/提交/哈希/重建命令）** |
-| `data/` | 逐轮采集数据：`evt_run_*.csv`（事件流，22 列）、`win/evt_run_*_win.npz`（512 点全速波形）、`*.png`（图） |
-| `drone/` | 无人机侧（PX4 板级/传感器相关） |
+| `PX4-Autopilot/` | PX4 固件源码（看代码、编译 SITL 都在这里） |
+| `start-sitl.sh` | 一键启动 PX4 SITL + Gazebo（x500） |
+| `notes/学习路线.md` | 学习路线文档（软链到 `~/桌面/无人机/学习路线.md`） |
+| `notes/阶段0-基础篇.md` | 阶段 0 **原理层**：为什么能飞、坐标系、传感器融合、串级控制、动力/硬件/通信、飞行模式（软链到 `~/桌面/无人机/阶段0-基础篇.md`） |
+| `notes/阶段0-教学.md` | 阶段 0 **操作层**：动手教学，怎么飞、怎么看日志（软链到 `~/桌面/无人机/阶段0-教学.md`） |
+| `plotlog.py` | 把 .ulg 日志画成高度/姿态/电机三张曲线图 |
+| `logs/` | ulog / tlog 飞行日志复盘放这里 |
+| `notes/` | 代码阅读笔记放这里 |
+| `my_modules/` | 以后自己写的 PX4 模块/驱动放这里 |
 
-## 数据格式（自己解析时看这里）
-
-- **CSV（事件流）**：一行 = 一次换相。列：`seq` `ts_frame`(24kHz 帧号，真实时间轴) `delta`(换相时"悬空相−V0") `step` `wait`(该步 waitTime) `duty`/`duty_setpoint`/`duty_max` `cur` `stage`(1=开环 0=非开环) `ci` `thiszctime`/`lastzctime` `average_interval` `advance` `bemf_timeout`(漏过零计数) `zc_reject` `input` `stall_adj` `desync`
-- **NPZ（波形黑匣子）**：`va/vb/vc/v0/cur/step/dbg` 各 `(N 窗, 512 采样点)`，**24 kHz 全速无降采样**；`dbg` = 未钳制步内时间（锯齿周期=该步真实长度）
-- ⚠ `bemf_timeout` 是 **8 位** ⇒ 到 255 就是**触顶**，真值更大
-- ⚠ 一轮的**配置**记在同名 `*_meta.txt`（本轮起自动写：分支/提交/哈希/关键开关/判分）
-
-## 工具（`firmware/tools/`）
-
-| 工具 | 用途 |
-|---|---|
-| `count-run.py` | ★**判分器**：关窗口流跑一轮 → 漏过零 / 六步极差 / 换相节拍 / 电流 + 四道跑前闸（串口存活、母线≥10V、窗口≥0.8s、工况），并写 `*_meta.txt` |
-| `cap-evt.py` | 采集（给油→采→收油）+ 出四栏图 + 换相埋点 dump |
-| `esc-lab.sh` / `esc-dbg.sh` | 编译+烧录；SWD 夹具（`peek`/`poke`/`arm`） |
-| `stab-view.py` `speed-view.py` `phase-view.py` `step-window.py` `vert-view.py` | 稳定性 / 转速 / 每相 Gantt / 换步出错窗口 / 竖直偏移 视图（都只读数据、不驱动电机） |
-| `ao-dump.py` `ao-view.py` `ao-replay.py` | 自适应电压偏移的读数 / 结果图 / 时间线重放 |
-| `longrun-view.py` `cal-anchor.py` `index-runs.py` | 长跑总览 / 开环锚定拟合 / 索引生成 |
-
-## 快速上手
-
-```bash
-cd firmware
-make RM2027_ESC_G071 ARM_SDK_PREFIX=/usr/bin/arm-none-eabi-   # 编译
-printf '\n' | ./tools/esc-lab.sh 1                            # 编译+烧录（需 ST-Link；烧录不需要 12V）
-python3 tools/count-run.py 11 "标签"                           # 判分一轮（需 12V 上电、F1 收油）
-python3 tools/count-run.py 3 "空载自检"                        # 空载只跑闸（不驱动电机）
-```
-⚠ **判闭环只用 `count-run.py`**；波形轮的"漏过零"是窗口流自己造的，只能看形状/相位。
-
-## 安全红线（台架）
-
-1. **不要加大占空比**（锚定值 `RM2027_CL_ANCHOR_DUTY=300` = 15%）
-2. **单次闭环 ≤7 秒**（源码注释依据：闭环发热 20 秒就烫；`RM2027_CL_RUN_MS` 默认 6000）
-3. **采样不能降**（窗口流降采样只减发包频率，窗内仍是 512 点全速）
-4. 每轮实验间隔 ≥60 秒；**烧录前 F1 必须收油**（否则 AM32 引导程序不跳 app）
-
-## 现阶段结论（诚实版）
-
-- **控制算法**：实测**纯基线最好**（漏过零 0、六步极差 16.7%、换相节拍 2,000 拍）；试过的补偿族
-  （静态分步竖直偏移、自适应电压偏移 v1/v2、软件三相平均 V0、CCR4 缩小）**全部更差或不可用** ✗
-- **测量层**：本阶段的真正产出 —— 判分口径（关窗口流 + 锚定窗口 + Δts 时长）、四道跑前闸、
-  **窗口流降采样**（波形轮"整段无过零" 0.97% → 0.00%，事件采集 4.2×）
-- **关键发现**：那 ~10 次/秒的"漏过零"**主要是测量仪器自己造的**（窗口流占 85% 串口带宽）；
-  电压偏移能修的相位量有硬上限 = 该步半幅 A_s（86~145 码），超出就必须用**时间域 waitTime** 修
-- **未决**：① 能否换回上游的**硬件比较器**过零（岔口是一行 `USE_ADC_BEMF`，比较器输入已在 target 里定义）
-  ② 闭环主路径是否该改回 `ci/2`（最小偏离）③ 串口发送侧卡死（`tx_ready` 不自恢复）④ 漏过零计数加宽到 16 位
-
-细节与证据见 `一切为了校准/03_本轮结论.md` 与 `交接/00_交接说明.md`。
-
-## 许可
-
-上游 AM32 为 **GPL-3.0**（见 `firmware/LICENSE`），本工程为其衍生，**同样按 GPL-3.0 分发**。
+- QGC 地面站：`~/Applications/QGroundControl.AppImage`（或应用菜单里的 QGroundControl）
+- 桌面入口：`~/桌面/RM2027` → 本目录
+- 飞行日志（SITL）：`PX4-Autopilot/build/px4_sitl_default/rootfs/fs/log/<日期>/*.ulg`
+- GitHub 走 ghfast 镜像：`git config --global --get-regexp url.` 可见改写规则；
+  如需直连原站：`git config --global --unset-all url.https://ghfast.top/https://github.com/.insteadOf`

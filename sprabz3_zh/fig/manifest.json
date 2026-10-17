@@ -1,0 +1,301 @@
+{
+ "fig1": {
+  "file": "fig1.png",
+  "page": 2,
+  "rect": [
+   225.5,
+   440.3,
+   370.0,
+   585.5
+  ],
+  "en": "Fig.1 A three-phase synchronous motor with a one permanent magnet pair pole rotor"
+ },
+ "fig2": {
+  "file": "fig2.png",
+  "page": 4,
+  "rect": [
+   96.5,
+   352.6,
+   522.2,
+   691.3
+  ],
+  "en": "Fig.2 Speed and Current Control Loop Configurations for a BLDC Motor"
+ },
+ "fig3": {
+  "file": "fig3.png",
+  "page": 5,
+  "rect": [
+   158.0,
+   271.4,
+   463.0,
+   496.0
+  ],
+  "en": "Fig 3. Electrical Waveforms in the Two Phase ON Operationand Torque Ripple"
+ },
+ "fig4": {
+  "file": "fig4.png",
+  "page": 5,
+  "rect": [
+   165.0,
+   630.5,
+   439.1,
+   696.1
+  ],
+  "en": "Fig.4 Torque Ripple in a Sinusoidal Motor Controlled as a BLDC"
+ },
+ "fig5": {
+  "file": "fig5.png",
+  "page": 6,
+  "rect": [
+   111.2,
+   171.8,
+   501.1,
+   398.5
+  ],
+  "en": "Fig.5 Three Phase Inverter"
+ },
+ "fig6": {
+  "file": "fig6.png",
+  "page": 7,
+  "rect": [
+   159.4,
+   434.0,
+   474.8,
+   635.3
+  ],
+  "en": "Fig. 6 Shunt Resistor Voltage Drop according to PWM DutyCycles (Soft Chopping)"
+ },
+ "fig7": {
+  "file": "fig7.png",
+  "page": 8,
+  "rect": [
+   95.3,
+   411.7,
+   270.4,
+   588.7
+  ],
+  "en": "Fig. 7 Backemf sensing circuit on HDMC kit"
+ },
+ "fig8": {
+  "file": "fig8.png",
+  "page": 8,
+  "rect": [
+   314.4,
+   411.7,
+   515.4,
+   552.0
+  ],
+  "en": "Fig. 8 Stator Terminal Electrical Model"
+ },
+ "fig9": {
+  "file": "fig9.png",
+  "page": 9,
+  "rect": [
+   106.6,
+   443.5,
+   505.3,
+   639.7
+  ],
+  "en": "Fig. 9 Typical current and BEMF waveform sin BLDC motor drive"
+ },
+ "fig10": {
+  "file": "fig10.png",
+  "page": 15,
+  "rect": [
+   76.6,
+   105.2,
+   532.5,
+   287.6
+  ],
+  "en": "Fig 10 A 3-ph BLDC drive implementation"
+ },
+ "fig11": {
+  "file": "fig11.png",
+  "page": 15,
+  "rect": [
+   75.0,
+   358.1,
+   555.0,
+   646.0
+  ],
+  "en": "Fig. 11 Overall block diagram of sensorless control of BLDC motor"
+ },
+ "fig13": {
+  "file": "fig13.png",
+  "page": 17,
+  "rect": [
+   143.9,
+   215.9,
+   468.3,
+   360.5
+  ],
+  "en": "Figure 13 controlCARD DIP Switch Settings"
+ },
+ "fig14": {
+  "file": "fig14.png",
+  "page": 18,
+  "rect": [
+   102.0,
+   91.5,
+   510.0,
+   490.0
+  ],
+  "en": "Fig. 14 DRV8312-EVM Connections and Settings"
+ },
+ "fig15": {
+  "file": "fig15.png",
+  "page": 19,
+  "rect": [
+   76.1,
+   199.5,
+   535.9,
+   477.4
+  ],
+  "en": "Fig. 15 Watch Window Setup"
+ },
+ "fig16": {
+  "file": "fig16.png",
+  "page": 22,
+  "rect": [
+   180.0,
+   309.5,
+   432.0,
+   501.5
+  ],
+  "en": "Fig. 16 The PWM outputs , PWM1A (Red) , PWM1B"
+ },
+ "fig17": {
+  "file": "fig17.png",
+  "page": 25,
+  "rect": [
+   180.0,
+   101.0,
+   432.0,
+   293.0
+  ],
+  "en": "Fig. 17 The outputs of Hall Effect sensors, Hall A, B and C"
+ },
+ "fig18": {
+  "file": "fig18.png",
+  "page": 25,
+  "rect": [
+   66.1,
+   363.4,
+   545.9,
+   592.3
+  ],
+  "en": "Fig. 18 (a) mod6 counter, (b) BemfA, (c) BemfB and (d)BemfC"
+ },
+ "fig19": {
+  "file": "fig19.png",
+  "page": 28,
+  "rect": [
+   180.0,
+   464.0,
+   432.0,
+   654.1
+  ],
+  "en": "Fig. 19 (a) BemfA,  (b)BemfB and (c) Neutral"
+ },
+ "fig20": {
+  "file": "fig20.png",
+  "page": 31,
+  "rect": [
+   66.0,
+   91.5,
+   545.5,
+   316.8
+  ],
+  "en": "Fig. 20 (a) mod6 counter, (b) BemfA, (c) BemfB and (d)BemfC"
+ },
+ "fig21": {
+  "file": "fig21.png",
+  "page": 31,
+  "rect": [
+   180.0,
+   419.8,
+   432.0,
+   611.8
+  ],
+  "en": "Fig. 21  PWMDAC outputs a)  BemfA, (b) BemfB, (c)BemfC"
+ },
+ "fig22": {
+  "file": "fig22.png",
+  "page": 34,
+  "rect": [
+   66.0,
+   92.0,
+   545.5,
+   319.9
+  ],
+  "en": "Fig. 22  a) mod 6 counter (b) BemfA, (c) BemfB, (d )BemfC"
+ },
+ "fig23": {
+  "file": "fig23.png",
+  "page": 34,
+  "rect": [
+   180.0,
+   425.8,
+   432.0,
+   616.8
+  ],
+  "en": "Fig. 23  PWMDAC outputs a)  BemfA, (b) BemfB, (c)BemfC"
+ },
+ "fig24": {
+  "file": "fig24.png",
+  "page": 37,
+  "rect": [
+   66.0,
+   92.0,
+   545.5,
+   319.9
+  ],
+  "en": "Fig. 24   a) mod 6 counter (b) BemfA, (c) BemfB, (d )BemfC"
+ },
+ "fig25": {
+  "file": "fig25.png",
+  "page": 37,
+  "rect": [
+   180.0,
+   422.3,
+   432.0,
+   612.4
+  ],
+  "en": "Fig. 25  PWMDAC outputs a)  BemfA, (b) BemfB, (c)BemfC"
+ },
+ "fig12": {
+  "file": "fig12.png",
+  "page": 16,
+  "en": "Figure 12 Software flow"
+ },
+ "level1_block": {
+  "file": "level1_block.png",
+  "page": 23,
+  "en": "Level 1 Incremental System Build Block Diagram"
+ },
+ "level2_block": {
+  "file": "level2_block.png",
+  "page": 26,
+  "en": "Level 2 Incremental System Build Block Diagram"
+ },
+ "level4_block": {
+  "file": "level4_block.png",
+  "page": 29,
+  "en": "Level 4 Incremental System Build Block Diagram"
+ },
+ "level5_block": {
+  "file": "level5_block.png",
+  "page": 32,
+  "en": "Level 5 Incremental System Build Block Diagram"
+ },
+ "level6_block": {
+  "file": "level6_block.png",
+  "page": 35,
+  "en": "Level 6 Incremental System Build Block Diagram"
+ },
+ "level7_block": {
+  "file": "level7_block.png",
+  "page": 38,
+  "en": "Level 7 Incremental System Build Block Diagram"
+ }
+}

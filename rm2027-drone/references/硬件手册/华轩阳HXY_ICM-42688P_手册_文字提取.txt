@@ -1,0 +1,2476 @@
+            HUAXUANYANG        HXY                                           ICM-42688P
+            ELECTRONICS CO.,LTD                                             六轴惯性传感器模块
+
+
+   描述
+       ICM-42688P 是一款高集成度、低功耗惯性测量单元（IMU），内置高性能三轴加速度计和三轴陀螺仪测量单元。加
+    速度计量程范围 ±2g/±4g/±8g/±16g， 陀 螺 仪 的 角 速 度 量 程 范 围 ±125dps/±250dps/±500dps/±1000dps /±2000dps，
+    用户可灵活测量外部加速度和角速度，加速度计输出数据率 0.78HZ 至 1.6KHZ可选，陀螺仪输出数据率 25HZ 至
+    3.2KHZ 可选。正常工作温度范围为-40°C~+85°C。
+       芯片通过 I²C/SPI 接口与 MCU 通信，加速度计和陀螺仪测量数据以中断方式或查询方式获取。INT1 和 INT2 中断管
+    脚提供多种内部自动检测的中断信号，适应多种运动检测场合，可以在系统功耗极低的条件下有效可靠地实现运动检测、
+    姿态定位和手势识别等功能。中断源包括 6D/4D 方向检测中断信号、自由落体检测中断信号、睡眠和唤醒检测中断信
+    号、单击和多击检测中断信号、计步功能中断信号、抬手功能中断信号、OIS 功能中断信号、温度检测中断信号。
+       芯片内置高精度校准模块，芯片内置 LDO 电路，在不同电压下零偏更稳定，对传感器的失调误差和增益误差进行精
+    确补偿。芯片内置自测试功能允许客户系统测试时检测系统功能，省去复杂的转台测试。
+       ICM-42688P 可应用于智能手机、无人机、游戏手柄、各类物联网和智能硬件系统中，支持主流操作系统，实现微信
+    计步和动作截屏，且提供无人机、游戏手柄、VR 和 AR 的各类算法支持。
+
+
+
+   主要特点                                                     应用
+   ● 模拟供电电压范围 1.71~3.6V                                     ● AR/VR 设备
+   ● 低功耗模式下整体联合电源电流 399uA                                   ● 手机平板设备
+   ● 高性能模式下整体联合电源电流 927uA                                   ● 智能穿戴设备
+   ● 加速度计和陀螺仪 16bit数据输出                                     ● 头戴式设备角
+                                                            ● 度检测设备图
+   ● I²C/SPI数字输出接口
+                                                            ● 像旋转场景敲
+   ● 内嵌温度传感器；
+                                                            ● 击检测场景活
+   ● 6D/4D方向检测、倾斜检测/角度检测、静止及运动检测
+                                                            ● 动检测设备
+   ● 睡眠和唤醒检测、自由落体检测、单击多击检测
+                                                            ● 9D方向检测场景
+   ● SensorTime功能
+                                                            ● 手势识别场景
+   ● OIS功能（ODR=6.4kHz）                                      ● 振动检测和补偿场景
+   ● 可编程中断生成电路
+                                                            ● 室内导航/行人路线跟踪/定位场景
+   ● 内嵌可编程计步检测功能、内嵌可编程抬手识别功能内嵌
+                                                            ● 3D扫描/室内地图测绘/SLAM场景
+     自测试功能
+                                                            ● 虚拟现实游戏
+   ● 内嵌 FIFO
+                                                            ● 空鼠/游戏手柄
+   ● 10000g高 G抗击能力
+                                                            ● IOT应用场景
+   ● 符合欧盟无害封装，绿色环保
+                                                            ● 摄像设备的光学防抖
+                                                            ● 玩具无人机
+
+
+   产品规格分类
+        产品名称                 封装形式                材料               丝印             包装形式
+        ICM-42688P       LGA-14-2.5x3x1.00       无铅             7I22/xxxx          编带
+
+
+
+
+Shenzhen HuaXuanYang Electronics CO.,LTD                                         www.hxymos.com
+            HUAXUANYANG         HXY                                               ICM-42688P
+            ELECTRONICS CO.,LTD                                             六轴惯性传感器模块
+
+
+   内部框图
+
+
+
+
+   极限参数
+          参数             符号                    测试条件                最小值     最大值           单位
+    电源电压              VDD/VDDIO       电路不损坏                        -0.3      3.6          V
+                                      电路不损坏
+    任一控制管脚                Vin                                      -0.3   VDDIO+0.3       V
+                                      (CS/SDO/SCL/SDA/INT1/INT2)
+    工作温度                 TOPR         电路不损坏                        -40       +85          °C
+    贮存温度                 TSTG         电路不损坏                        -55      +150          °C
+                         HBM          --                            --        4           kV
+    ESD
+                         CDM          --                            --       1.5          kV
+
+
+
+
+Shenzhen HuaXuanYang Electronics CO.,LTD                                            www.hxymos.com
+            HUAXUANYANG            HXY                                                                                ICM-42688P
+            ELECTRONICS CO.,LTD                                                                                      六轴惯性传感器模块
+
+
+   管脚说明
+                                                                               12             14
+                                                               11                                        S DO    1
+
+
+
+
+                                                                                     S CX
+                                                                               CSB
+
+
+
+
+                                                                                               S DX
+                                                                       OS DO
+
+
+
+
+                                                                       OCS B                             A SDX
+
+
+
+
+                                                                       INT 2                             A SCX
+
+
+
+
+                                                                   8                                             4
+
+
+
+
+                                                                                               V DDI O
+                                                                                     GNDIO
+                                                                               GND
+                                                                       V DD                              INT 1
+
+
+
+                                                                               7                5
+                                                                               （仰视图）
+                                             LGA14-2.5x3x1.00mm3
+
+
+                               Z
+                                                                                             +Ω Z
+                     Y                                                                                     +Ω X
+                                                               +Ω Y
+                                         X
+
+                1                                               1
+
+
+
+                           加速度方向                                               陀螺仪方向
+                                                                               （俯视图）
+     管脚描述
+      序号            名称         I/O 特性             描述
+       1       SDO/SA0         I/O                SPI 4 线接口的数据输出 SDO；
+                                                  IIC 的器件地址的最低位 SA0
+       2            ASDx       I/O                OIS 接口
+       3         ASCx          O                  OIS 接口
+       4            INT1       I/O                中断 1
+       5        VDDIO          S                  数字电源
+       6        GNDIO          GND                地
+       7            GND        GND                地
+       8            VDD        S                  模拟电源
+       9            INT2       I/O                中断 INT2
+       10       OCSB           I/O                OIS 接口
+       11       OSDO           I/O                OIS 接口
+       12           CSB        I                  IIC 和 SPI 选择：
+                                                  1：IIC；
+                                                  0：SPI
+       13           SCX        I                  IIC 时钟 SCL；
+                                                  SPI 时钟 SPC
+       14           SDX        I/O                IIC 数据 SDA；
+                                                  SPI 数据输入 SDI；
+                                                  3 线 SPI 的数据输出 SDO；
+
+
+
+
+Shenzhen HuaXuanYang Electronics CO.,LTD                                                                                www.hxymos.com
+            HUAXUANYANG           HXY                                              ICM-42688P
+            ELECTRONICS CO.,LTD                                                   六轴惯性传感器模块
+
+
+   机械参数-加速度计(VDD=1.8V, TA=25°C)
+          参数             符号                        测试条件           最小值     典型值     最大值         单位
+                         AFS0           A_FS=0                     --     ±2.0      --
+    加速度计                 AFS1           A_FS=1                     --     ±4.0      --
+                                                                                                g
+    全量程测量范围              AFS2           A_FS=2                     --     ±8.0      --
+                         AFS3           A_FS=3                     --     ±16.0     --
+                        ASo0            A_FS=0                     --     0.061     --
+    加速度计                ASo1            A_FS=1                     --     0.122     --
+                                                                                             mg/digit
+    灵敏度（16bits）         ASo2            A_FS=2                     --     0.244     --
+                        ASo3            A_FS=3                     --     0.488     --
+    加速度计
+                        ASERR           A_FS=0                     --      ±2       --         %
+    灵敏度误差
+    加速度计                                A_FS=0 ， -40°C ~ 85°C 与
+                        ATCSO                                      --     ±0.01     --        %/°C
+    温变灵敏度                               T=25°C 差
+    加速度计零漂              ATyOff          A_FS=0，SOCKET 压持测试         --     ±80       --         mg
+    加速度计零漂温漂             ATCoff         与 25°C 的最大偏差               --      ±1       --        mg/°C
+    加速度计非线性度             ANL            最佳拟合直线，A_FS=2              --      0.5      --        %FS
+    加速度计电源电压
+                        APSRR           TA=25°C                    --     ±0.2      --        mg/V
+    抑制比
+                                        A_FS=0，三个轴中任意两个轴之
+    加速度计轴间干扰             ASX                                       --      2        --         %
+                                        间的干扰
+    加速度计                                A_FS=0，A_ODR=100Hz，
+                        ARMS1                                      --      0.6      --         mg
+    输出噪声 1                              高性能模式，OSR4_AVG1
+    加速度计                                A_FS=0，A_ODR=100Hz，
+                        ARMS2                                      --      4.5      --         mg
+    输出噪声 2                              低功耗模式，OSR4_AVG1
+                       AODRA,H          高性能模式                     12.5     --      1600        Hz
+    加速度计输出速率
+                      AODRA,LPM         低功耗模式                     0.78     --      800         Hz
+    加速度计系统带宽             ABW            --                        ODR/3    --     ODR/2        Hz
+                                        A_FS=3，X 轴，高偏转振幅，正
+                         AVst1                                     --      6        --          g
+                                        负方向幅度差值的绝对值
+                                        A_FS=3，Y 轴，高偏转振幅，正
+    加速度计自测输出             AVst2                                     --      6        --          g
+                                        负方向幅度差值的绝对值
+                                        A_FS=3，Z 轴，高偏转振幅，正
+                         AVst3                                     --      8        --          g
+                                        负方向幅度差值的绝对值
+    加速度计工作温度            ATOPR           --                         -40     --      +85         °C
+
+   注意：电路 1.8V 出厂校准。电路实际工作电压 1.71V-3.6V。
+
+
+
+
+Shenzhen HuaXuanYang Electronics CO.,LTD                                                 www.hxymos.com
+            HUAXUANYANG           HXY                                              ICM-42688P
+            ELECTRONICS CO.,LTD                                              六轴惯性传感器模块
+
+
+   机械参数-陀螺仪(VDD=1.8V, TA=25°C)
+          参数              符号                   测试条件          最小值    典型值      最大值        单位
+                         GFS0           G_FS=±125dps          --    ±125      --
+                         GFS1           G_FS=±250dps          --    ±250      --
+    陀螺仪
+                         GFS2           G_FS=±500dps          --    ±500      --         dps
+    全量程测量范围
+                         GFS3           G_FS=±1000dps         --    ±1000     --
+                         GFS4           G_FS=±2000dps         --    ±2000     --
+                         GSo0           G_FS=±125dps          --    3.8125    --
+                         GSo1           G_FS=±250dps          --    7.625     --
+    陀螺仪
+                         GSo2           G_FS=±500dps          --    15.25     --      mdps/LSB
+    灵敏度（16bits）
+                         GSo3           G_FS=±1000dps         --     30.5     --
+                         GSo4           G_FS=±2000dps         --     61       --
+                                        G_FS=±2000dps，
+    陀螺仪温变灵敏度             GTCSO                                --    ±0.05     --        %/°C
+                                        -40°~85°与 T=25°差
+    陀螺仪灵敏度误差             GSERR          G_FS=±2000dps 加校准     --     ±1.5     --          %
+                                        G_FS=±2000dps，
+    陀螺仪零漂                GTyOff                               --     ±0.2     --         dps
+                                        SOCKET 压持测试
+                                        G_FS=±2000dps，
+    陀螺仪零漂温漂              GTCoff                               --    ±0.05     --        dps/°C
+                                        与 25°C 的最大偏差
+                                        最佳拟合直线，
+    陀螺仪非线性度               GNL                                 --     0.1      --        %FS
+                                        G_FS=±2000dps
+    陀螺仪轴间干扰               GSX           G_FS=±2000dps         --      2       --          %
+    陀螺仪噪声密度               GN            G_FS=±2000dps，高性能模
+                                                              --      6       --      ����/ ��
+                                        式, GYR_BWP[1:0]=00
+                       GODRG,HN         高性能/正常模式              25      --     3200        HZ
+    陀螺仪输出速率
+                       GODRG,LPM        低功耗模式                 25      --     800         HZ
+    工作温度                  TOPR          --                    -40     --     +85         °C
+
+   注意：电路 1.8V 出厂校准。电路实际工作电压 1.71V-3.6V。
+
+
+
+
+Shenzhen HuaXuanYang Electronics CO.,LTD                                             www.hxymos.com
+            HUAXUANYANG            HXY                                             ICM-42688P
+            ELECTRONICS CO.,LTD                                                  六轴惯性传感器模块
+
+
+   电气参数(VDD=1.8V, TA=25°C)
+          参数              符号                         测试条件    最小值          典型值     最大值          单位
+    供电电压                   VDD           --                    1.71        1.8      3.6         V
+    IO 供电电压               VDDIO          --                    1.62        --       3.6         V
+                                         A+G 高性能模式
+                                         VDD=1.8V, TA=25°C       --       927        --         uA
+                                         ODR1.6kHz
+                                         A+G 正常模式
+                                         VDD=1.8V, TA=25°C       --       670        --         uA
+                                         ODR1.6kHz
+                                         A+G 低功耗模式
+    功耗                    IDD            VDD=1.8V, TA=25°C       --       399        --         uA
+                                         ODR25Hz
+                                         Aonly 高性能模式
+                                         VDD=1.8V, TA=25°C       --       299        --         uA
+                                         ODR1.6kHz
+                                         Aonly 低功耗模式
+                                         VDD=1.8V, TA=25°C       --       13.3       --         uA
+                                         ODR25Hz
+                                         A+G 关闭状态
+                                                                 --        6         --         uA
+                                         VDD=1.8V, TA=25°C
+    掉电电流                  IDDPdn         --                      --        6         --         uA
+    数字高电平输入电压              VIH           --                  0.8* VDDIO    --        --         V
+    数字低电平输入电压              VIL           --                      --        --    0.2* VDDIO     V
+    高电平输出电压                VOH           --                  0.9* VDDIO    --        --         V
+    低电平输出电压                VOL           --                      --        --    0.1* VDDIO     V
+    开启时间                   Ton           ODR=100HZ               --        50        --         ms
+    工作温度                   Topr          --                     -40        --       +85         °C
+
+
+
+
+Shenzhen HuaXuanYang Electronics CO.,LTD                                                  www.hxymos.com
+            HUAXUANYANG                                   HXY                                                                                                  ICM-42688P
+            ELECTRONICS CO.,LTD                                                                                                                        六轴惯性传感器模块
+
+
+   I²C 控制接口参数(=1.8V, TA=25°C)
+                                                                                      I²C 标准模式                               I²C 快速模式
+           参数                                 符号                                                                                                                               单位
+                                                                          MIN                                 MAX     MIN                                MAX
+    SCL 时钟频率                                  f(SCL)                           0                              100       0                                   400                    KHz
+    SCL 时钟低时间                               tw(SCLL)                        4.7                                --      1.3                                     --
+                                                                                                                                                                                   us
+    SCL 时钟高时间                               tw(SCLH)                        4.0                                --      0.6                                     --
+    SDA 建立时间                                tsu(SDA)                        250                                --      100                                     --                  ns
+    SDA 数据保持时间                               th(SDA)                       0.01                               3.45     0.01                                  0.9                   us
+                                             tr(SDA)
+    SDA/SCL 上升沿时间                                                              --                             1000   20+0.1Cb                               300                    ns
+                                              tr(SCL)
+                                              tf(SDA)
+    SDA/SCL 下降沿时间                                                              --                             300    20+0.1Cb                               300                    ns
+                                              tf(SCL)
+    START 条件保持时间                              th(ST)                           4                               --      0.6                                     --
+    重复 START 条件建立
+                                             tsu(SR)                        4.7                                --      0.6                                     --
+    时间                                                                                                                                                                             us
+    STOP 条件建立时间                              tsu(SP)                           4                               --      0.6                                     --
+    总线空闲时间                                 tw(SP:SR)                        4.7                                --      1.3                                     --
+
+
+
+
+                                                                                                                                                                 REPEATED
+                                                                                                                                                                   STAR T
+                                   STAR T
+
+                                                                                                                              ts u (S R )
+                                                                                                                                                     tw (S P :S R )       STAR T
+          SDA
+
+
+
+                tf(SDA)                     t r(S D A )                   ts u ( S D A )            th(SDA)
+
+                                                                                                                                       ts u (S P )                    S TO P
+
+
+          SCL
+
+
+
+                          th(ST)    tw (S C L L )         tw (S C L H )             tr(SCL)    t f( S C L )
+
+
+
+                                                                                           I²C 从设备时序图
+
+
+
+
+Shenzhen HuaXuanYang Electronics CO.,LTD                                                                                                                                www.hxymos.com
+             HUAXUANYANG                HXY                                                                                            ICM-42688P
+             ELECTRONICS CO.,LTD                                                                                           六轴惯性传感器模块
+
+
+   SPI 串行外围接口参数(VDD=1.8V, TA=25°C)
+           参         数                符 号                                  测试条件                         最小值   典型值   最大值                             单位
+    SPI 时钟周期                          Tc(SPC)                                                           100    --    --                                  ns
+                 注
+
+
+
+    SPI 时钟频率                          Fc(SPC)                                                            --    --    10                             MHz
+    CS 建立时间                           Tsu(CS)                                                            5     --    --
+    CS 保持时间                           Th(CS)                                                             8     --    --
+    SDI 输入建立时间                        Tsu(SI)                                                            5     --    --
+    SDI 输入保持时间                        Th(SI)                                                             15    --    --                                  ns
+    SDO 有效输出时间                        Tv(SO)                                                             --    --    50
+    SDO 输出保持时间                        Th(SO)                                                             6     --    --
+
+   注：10MHZ 时钟速率
+
+
+
+
+           CS        (3 )                                                                                                                            (3 )
+
+                            tsu(CS)                                              tc (S P C )                              th ( C S )
+
+
+           SPC       (3 )                                                                                                                            (3 )
+
+                                        tsu(SI)        th ( S I )
+
+
+           SDI       (3 )                       M S B IN                                                             L S B IN                        (3 )
+
+                                                                    tv ( S O )                 th(SO)                                   t d is ( S O )
+
+
+           SDO       (3 )                         MSB OUT                                                            LSB OUT                         (3 )
+
+
+
+
+                                                                      SPI 从设备时序图
+
+
+
+
+Shenzhen HuaXuanYang Electronics CO.,LTD                                                                                                 www.hxymos.com
+            HUAXUANYANG        HXY                          ICM-42688P
+            ELECTRONICS CO.,LTD                           六轴惯性传感器模块
+
+   功能描述
+   1     特定词汇说明
+
+   1.1 灵敏度
+
+         加速度计灵敏度：加速度计灵敏度是描述加速度计增益的物理量，在此可用±1G 加速度输入时能准确解析的一半
+   最大数字输出表示。实际测试中，通过重力加速度来测量。将电路需要测量的轴正对地心，记录电路的输出值 A1，再在
+   这个轴线的任意平面上旋转 180°，将该轴的另一端对准地心，记录电路的输出值 A2。再计算 A2-A1 的绝对值，绝对
+   值除以 2 的结果就是该轴的灵敏度，该值随温度和时间的变化量很小。另外一个参数“灵敏度容差”，描述了大批量电
+   路的灵敏度范围，是衡量电路一致性的参数。
+         陀螺仪灵敏度：陀螺仪灵敏度是描述陀螺仪增益的物理量，可以通过施加一个给定的角速度得到。该灵敏度随温度
+   和时间的变化都很小。陀螺仪当传感器逆时针方向转的时候，该轴对应正向的数字输出。
+
+   1.2 零漂
+
+         加速度计零偏(Zero-g)：是指在没有加速度的情况下，实际输出信号和理想输出信号之间的偏差。水平面上稳定的
+   加速度计，理想状态下，X 轴和 Y 轴将得到 0g 的输出，而 Z 轴应该是得到 1g 的输出，这些输出理想情况下应该是处于
+   各自动态范围的中间，但是实际情况往往会存在偏差，这种和理想值之间的偏差就是所述的零偏(Zero-g offset)。
+         零偏 Offset 从某种程度上来说是 MEMS 传感器上受到压力情况的一种体现，因此在传感器装配到 PCB 板或者将它
+   置于大量机械应力之下后，零偏 Offset 会有轻微的变化。零偏 Offset 随温度变化比较小。加速度计零偏容差是指一批加
+   速度计传感器零偏值范围的标准差。
+         陀螺仪零偏(Zero-Rate)：是指在没有角速度的情况下实际输出信号。 该零偏 Offset 从某种程度上来说是 MEMS
+                                            同样，
+   传感器上受到压力情况的一种体现，因此在传感器装配到 PCB 板或者将它置于大量机械应力之下后，零偏 Offset 会有
+   轻微的变化。零偏 Offset 随温度变化和时间比较小。
+
+   1.3    自测试
+
+         加速度计自测试：加速度计自测试功能是允许在不做机械运动的情况下测试机械部分的功能。自测试位配置为零时，
+   自测试功能被关闭。该自测试位为“1”时，相应功能被打开，一个驱动力被加到机械部分的质量块上，模拟出某一确
+   切的加速度输入。此时，电路在设置好的量程范围内输出相应的数据。当自测试模式被使能后，电路的实际输出是外部
+   加速度输入与静电驱动力输入两者的代数和。如果自测试输出信号变化在说明书的范围内，则电路工作正常。具体功能
+   设置情况参考下文寄存器说明。
+         陀螺仪自测试：陀螺仪自测试功能是检查陀螺仪的驱动幅度、频率和驱动控制回路的稳定性。因此可以检测到颗粒
+   运动的干扰、机械损伤或者压力损失。启动陀螺仪自测试后，通过判断 GYR_MEMS_OK 来确定陀螺仪自测试功能是否
+   正常。具体功能设置情况参考下文寄存器说明。
+
+   2     工作模式说明
+
+   2.1 工作模式
+
+         ICM-42688P 有三种工作模式可选：
+         1） 只有加速度计工作，陀螺仪关闭；
+         2） 只有陀螺仪工作，加速度计关闭；
+         3） 陀螺仪和加速度计同时开启，且 ODR 相互独立；
+
+
+   2.2 加速度计工作模式
+
+         在 ICM-42688P 中，加速度计可以配置成三种不同的工作模式：关闭、低功耗、高性能三种模式。
+
+
+
+Shenzhen HuaXuanYang Electronics CO.,LTD                      www.hxymos.com
+              HUAXUANYANG          HXY                                            ICM-42688P
+              ELECTRONICS CO.,LTD                                                六轴惯性传感器模块
+
+
+   2.3 陀螺仪工作模式
+
+         在 ICM-42688P 中，陀螺仪可以配置成四种不同的工作模式：关闭、低功耗、正常以及高性能四种模式。
+
+   2.4 工作模式设置
+
+                                                          ACC_FILTER_   GYR_FILTER_   GYR_NOISE_
+       工作模式       传感器类型             ACC_EN      GYR_EN
+                                                              PERF         PERF          PERF
+       待机模式           --                 0        0             X           X             X
+                   加速度计                  1        0             0           X             X
+       低功耗模式        陀螺仪                  0        1             X            0            0
+                     IMU                 1        1             0            0            0
+                   加速度计                  1        0             1           X             X
+       正常模式         陀螺仪                  0        1             X            1            0
+                     IMU                 1        1             1            1            0
+                   加速度计                  1        0             1           X             X
+       高性能模式        陀螺仪                  0        1             X            1            1
+                     IMU                 1        1             1            1            1
+
+   3     数字接口
+         ICM-42688P 内置的寄存器访问可以通过 IIC 和 SPI 串连接口来实现，其中 SPI 接口可以通过开关配置成 3 线或
+   者是 4线接口模式。当选择 IIC 的时候，CS 脚必须接高（VDD
+                                 _    IO）。
+           管脚名                                           管脚描述
+                           SPI使能
+    CS
+                           I²C/SPI 模式选择（1：I²C 模式；0：SPI 使能）
+                           I²C串行时钟（SCL）
+    SCL/SPC
+                           SPI 串行时钟（SPC）
+                           I²C串行数据（SDA）
+    SDA/SDI/SDO            SPI串行数据输入（SDI）
+                           3 线接口串行数据输出（SDO）
+    SDO/SA0                SPI 串行数据输出 SDO；
+                           IIC 器件地址低位 LSB，SA0
+
+   3.1 I²C 串行接口
+
+         本电路的 I²C 总线接口是从设备。可以通过 I²C 接口写入数据到寄存器，也可从寄存器读出数据。相关的 I²C 名词说
+   明如下表。
+                                             串行接口管脚描述
+
+           名词                                            描述
+           发射端             发送数据到总线
+           接收端             从总线接收数据
+           主机              发起传输，生成时钟信号，终止传输
+           从设备             由主设备寻址访问
+         I²C 总线相关的两根信号线：串行时钟线和串行数据线。串行数据线是双向通信管脚，可由主机发送数据到从设备，
+   也可由从设备发送到主机。两根信号线都通过上拉电阻连接的 VDDIO 端。当总线空闲时，两根数据线都为高。I²C 接口
+   遵循快速模式（400KHZ）I²C 标准。
+
+
+Shenzhen HuaXuanYang Electronics CO.,LTD                                              www.hxymos.com
+                HUAXUANYANG                   HXY                                                                                                         ICM-42688P
+                ELECTRONICS CO.,LTD                                                                                                                      六轴惯性传感器模块
+
+   3.1.1      I²C 操作
+
+       总线的传输通过一个 START 信号开始。START 条件定义为：SCL 高期间，SDA 上有一个高到低的变化。之后，
+   总线会被认为进入占用状态。接下来的一个字节数据的高 7 位表示主机需要通信的址位，第 8 位表示接下来的数据传输
+   是主机到从设备，还是由从设备到主机。当地址被发送出去后，每个连接到该总线上的电路会比较这个地址是不是自己
+   的地址。如果地址配对成功，则返回 ACK 到主机。ACK 在第 9 个 CLK 上是一个低电平。
+       ICM-42688P 的从设备地址是 0011 00xb（具体地址可根据用户需求配置）。数据传输需要 ACK 信号返回才有效。
+   发送端在第 9 个 CLK 上必须释放总线，接收端在第 9 个 CLK 上拉低总线，完成一个 ACK 返回。接收端必须在接收到
+   每个字节后返回 ACK。ICM-42688P 的 I²C 接口是从设备接口，而且遵循近似的标准 I²C 协议（稍有不同）
+                                                              。START 信
+   号之后，主机的从设备地址发送出去。当从设备的 ACK 返回后，一个 8 位的子地址被发送出去，其低 7 位表示的是实
+   际的寄存器地址。
+       从地址加上读写控制位构成一个完整的从设备地址。如果读写控制位为“1（读）”，从设备地址和子寄存器地址发
+   送成功，则需要发送一个“重复 START”信号。如果读写控制位为“0（写）”
+                                        ，则下一个字节的传输方向不变。
+
+   主机写一个字节到从设备
+      Master              ST               SAD+W                         --               SUB                --                    DATA                   --                SP
+       Slave               --                --                     SAK                    --            SAK                             --              SAK                --
+
+   主机写多字节到从设备
+     Master         ST          SAD+W                   --                SUB              --          DATA                   --              DATA              --          SP
+      Slave          --               --               SAK                    --          SAK           --                   SAK               --              SAK           --
+
+   主机从从设备读取一个字节
+                                SAD+
+     Master         ST                            --               SUB              --           SR      SAD+R                      --              --         NMAK          SP
+                                 W
+     Slave          --           --          SAK                    --             SAK            --              --               SAK         DATA              --              --
+
+
+   主机从从设备读取多个字节
+                         SAD+                                                      SAD+
+    Master     ST                 --        SUB               --          SR                     --     --             MAK           --        MAK         --        NMAK        SP
+                          W                                                          R
+    Slave      --         --     SAK         --              SAK              --     --         SAK    DATA             --         DATA         --       DATA         --          --
+
+        数据以字节的形式在总线上传输，每个数据传输包含 8 个位。每一次传输的次数不限制。数据传输时，最高位先发
+   送。如果接收端正在处理其他事物，不能完整接收数据，则拉低 SCL 线迫使发送端进入等待状态。只有等到接收端不再
+   繁忙，且释放 SCL 总线后，方可继续传输。如果从设备接收端因为实时事务不能应答从设备地址，SDA 线也不能被占
+   用，主机会自行终止传输。SCL 为高状态时，SDA 总线上的一个低到高的跳变，定义为一个 STOP 条件。每个数据传
+   输需要有 STOP 条件来终止。为了能更快传输数据，可使用批量读取或批量写入来加快，传感器默认读写地址自增。例
+   如：配置工作后，采用连续读取加速度计三轴数据（寄存器地址 0x0C~0x12）。
+
+
+
+
+Shenzhen HuaXuanYang Electronics CO.,LTD                                                                                                                         www.hxymos.com
+             HUAXUANYANG       HXY                                            ICM-42688P
+             ELECTRONICS CO.,LTD                                            六轴惯性传感器模块
+
+   3.1.2   I²C 地址
+
+       ICM-42688P 作为从设备的地址是 0011 00xb。外部管脚 SDO/SA0 脚可以修改器件地址的最低位 LSB，如果
+   SDO/SA0 接高，则 LSB=1（地址为 0011 001b），如果 SDO/SA0 接地，则 LSB=0（地址为 0011 000b）
+                                                                        ，该方案可以
+   允许同一个IIC 总线访问两个不同的惯性传感器。
+       从设备 IIC 地址读写地址(SAD+Read/Write)对应表格
+           SDO外部连接                   7位IIC地址                8位IIC地址            备注
+           悬空/接逻辑高                    0x19               0x32(W)、0x33(R)     不漏电连接方式
+            接逻辑低                      0x18               0x30(W)、0x31(R)   需关闭SDO内部上拉电阻
+
+
+   3.2 SPI 总线接口
+
+       本电路的SPI总线接口是从设备。可以通过SPI接口写入数据到寄存器，也可从寄存器读出数据。相关的四个总线信
+   号是：CSB、SPC、SDI和SDO。
+
+
+
+
+                                               SPI读写时序
+
+       CSB是SPI的使能信号，由SPI主机控制，在SPI传输开始前变低，在SPI传输结束后变高。SPC是SPI接口的串行时
+   钟信号，由SPI主机控制。在CS为高期间为高（无传输）。SDI和SDO是串行数据输入和输出，在SPC的下降沿驱动，
+   SPC的上升沿读取。单字节读写以16个时钟完成，如果是多字节读写，则是8的倍数个时钟完成。第一个位（bit0）在SPC
+   的第一个下降沿上开始发送。SPC的第一个下降沿在CS的下降沿后开始。最后一个位（bit15或者bit23，…）在最后一
+   个SPC的下降沿开始发送，但SPC的上升沿必须在CS的上升沿前完成。
+              ——
+      Bit0：RW位。为0，DI(7:0)是写入到电路的数据。为1，DO(7:0)是从电路读出的数据。如果是读，则电路会在bit8
+       开始驱动SDO。
+      Bit1-7：地址AD(6:0)是寄存器地址。
+      Bit8-15：数据DI(7:0)（写模式），写入到从设备的数据（MSB先发送）。
+      Bit8-15：数据DO(7:0)（读模式），由从设备读取出来的数据（MSB先发送）。
+       在多字节读写命令中，更多的8时钟周期被加上。Addr_Auto=1时地址自增，SDI和SDO的功能和行为不变。
+
+
+
+
+Shenzhen HuaXuanYang Electronics CO.,LTD                                        www.hxymos.com
+             HUAXUANYANG       HXY                        ICM-42688P
+             ELECTRONICS CO.,LTD                         六轴惯性传感器模块
+
+   3.2.1   SPI 读
+
+
+
+
+                                           SPI读协议
+
+   SPI读命令以16个时钟完成。多字节的读会增加更多的8时钟模块。
+      Bit0：读写控制位，为1。
+      Bit1-7：地址AD(6:0)是寄存器地址。
+      Bit8-15：数据DO(7:0)（读模式），由从设备读取出来的数据（MSB先发送）。
+      Bit16-…：数据DO(…:8)（读模式），更多的数据（MSB先发送）。
+
+
+
+
+                                      SPI多字节读协议（2字节为例）
+
+   3.2.2   SPI 写
+
+
+
+
+                                           SPI写协议
+
+
+
+
+Shenzhen HuaXuanYang Electronics CO.,LTD                    www.hxymos.com
+            HUAXUANYANG        HXY                                       ICM-42688P
+            ELECTRONICS CO.,LTD                                        六轴惯性传感器模块
+
+   SPI单字节写命令以16个时钟完成。多字节的读会增加更多的8时钟模块。
+      Bit0：读写控制位，为0。
+      Bit1-7：地址AD(6:0)是寄存器地址。
+      Bit8-15：数据DI(7:0)（写模式），向从设备写数据（MSB先发送）。
+      Bit16-…：数据DI(…:8)（写模式），写入更多的数据（MSB先发送）。
+
+
+
+
+                                      SPI多字节写协议（2字节为例）
+
+   3.2.3   SPI 3 线模式读
+
+       3线通过想SIM位写入1来完成设置。4线模式写与3线模式写都只用到3个信号线，且逻辑与时序相同，所以通过4线
+   写模式将从设备配置成3线模式，再以3线模式访问。
+
+
+
+
+                                           SPI 3线模式读协议
+
+
+   SPI读命令以16个时钟完成。
+      Bit0：读写控制位，为1。
+      Bit1-7：地址AD(6:0)是寄存器地址。
+      Bit8-15：数据DO(7:0)（读模式），由从设备读取出来的数据（MSB先发送）。
+   采用SPI方式连续读取三轴FIFO数据时，需从0x0B寄存器开始读取，连续读取7个字节数据，取后6个字节分别拼接成三
+   轴数据。特别注意：禁止多SPI设备复用SPC、MOSI、MISO。
+
+   3.3 OIS 接口
+
+       ICM-42688P 可以通过辅助接口支持光学图像稳定（optical image stabilization ,OIS）应用。该接口用于以最小延迟直
+   接访 问 预 滤 波 陀 螺 仪 和 加 速 度 计 数 据 。 预 滤 波 加 速 度 计 数 据 在 ACC_ODR=1.6kHz 时 可 用 ， 陀 螺 仪 数 据 在
+   GYR_ODR=6.4kHz 时可用。OIS 的 SPI 接口支持 3 线和 4 线模式，OIS 的 SPI 接口时序与主 SPI 接口时序相同。
+
+
+
+
+Shenzhen HuaXuanYang Electronics CO.,LTD                                     www.hxymos.com
+             HUAXUANYANG       HXY                                        ICM-42688P
+             ELECTRONICS CO.,LTD                                         六轴惯性传感器模块
+
+   4   寄存器列表
+
+   4.1 通用寄存器
+
+   下表列出了 ICM-42688P 用8位地址可以直接访问的通用寄存器及地址和初值。
+                                                   寄存器地址
+                  名称                 类型                           缺省            备注
+                                           16进制        二进制
+    WHO_AM_I                          rw    01        0000 0001   0x6A           --
+    Reserved（do not modify）           --   02-03           --      --            --
+    OIS_CONF                          rw    04        0000 0100    --            --
+    COM_CFG                           rw    05        0000 0101   0x50           --
+    INT_CFG1                          rw    06        0000 0110    --            --
+    INT_CFG2                          rw    07        0000 0111    --            --
+    HPF&LPF_CFG                       rw    08        0000 1000   0x80           --
+    DATA_STAT/DATA_STAT_OIS           r     0B        0000 1011    --            --
+    ACC_XH/ACC_XH_OIS                 r     0C        0000 1100    --          output
+    ACC_XL/ACC_XL_OIS                 r     0D        0000 1101    --          output
+    ACC_YH/ACC_YH_OIS                 r     0E        0000 1110    --          output
+    ACC_YL/ACC_YL_OIS                 r     0F        0000 1111    --          output
+    ACC_ZH/ACC_ZH_OIS                 r     10        0001 0000    --          output
+    ACC_ZL/ACC_ZL_OIS                 r     11        0001 0001    --          output
+    GYR_XH/GYR_XH_OIS                 r     12        0001 0010    --          output
+    GYR_XL/GYR_XL_OIS                 r     13        0001 0011    --          output
+    GYR_YH/GYR_YH_OIS                 r     14        0001 0100    --          output
+    GYR_YL/GYR_YL_OIS                 r     15        0001 0101    --          output
+    GYR_ZH/GYR_ZH_OIS                 r     16        0001 0110    --          output
+    GYR_ZL/GYR_ZL_OIS                 r     17        0001 0111    --          output
+    TIME_H                            r     18        0001 1000    --            --
+    TIME_M                            r     19        0001 1001    --            --
+    TIME_L                            r     1A        0001 1010    --            --
+    FIFO_CFG0                         rw    1C        0001 1100    --            --
+    FIFO_CFG1                         rw    1D        0001 1101   0x07           --
+    FIFO_CFG2                         rw    1E        0001 1110   0xFF           --
+    FIFO_STAT0                        r     1F        0001 1111   0x40           --
+    FIFO_STAT1                        r     20        0010 0000    --            --
+    FIFO_DATA                         r     21        0010 0001    --            --
+    TEMP_H                            r     22        0010 0010    --            --
+    TEMP_L                            r     23        0010 0011    --            --
+    AOI1_CFG                          rw    30        0011 0000    --            --
+    AOI1_STAT                         r     31        0011 0001    --            --
+
+
+
+
+Shenzhen HuaXuanYang Electronics CO.,LTD                                    www.hxymos.com
+              HUAXUANYANG      HXY                                      ICM-42688P
+              ELECTRONICS CO.,LTD                                      六轴惯性传感器模块
+
+
+                                                 寄存器地址
+                  名称                 类型                         缺省            备注
+                                           16进制      二进制
+    AOI1_THS                          rw    32      0011 0010    --            --
+    AOI1_DURATION                     rw    33      0011 0011    --            --
+    AOI2_CFG                          rw    34      0011 0100    --            --
+    AOI2_STAT                         r     35      0011 0101    --            --
+    AOI2_THS                          rw    36      0011 0110    --            --
+    AOI2_DURATION                     rw    37      0011 0111    --            --
+    CLICK_CRTL_REG                    rw    38      0011 1000    --            --
+    CLICK_SRC                         r     39      0011 1001    --            --
+    STEP_CFG                          rw    3A      0011 1010   0x08           --
+    STEP_SRC                          rw    3B      0011 1011    --            --
+    STEP_COUNTER_L                    r     3C      0011 1100    --            --
+    STEP_COUNTER_H                    r     3D      0011 1101    --            --
+    AOI1&AOI2_CFG                     rw    3F      0011 1111    --            --
+    ACC_CONF                          rw    40      0100 0000   0xA8           --
+    ACC_RANGE                         rw    41      0100 0001   0x02           --
+    GYR_CONF                          rw    42      0100 0010   0xA9           --
+    GYR_RANGE                         rw    43      0100 0011    --            --
+    FIFO_DOWNS                        rw    45      0100 0101   0x88           --
+    SOFT_RST                          rw    4A      0100 1010    --            --
+    ACC_SELF_TEST                     rw    6D      0110 1101    --            --
+    GRY_SELF_TEST                     rw    6F      0110 1111    --            --
+    PWR_CTRL                          rw    7D      0111 1101    --            --
+    SEG_SEL                           rw    7F      0111 1111    --            --
+   备注：标识为“保留”的，在使用中不要更改，可能会引起永久性破坏。另外，在配置完寄存器后建议延时 1ms 再进行寄存器读取操作。
+
+   4.2 特殊寄存器 1
+
+   下表列出了 ICM-42688P 需要先将0x7F(SEG_SEL)配置0x83后再进行访问的寄存器及地址和初值。
+                                                 寄存器地址
+                  名称                 类型                         缺省            备注
+                                           16进制      二进制
+    I2C_UN                            rw    6F      0110 1111    --            --
+   备注：特殊寄存器配置完成后需要退出该地址（0x7F 配置 0x00）再访问其他通用寄存器。另外，在配置完寄存器后建议延时 1ms 再进行寄
+   存器读取操作。
+
+   4.3 特殊寄存器 2
+
+   下表列出了 ICM-42688P 需要先将0x7F(SEG_SEL)配置0x8C后再进行访问的寄存器及地址和初值。
+                                                 寄存器地址
+                  名称                 类型                         缺省            备注
+                                           16进制      二进制
+    DIG_CTRL                          rw    30      0011 0000    --            --
+   备注：特殊寄存器配置完成后需要退出该地址（0x7F 配置 0x00）再访问其他通用寄存器。另外，在配置完寄存器后建议延时 1ms 再进行寄
+   存器读取操作。
+
+
+
+Shenzhen HuaXuanYang Electronics CO.,LTD                                  www.hxymos.com
+             HUAXUANYANG       HXY                                                           ICM-42688P
+             ELECTRONICS CO.,LTD                                                        六轴惯性传感器模块
+
+   4.4 特殊寄存器 3
+
+   下表列出了 ICM-42688P 需先将0x7F(SEG_SEL)配置0x90后再进行访问的寄存器及地址和初值。
+                                                         寄存器地址
+                   名称                类型                                          缺省                备注
+                                                  16进制           二进制
+    WRIST_SRC                         rw            3E          0011 1110         --                --
+    CLICK_COEFF1                      rw            40          0100 0000        0x52               --
+    CLICK_COEFF2                      rw            41          0100 0001        0x9A               --
+    CLICK_COEFF3                      rw            42          0100 0010        0x04               --
+    CLICK_COEFF4                      rw            43          0100 0011        0x57               --
+    STEP_DELTA                        rw            44          0100 0100        0x01               --
+    STEP_WTM                          rw            45          0100 0101        0x01               --
+    PEDO_COEFF1                       rw            46          0100 0110        0x4F               --
+    PEDO_COEFF2                       rw            47          0100 0111        0x23               --
+    PEDO_COEFF3                       rw            48          0100 1000        0xA5               --
+    PEDO_COEFF4                       rw            49          0100 1001        0x23               --
+    PEDO_COEFF5                       rw            4A          0100 1010        0x04               --
+    PEDO_COEFF6                       rw            4B          0100 1011        0x8C               --
+    WRIST_CTRL1                       rw            51          0101 0001        0x30               --
+    WRIST_CTRL2                       rw            52          0101 0010        0x0F               --
+    WRIST_CTRL3                       rw            53          0101 0011        0x93               --
+   备注：特殊寄存器配置完成后需要退出该地址（0x7F 配置 0x00）再访问其他通用寄存器。另外，在配置完寄存器后建议延时 1ms 再进行寄
+   存器读取操作。
+
+       在“引导启动”时加载到寄存器中的内容不要改变。这些内容包含了工厂校准补偿的信息，能掉电保存和自动加载。
+
+   5   寄存器描述
+
+   5.1 WHO_AM_I（01h）
+
+        B7          B6          B5           B4            B3               B2          B1          B0
+         0           1           1           0             1                0           1           0
+   备注：等同 CHIP_ID 值为 0x6A。
+
+
+   5.2 OIS_CONF (04h)
+
+        B7          B6          B5          B4             B3               B2          B1          B0
+        --          --          --         OIS_EN          --               --          --          --
+
+
+                         OIS 使能位。默认值：0
+         OIS_EN
+                         (0：OIS 关闭； 1：OIS 使能)
+
+
+
+
+Shenzhen HuaXuanYang Electronics CO.,LTD                                                       www.hxymos.com
+               HUAXUANYANG       HXY                                                    ICM-42688P
+               ELECTRONICS CO.,LTD                                                六轴惯性传感器模块
+
+   5.3 COM_CFG(05h)
+
+        B7             B6          B5          B4         B3          B2           B1            B0
+      BOOT            BDU          --       Addr_Auto      --        OSIM          --           SIM
+
+
+                         重载修调值。默认值：0
+          BOOT
+                         (0：正常模式；1：重载修调值，置“1”后会自动复位为“0”)
+                         块数据更新。默认值：0
+              BDU
+                         (0：连续更新；1：输出数据寄存器不更新直到 MSB 和 LSB 被读取)
+                         通讯地址自增控制位。 默认值：1
+        Addr_Auto        0： 地址不自增（通过 FIFO_DATA 连续读取数据时需要配置为地址不自增）
+                                                                ；
+                         1： 地址自增，连续读写时地址自增（I2C 和 SPI 通信皆适用，OIS 不适用）；
+                         OIS SPI 通信模式选择位。默认值：0
+          OSIM
+                         (0：OIS 4 线模式；1：OIS 3 线模式)
+                         SPI 串行接口模式配置。默认值：0
+              SIM
+                         (0：4 线接口；1：3 线接口)
+
+   5.4 INT_CFG1(06h)
+
+        B7             B6          B5            B4        B3          B2          B1            B0
+         --         INT_PP_OD   H_LACTIVE   INT1_SEL4   INT1_SEL3   INT1_SEL2   INT1_SEL1     INT1_SEL0
+
+
+                         INT1 和 INT2 推挽输出或开漏输出选择位。 默认值： 0
+       INT_PP_OD
+                         (0：推挽输出使能； 1：开漏输出使能)
+                         中断引脚默认电平控制位。 默认值： 0
+       H_LACTIVE         0：中断触发时输出高电平（默认低电平）
+                         1：中断触发时输出低电平（默认高电平）
+
+
+     INT1_SEL[4：0]       描述
+          00001          DRDY_ACC 中断在 INT1 上
+          00010          DRDY_ACC_OIS 中断在 INT1 上
+          00011          DRDY_GYR 中断在 INT1 上
+          00100          DRDY_GYR_OIS 中断在 INT1 上
+          00101          DRDY_TMP 中断在 INT1 上
+          00111          CLICK 中断在 INT1 上
+          01000          EMPTY 中断在 INT1 上
+          01001          WTM 中断在 INT1 上
+          01010          OVER_FIFO 中断在 INT1 上
+          01011          AOI1 中断在 INT1 上
+          01100          AOI2 中断在 INT1 上
+          01101          AOI1| AOI2 中断在 INT1 上
+          01111          WTM_STEP 中断在 INT1 上
+
+
+
+
+Shenzhen HuaXuanYang Electronics CO.,LTD                                                    www.hxymos.com
+              HUAXUANYANG           HXY                                                    ICM-42688P
+              ELECTRONICS CO.,LTD                                                     六轴惯性传感器模块
+
+
+          10000             DELTA_STEP 中断在 INT1 上
+          10001             OVER_STEP 中断在 INT1 上
+          10010             WRIST_FLAG 中断在 INT1 上
+          10011             WRIST_ON_FLAG 中断在 INT1 上
+          10100             WRIST_DOWN_FLAG 中断在 INT1 上
+          10101             WRIST_ON_FLAG|WRIST_DOWN_FLAG 中断在 INT1 上
+
+   5.5 INT_CFG2(07h)
+
+        B7           B6              B5             B4        B3          B2          B1            B0
+         --            --             --       INT2_SEL4   INT2_SEL3   INT2_SEL2   INT2_SEL1    INT2_SEL0
+
+
+     INT2_SEL[4：0]          描述
+          00001             DRDY_ACC 中断在 INT2 上
+          00010             DRDY_ACC_OIS 中断在 INT2 上
+          00011             DRDY_GYR 中断在 INT2 上
+          00100             DRDY_GYR_OIS 中断在 INT2 上
+          00101             DRDY_TMP 中断在 INT2 上
+          00111             CLICK 中断在 INT2 上
+          01000             EMPTY 中断在 INT2 上
+          01001             WTM 中断在 INT2 上
+          01010             OVER_FIFO 中断在 INT2 上
+          01011             AOI1 中断在 INT2 上
+          01100             AOI2 中断在 INT2 上
+          01101             AOI1| AOI2 中断在 INT2 上
+          01111             WTM_STEP 中断在 INT2 上
+          10000             DELTA_STEP 中断在 INT2 上
+          10001             OVER_STEP 中断在 INT2 上
+          10010             WRIST_FLAG 中断在 INT2 上
+          10011             WRIST_ON_FLAG 中断在 INT2 上
+          10100             WRIST_DOWN_FLAG 中断在 INT2 上
+          10101             WRIST_ON_FLAG|WRIST_DOWN_FLAG 中断在 INT2 上
+
+
+
+
+Shenzhen HuaXuanYang Electronics CO.,LTD                                                       www.hxymos.com
+               HUAXUANYANG         HXY                                                          ICM-42688P
+               ELECTRONICS CO.,LTD                                                         六轴惯性传感器模块
+
+   5.6 HPF&LPF_CFG(08h)
+
+        B7           B6             B5             B4          B3              B2          B1          B0
+      HPCF2         HPCF1          FDS          HP_RESET       --         DLPF_EN     DLPF1          DLPF0
+
+
+     HPCF2 -HPCF1     高通截止频率选择。默认值：10
+                      数据滤波选择。默认值：0
+          FDS
+                      (0：跳过内部高通滤波； 1：内部高通滤波以后的数据输出到数据寄存器或 FIFO)
+                      高通滤波器复位。默认值：0
+       HP_RESET
+                      (0：复位禁止； 1：复位使能)
+                      数字低通滤波器使能位。 默认值： 0
+        DLPF_EN
+                      (0：数字低通滤波器禁止；1：数字低通滤波器使能)
+       DLPF[1：0]      低通截止频率选择。默认值：00
+
+
+   高通截止频率配置表
+       HPCF        Ft[Hz]@12.5Hz    Ft[Hz]@25Hz     Ft[Hz]@50Hz     Ft[Hz]@100Hz Ft[Hz]@200Hz Ft[Hz]@400Hz
+         00               1               2                4             8            16              32
+         01               0.5             1                2             4            8               16
+         10               0.1            0.2            0.4             0.8          1.6              3.2
+         11            0.025             0.05           0.1             0.2          0.4              0.8
+   低通截止频率配置表
+        DLPF       Ft[Hz]@12.5Hz    Ft[Hz]@25Hz     Ft[Hz]@50Hz     Ft[Hz]@100Hz Ft[Hz]@200Hz Ft[Hz]@400Hz
+         00            0.45              0.90           1.84            3.70         7.42            14.86
+         01            1.07              2.15           4.32            8.67        17.37            34.76
+         10            1.39              2.79           5.60           11.23        22.49            45.00
+         11            1.50              2.99           6.01           12.05        24.13            48.28
+
+
+
+
+Shenzhen HuaXuanYang Electronics CO.,LTD                                                          www.hxymos.com
+                 HUAXUANYANG            HXY                                                           ICM-42688P
+                 ELECTRONICS CO.,LTD                                                             六轴惯性传感器模块
+
+
+   5.7 DATA_SAT(0Ah)
+
+        B7                 B6            B5            B4           B3            B2              B1         B0
+                    GYR_MEM         SAT_GYR_     SAT_GYR_        SAT_GYR_      SAT_ACC_        SAT_ACC_   SAT_ACC
+            --
+                          S_OK           Z             Y            X             Z               Y          _X
+
+
+                            陀螺仪自测试状态位。默认值：0
+     GYR_MEMS_OK
+                            (0：陀螺仪自测试异常；1：陀螺仪自测试正常)
+                            陀螺仪 Z 轴原始数据饱和状态位。默认值：0
+       SAT_GYR_Z
+                            (0：Z 轴原始数据已饱和；1：Z 轴原始数据未饱和)
+                            陀螺仪 Y 轴原始数据饱和状态位。默认值：0
+       SAT_GYR_Y
+                            (0：Y 轴原始数据已饱和；1：Y 轴原始数据未饱和)
+                            陀螺仪 X 轴原始数据饱和状态位。默认值：0
+       SAT_GYR_X
+                            (0：X 轴原始数据已饱和；1：X 轴原始数据未饱和)
+                            加速度计 Z 轴原始数据饱和状态位。默认值：0
+       SAT_ACC_Z
+                            (0：Z 轴原始数据已饱和；1：Z 轴原始数据未饱和)
+                            加速度计 Y 轴原始数据饱和状态位。默认值：0
+       SAT_ACC_Y
+                            (0：Y 轴原始数据已饱和；1：Y 轴原始数据未饱和)
+                            加速度计 X 轴原始数据饱和状态位。默认值：0
+       SAT_ACC_X
+                            (0：X 轴原始数据已饱和；1：X 轴原始数据未饱和)
+
+   5.8 DATA_STAT/ DATA_STAT_OIS (0Bh)
+
+       B7           B6             B5            B4         B3            B2              B1               B0
+                                GYR_CONF      ACC_CONF                  DRDY_T    DRDY_GYR/DR          DRDY_ACC/D
+       --            --                                     --
+                                  _ERR          _ERR                     MP        DY_GYR_OIS          RDY_ACC_OIS
+
+
+                            陀螺仪初始化判断位。默认值：0
+     GYR_CONF_ERR
+                            (0：初始化无误；1：初始化错误)
+                            加速度计初始化判断位。默认值：0
+     ACC_CONF_ERR
+                            (0：初始化无误；1：初始化错误)
+                            温度传感器数据转换完成状态位。默认值： 0
+       DRDY_TMP
+                            (0：数据尚未转换完成；1：数据转换完成)
+       DRDY_GYR/            陀螺仪 X、Y 和 Z 三个轴新的数据转换完成状态位。 默认值： 0
+     DRDY_GYR_OIS           (0：三轴中至少某一轴的数据尚未转换完成；1：三个轴新的数据全都转换完成)
+       DRDY_ACC/            加速度计 X、Y 和 Z 三个轴新的数据转换完成状态位。 默认值： 0
+     DRDY_ACC_OIS           (0：三轴中至少某一轴的数据尚未转换完成；1：三个轴新的数据全都转换完成)
+
+
+
+
+Shenzhen HuaXuanYang Electronics CO.,LTD                                                                www.hxymos.com
+              HUAXUANYANG         HXY                                                           ICM-42688P
+              ELECTRONICS CO.,LTD                                                         六轴惯性传感器模块
+
+
+   5.9 ACC_XH/ACC_XH_OIS (0Ch), ACC_XL/ACC_XL_OIS (0Dh)
+
+       X 轴加速度计值。这个值以 2 的补码的形式输出。
+
+   5.10 ACC_YH/ACC_YH_OIS (0Eh), ACC_YL/ACC_YL_OIS (0Fh)
+
+       Y 轴加速度计值。这个值以 2 的补码的形式输出。
+
+   5.11 ACC_ZH/ACC_ZH_OIS (10h), ACC_ZL/ACC_ZL_OIS (11h)
+
+       Z 轴加速度计值。这个值以 2 的补码的形式输出。
+
+   5.12 GYR_XH/GYR_XH_OIS (12h), GYR_XL/GYR_XL_OIS (13h)
+
+       X 轴陀螺仪值。这个值以 2 的补码的形式输出。
+
+   5.13 GYR_YH/GYR_YH_OIS (14h), GYR_YL/GYR_YL_OIS (15h)
+
+       Y 轴陀螺仪值。这个值以 2 的补码的形式输出。
+
+   5.14 GYR_ZH/GYR_ZH_OIS (16h), GYR_ZL/GYR_ZL_OIS (17h)
+
+       Z 轴陀螺仪值。这个值以 2 的补码的形式输出。
+
+
+       以加速度计 X 轴数据拼接及单位转换为例
+     ACC_XH       ACC_XL      16bits(DEC)     10bits(DEC)   FS[1:0]=00   FS[1:0]=01   FS[1:0]=10     FS[1:0]=11
+       0x40        0x00         16384            256           1.0g         2.0g         4.0g          8.0g
+       0x20        0x00          8192            128           0.5g         1.0g         2.0g          4.0g
+       0xE0        0x00          -8192           -128         -0.5g        -1.0g        -2.0g          -4.0g
+       0xC0        0x00         -16384           -256         -1.0g        -2.0g        -4.0g          -8.0g
+    unsigned char X_H,X_L,Y_H,Y_L,Z_H, Z_L；                           //三轴数据（高、低位）
+    signed short int SL_ACCEL_X,SL_ ACCEL_Y,SL_ ACCEL_Z； //三轴数据
+    SL_ACCEL_X =（signed short int） ((X_H<< 8) | X_L)；                 //拼接数据
+    SL_ACCEL_Y =（signed short int） ((Y_H<< 8) | Y_L)；                 //强制数据类型转换
+    SL_ACCEL_Z =（signed short int） ((Z_H<< 8) | Z_L)；                 //16 位带符号整型数据
+    SL_ACCEL_X =SL_ ACCEL_X>>4；                                       //取 12 位带符号整型数据，Y，Z 同理
+
+
+
+   5.15 TIME_H(18h),TIME_M(19h),TIME_L(1Ah)
+
+         TIME_H           Sensor_Time [23：16]
+         TIME_M           Sensor_Time [15：8]
+         TIME_L           Sensor_Time [7：0]
+       Sensor_Time（时间戳）是一个 24 位的数据，在高性能模式和低功耗模式都可使用。在运行时 Sensor_Time 的值
+   是隐藏的，当它被读取时返回当前的时间值。Sensor_Time 的分辨率为 39.06125 us，且与 ODR 同步。
+
+
+
+
+Shenzhen HuaXuanYang Electronics CO.,LTD                                                           www.hxymos.com
+             HUAXUANYANG         HXY                                             ICM-42688P
+             ELECTRONICS CO.,LTD                                             六轴惯性传感器模块
+
+
+   5.16 FIFO_CFG0(1Ch)
+
+       B7        B6        B5          B4      B3         B2           B1              B0
+        --       --         --         --       --   FIFO_ACC_EN   FIFO_GYR_EN   FIFO_HEADER_EN
+
+
+                         加速度计 FIFO 使能位。默认值：0
+      FIFO_ACC_EN
+                         (0：FIFO 禁止；1：FIFO 使能)
+                         陀螺仪 FIFO 使能位。默认值：0
+      FIFO_GYR_EN
+                         (0：FIFO 禁止；1：FIFO 使能)
+                         FIFO 数据头码使能位，该位置 1 后 16 位 FIFO 数据中高 3 位为头码。默认值：0
+    FIFO_HEADER_EN
+                         (0：FIFO 数据无头码；1：FIFO 数据有头码)
+
+
+        头码使用说明                                             描述
+                                       代表该 FIFO 数据为 Sensor_Time：
+                          头码为 001      FIFO 最开始 4 个 Byte 数据拼接成 32 位，第 1Byte 和第 3Byte 的高 3 位为头
+                                       码，第 1Byte 中 B4-B3 进行补零，剩余 24 位进行拼接成 Sensor_Time
+                                       代表该数据为 ACC_X 轴 FIFO 数据：
+                          头码为 010
+                                       高 3 位为头码，低 13 位为 ACC_X 轴数据（原始数据舍去高 3 位得到）
+                                       代表该数据为 ACC_Y 轴 FIFO 数据：
+                          头码为 011
+                                       高 3 位为头码，低 13 位为 ACC_Y 轴数据（原始数据舍去高 3 位得到）
+    FIFO_HEADER_EN=1                   代表该数据为 ACC_Z 轴 FIFO 数据：
+                          头码为 100
+                                       高 3 位为头码，低 13 位为 ACC_Z 轴数据（原始数据舍去高 3 位得到）
+                                       代表该数据为 GYR_X 轴 FIFO 数据：
+                          头码为 101
+                                       高 3 位为头码，低 13 位为 GYR_X 轴数据（原始数据舍去高 3 位得到）
+                                       代表该数据为 GYR_Y 轴 FIFO 数据：
+                          头码为 110
+                                       高 3 位为头码，低 13 位为 GYR_Y 轴数据（原始数据舍去高 3 位得到）
+                                       代表该数据为 GYR_Z 轴 FIFO 数据：
+                          头码为 111
+                                       高 3 位为头码，低 13 位为 GYR_Z 轴数据（原始数据舍去高 3 位得到）
+                          FIFO 最开始 4 个 Byte 数据拼接成 32 位，取低 24 位直接拼接成 Sensor_Time，后续按照
+    FIFO_HEADER_EN=0      GYR_X、GYR_Y、GYR_Z、ACC_X、ACC_Y、ACC_Z 轴的顺序，正常拼接成 16 位数据，
+                          不受头码影响；
+   备注：在加速度和陀螺仪相同 ODR 时，无头码和有头码时读取 FIFO 数据最开始 4 个 Byte 都为 Sensor_Time，读取一次 FIFO 只有在最开始
+   出现 Sensor_Time，后续按照 GYR_X、GYR_Y、GYR_Z、ACC_X、ACC_Y、ACC_Z 轴的顺序进行读取，六轴的数据为一组，共 341 组（
+                                                                                    （2048-2）
+   /6=341）
+         。
+
+
+
+
+Shenzhen HuaXuanYang Electronics CO.,LTD                                            www.hxymos.com
+               HUAXUANYANG       HXY                                           ICM-42688P
+               ELECTRONICS CO.,LTD                                       六轴惯性传感器模块
+
+
+   5.17 FIFO_CFG1(1Dh)
+
+        B7            B6          B5          B4        B3        B2      B1          B0
+         --           TR         FM1         FM0        --     FTH10     FTH9        FTH8
+
+
+                           FIFO 触发模式选择。默认值：0
+              TR           0：AOI1 中断作为 FIFO 触发模式中断事件输入；
+                           1：AOI2 中断作为 FIFO 触发模式中断事件输入；
+                           FIFO 模式选择。默认值：00
+                           00：By-Pass 模式（旁路模式，即不使用 FIFO 功能）；
+         FM[1：0]           01：FIFO 模式（缓存满未及时读取，新数据丢弃）
+                                                    ；
+                           10：Stream 模式（缓存满后，最早数据丢弃，添加新数据）；
+                           11：触发模式（AOI1 或者 AOI2 中断事件有效，从 stream 模式进入 FIFO 模式）；
+                           FIFO 功能 WTM 阈值设置高 3 位。默认值：111
+        FTH[10:8]          当 FIFO 中的数据个数超过设定阈值时，FIFO 状态寄存器相应状态位会置“1”。本寄存器所设
+                           置的数量“1”表示 2 个 Byte 数据。
+   备注：ICM-42688P 使用 FIFO 模式或 Stream 模式工作时，FIFO 数据读取完成后，需先将 FIFO 模式或 Stream 模式切换到 BY-PASS 模式，
+   然后再切回到 FIFO 模式或 Stream 模式，即可继续工作。使用 Stream 模式时可将 FIFO_HEADER_EN=1，使能 FIFO 数据头码，可判断读取
+   的FIFO 数据是否错位。
+
+
+   5.18 FIFO_CFG2(1Eh)
+
+        B7            B6          B5          B4        B3        B2      B1          B0
+       FTH7          FTH6        FTH5        FTH4      FTH3      FTH2    FTH1        FTH0
+
+
+                           FIFO 功能 WTM 阈值设置低 8 位。默认值：1111 1111
+        FTH[7：0]           当 FIFO 中的数据个数超过设定阈值时，FIFO 状态寄存器相应状态位会置“1”。本寄存器所设
+                           置的数量“1”表示 2 个 Byte 数据。
+
+   5.19 FIFO_STAT0(1Fh)
+
+        B7            B6          B5          B4        B3        B2      B1          B0
+        --           EMPTY       WTM       OVER_FIFO   FSS11     FSS10   FSS9        FSS8
+
+
+          EMPTY            当 FIFO 中的数据全部被读取或者 FIFO 数据个数为 0 时，EMPTY 位置“1”
+                                                                       。默认值：1
+              WTM          当 FIFO 中的数据个数超过设定阈值时，WTM 位置“1”
+                                                        。默认值：0
+        OVER_FIFO          当 FIFO 中的数据溢出时，OVER_FIFO 位置“1”。默认值：0
+                           在 FIFO 中未读取数据的组数。
+         FSS[11:8]         当 FIFO 中的一组数据被读取时，该 FIFO 数据组数寄存器置会自动减一。FSS[11：8]所设置
+                           的数量“1”表示 2 个 Byte 数据。FIFO 中未读取组数上限为 2048。
+
+
+
+
+Shenzhen HuaXuanYang Electronics CO.,LTD                                         www.hxymos.com
+                HUAXUANYANG          HXY                                                   ICM-42688P
+                ELECTRONICS CO.,LTD                                                   六轴惯性传感器模块
+
+
+   5.20 FIFO_STAT1(20h)
+
+          B7            B6            B5          B4        B3           B2           B1           B0
+         FSS7          FSS6          FSS5        FSS4      FSS3         FSS2         FSS1         FSS0
+
+
+                              在 FIFO 中未读取数据的组数。
+          FSS[7：0]            当 FIFO 中的一组数据被读取时，该 FIFO 数据组数寄存器置会自动减一。FSS[7：0]所设置
+                              的数量“1”表示 2 个 Byte 数据。
+
+   5.21 FIFO_DATA(21h)
+
+          B7            B6            B5         B4         B3           B2           B1           B0
+          D7            D6            D5         D4         D3           D2           D1           D0
+
+
+                              读取 0x21 寄存器相当于是读取 FIFO 数据，读取数据顺序 GYR_X 轴、GYR _Y 轴、GYR _Z
+                              轴、ACC_X 轴、ACC_Y 轴、ACC_Z 轴；
+        FIFO_DATA[7：0]
+                              可以根据 0x1F-0x20 寄存器值计算 FIFO 组数，然后组数*12 作为读取 0x21 的次数。其中最开
+                              始的 4 个 Byte 为 Sensor_Time。
+
+   读取 FIFO 中六轴数据示例：
+    unsigned char     fifo_num1=0;                                             //1Fh 寄存器的值
+    unsigned char     fifo_num2=0;                                             //20h 寄存器的值
+    unsigned short     fifo_num=0;                                             //FIFO 中未读取数据的数量
+    unsigned char SL_ICM-42688P_FIFO_DATA[2048];                               //FIFO 数据
+    fifo_num = (fifo_num1&0x0F)*256+fifo_num2;                                 //拼接 FIFO 中未读取数据的数量
+    SL_ICM-42688P_I2c_Spi_Read(SL_SPI_IIC_INTERFACE, 0x21, fifo_num*2, SL_ICM-42688P_FIFO_DATA);
+    //单地址连续读取
+    //客户需要定义 IIC/SPI 接口封包函数，SL_SPI_IIC_INTERFACE:0=spi 1=i2c
+    for(j=0;j<(fifo_num-2)/6;j++)                  //表示 FIFO 中有(fifo_num-2)/6 组六轴数据
+    {
+    //0-3=sensor_time stamp
+    gyrx_buf[j]=(signed short)((SL_ICM-42688P_FIFO_DATA[j*12+4]<<8)+SL_ICM-42688P_FIFO_DATA[j*12+5]);
+    gyry_buf[j]=(signed short)((SL_ICM-42688P_FIFO_DATA[j*12+6]<<8)+SL_ICM-42688P_FIFO_DATA[j*12+7]);
+    gyrz_buf[j]=(signed short)((SL_ICM-42688P_FIFO_DATA[j*12+8]<<8)+SL_ICM-42688P_FIFO_DATA[j*12+9]);
+    accx_buf[j]=(signed short)((SL_ICM-42688P_FIFO_DATA[j*12+10]<<8)+SL_ICM-42688P_FIFO_DATA[j*12+11]);
+    accy_buf[j]=(signed short)((SL_ICM-42688P_FIFO_DATA[j*12+12]<<8)+SL_ICM-42688P_FIFO_DATA[j*12+13]);
+    accz_buf[j]=(signed short)((SL_ICM-42688P_FIFO_DATA[j*12+14]<<8)+SL_ICM-42688P_FIFO_DATA[j*12+15]);
+    //数据拼接，强制数据转换，16 位数据读取
+    }
+
+
+
+
+Shenzhen HuaXuanYang Electronics CO.,LTD                                                     www.hxymos.com
+              HUAXUANYANG           HXY                                            ICM-42688P
+               ELECTRONICS CO.,LTD                                            六轴惯性传感器模块
+
+   5.22 TEMP_H(22h),TEMP_L(23h)
+
+        TEMP_H             TEMP [15:8]
+         TEMP_L            TEMP [7:0]
+
+       TEMP（温度传感器寄存器）是一个 16 位的数据，在高性能模式和低功耗模式都可使用。可通过判断 DRDY_TMP
+   状态位（通用寄存器 0x0B<2>）然后读取实时温度值。T=(signed short int)((X_H<< 8) | X_L)/512+23℃；
+
+   5.23 AOI1_CFG(30h)
+
+        B7                B6            B5     B4           B3       B2       B1          B0
+                                    ZHIE/     ZLIE/        YHIE/    YLIE/    XHIE/       XLIE/
+        AOI               6D
+                                    ZUPE     ZDOWNE        YUPE    YDOWNE    XUPE      XDOWNE
+
+
+              AOI              与/或中断事件。默认值：0。参考“中断模式”
+              6D               加速度计 6 个方向检测功能使能。默认值：0。参考“中断模式”
+             ZHIE/             ACC_Z 轴高事件中断或者 ACC_Z 轴方向检测中断使能。默认值：0
+             ZUPE              (0：禁止中断；1：使能中断)
+             ZLIE/             ACC_Z 轴低事件中断或者 ACC_Z 轴方向检测中断使能。默认值：0
+         ZDOWNE                (0：禁止中断；1：使能中断)
+             YHIE/             ACC_Y 轴高事件中断或者 ACC_Y 轴方向检测中断使能。默认值：0
+          YUPE                 (0：禁止中断；1：使能中断)
+             YLIE/             ACC_Y 轴低事件中断或者 ACC_Y 轴方向检测中断使能。默认值：0
+         YDOWNE                (0：禁止中断；1：使能中断)
+             XHIE/             ACC_X 轴高事件中断或者 ACC_X 轴方向检测中断使能。默认值：0
+          XUPE                 (0：禁止中断；1：使能中断)
+             XLIE/             ACC_X 轴低事件中断或者 ACC_X 轴方向检测中断使能。默认值：0
+         XDOWNE                (0：禁止中断；1：使能中断)
+
+
+                     AOI                              6D                      中断模式
+                      0                               0                      或中断事件
+                      0                               1                     6 个方向运动识别
+                      1                               0                      与中断事件
+                      1                               1                     6 个方向位置检测
+
+
+
+
+Shenzhen HuaXuanYang Electronics CO.,LTD                                             www.hxymos.com
+               HUAXUANYANG          HXY                                       ICM-42688P
+               ELECTRONICS CO.,LTD                                      六轴惯性传感器模块
+
+   5.24 AOI1_STAT(31h)
+
+        B7            B6              B5            B4     B3     B2     B1          B0
+         --             IA            ZH            ZL    YH      YL    XH           XL
+
+
+                             中断激活。默认值：0
+              IA
+                             (0：中断没有产生；1：一个或多个中断已经产生)
+                             ACC_Z 轴高。默认值：0
+              ZH
+                             (0：没有中断，1：ACC_Z 轴高事件已经产生)
+                             ACC_Z 轴低。默认值：0
+              ZL
+                             (0：没有中断，1：ACC_Z 轴低事件已经产生)
+                             ACC_Y 轴高。默认值：0
+              YH
+                             (0：没有中断，1：ACC_Y 轴高事件已经产生)
+                             ACC_Y 轴低。默认值：0
+              YL
+                             (0：没有中断，1：ACC_Y 轴低事件已经产生)
+                             ACC_X 轴高。默认值：0
+              XH
+                             (0：没有中断，1：ACC_X 轴高事件已经产生)
+                             ACC_X 轴低。默认值：0
+              XL
+                             (0：没有中断，1：ACC_X 轴低事件已经产生)
+
+
+   5.25 AOI1_THS(32h)
+
+        B7            B6              B5            B4     B3     B2     B1          B0
+         --          THS6            THS5          THS4   THS3   THS2   THS1        THS0
+
+
+                             中断 1 阈值。默认值：000 0000
+                             1LSB=16mg @ FS=2g
+       THS6 - THS0           1LSB=32mg @ FS=4g
+                             1LSB=64mg @ FS=8g
+                             1LSB=128mg @ FS=16g
+
+
+
+
+Shenzhen HuaXuanYang Electronics CO.,LTD                                        www.hxymos.com
+              HUAXUANYANG      HXY                                         ICM-42688P
+              ELECTRONICS CO.,LTD                                     六轴惯性传感器模块
+
+   5.26 AOI1_DUR(33h)
+
+        B7          B6          B5           B4      B3       B2      B1          B0
+        D7          D6          D5           D4      D3       D2      D1          D0
+
+
+                        持续时间计数值。默认值： 000 0000
+         D6 - D0        D6 - D0 位设置识别到中断 1 事件的最小持续时间。持续时间寄存器的最大时间和时间步进是以
+                        ODR 为时钟的。
+
+   AOI1 中断数据源说明：
+       按照中断事件的组合逻辑分为与事件和或事件。与事件是指选定的多个事件同时发生时才会触发中断，或事件是指
+   选定的多个事件中任意一个发生即可触发中断；例如，需要配置 ACC_X 轴数据大于设定阈值或 ACC_Y 轴数据大于设
+   定阈值，就需要使用或事件中断功能。该功能若用于活动检测，建议选择三轴高通后的数据作为该功能的数据源。满足
+   触发条件后，中断触发或标志位呈现的响应时间为 1/ODR。
+       按照中断事件的方向检测情况分为 3D 方向运动（位置）检测和 6D 方向运动（位置）检测。
+       方向运动检测事件是指设备在某一个方向上进行运动或振动，引起该方向上的数据大于设定阈值，从而触发的事件。
+   一般情况下该检测功能需要设置该 AOI 事件的数据源为三轴高通后数据。
+       方向位置检测事件(倾斜检测/角度检测)是指设备从某一个固定位置缓慢移动到另外一个位置，引起三轴数据大于或
+   小于设置角度阈值，从而触发的事件。一般情况下该检测功能需要设置该 AOI 事件的数据源为三轴原始数据。
+       3D 事件是指三轴数据的绝对值和设定阈值进行比较，从而触发大于或小于设定阈值的事件，该功能可以判断出是
+   哪个轴大于或小于阈值了，无法判断是正向大于或小于设定阈值还是负向大于或小于设定阈值。若配置 ACC_X 轴高事
+   件触发时，需要 ACC_X 数据的绝对值大于阈值才触发，相当于正向或负向数据都能触发中断，触发前 XL=1，触发后
+   XH=1。
+       6D 事件是指三轴数据和设定阈值的正负 1 倍进行比较，从而触发大于或小于设定阈值的事件，该功能可以判断出
+   是哪个轴大于或小于阈值了，同时也判断出是正向大于或小于设定阈值还是负向大于或小于设定阈值。若配置 ACC_X
+   轴高事件触发时，需要 ACC_X 数据的值大于阈值才触发，相当于只有正向数据才能触发中断，触发前 XH=0，触发后
+   XH=1。为了实现双方向数据绝对值较大时都能触发中断，需要同时配置 ACC_X 轴高事件触发和 ACC_X 轴低事件触发。
+   触发前 XH=0，XL=0，触发后，XH=1 或 XL=1。
+       AOI2 功能与 AOI1 功能的配置方法相同。
+      备注：默认设置 AOI1_DURATION（AOI2_DURATION）最高位为 0（D7）
+                                                   ，这种情况下与或中断和运动位置中断在判断大于阈值次数时，
+   该计数值是每个成立情况下自增一，在不成立情况下自减一；若设置 AOI1_DURATION（AOI2_DURATION）最高位为 1（D7），则该计数值
+   在不成立情况下直接清 0，可以减少阈值次数判断时的中断误触发的情况。推荐默认设置 AOI1_DURATION（AOI2_DURATION）最高位为 0
+   （D7）
+      。
+
+
+
+   5.27 AOI2_CFG(34h)
+
+        B7          B6          B5           B4      B3       B2      B1          B0
+                               ZHIE/        ZLIE/   YHIE/    YLIE/   XHIE/       XLIE/
+        AOI         6D
+                               ZUPE        ZDOWNE   YUPE    YDOWNE   XUPE      XDOWNE
+
+
+
+
+Shenzhen HuaXuanYang Electronics CO.,LTD                                     www.hxymos.com
+                HUAXUANYANG          HXY                                    ICM-42688P
+                ELECTRONICS CO.,LTD                                    六轴惯性传感器模块
+
+
+              AOI               与/或中断事件。默认值：0。参考“中断模式”
+               6D               6 个方向检测功能使能。默认值：0。参考“中断模式”
+          ZHIE/                 ACC_Z 轴高事件中断或者 ACC_Z 轴方向检测中断使能。默认值：0
+          ZUPE                  (0：禁止中断；1：使能中断)
+              ZLIE/             ACC_Z 轴低事件中断或者 ACC_Z 轴方向检测中断使能。默认值：0
+        ZDOWNE                  (0：禁止中断；1：使能中断)
+          YHIE/                 ACC_Y 轴高事件中断或者 ACC_Y 轴方向检测中断使能。默认值：0
+          YUPE                  (0：禁止中断；1：使能中断)
+              YLIE/             ACC_Y 轴低事件中断或者 ACC_Y 轴方向检测中断使能。默认值：0
+        YDOWNE                  (0：禁止中断；1：使能中断)
+          XHIE/                 ACC_X 轴高事件中断或者 ACC_X 轴方向检测中断使能。默认值：0
+          XUPE                  (0：禁止中断；1：使能中断)
+              XLIE/             ACC_X 轴低事件中断或者 ACC_X 轴方向检测中断使能。默认值：0
+        XDOWNE                  (0：禁止中断；1：使能中断)
+
+
+                      AOI                             6D               中断模式
+                       0                              0                或中断事件
+                       0                              1              6 个方向运动识别
+                       1                              0                与中断事件
+                       1                              1              6 个方向位置检测
+
+
+   5.28 AOI2_STAT(35h)
+
+        B7                 B6         B5         B4        B3   B2     B1          B0
+         --                IA         ZH         ZL        YH   YL     XH          XL
+
+
+                                中断激活。默认值：0
+               IA
+                                (0：中断没有产生； 1：一个或多个中断已经产生)
+                                ACC_Z 轴高。默认值：0
+               ZH
+                                (0：没有中断，1：ACC_Z 轴高事件已经产生)
+                                ACC_Z 轴低。默认值：0
+               ZL
+                                (0：没有中断，1：ACC_Z 轴低事件已经产生)
+                                ACC_Y 轴高。默认值：0
+               YH
+                                (0：没有中断，1：ACC_Y 轴高事件已经产生)
+                                ACC_Y 轴低。默认值：0
+               YL
+                                (0：没有中断，1：ACC_Y 轴低事件已经产生)
+                                ACC_X 轴高。默认值：0
+               XH
+                                (0：没有中断，1：ACC_X 轴高事件已经产生)
+                                ACC_X 轴低。默认值：0
+               XL
+                                (0：没有中断，1：ACC_X 轴低事件已经产生)
+
+
+
+
+Shenzhen HuaXuanYang Electronics CO.,LTD                                      www.hxymos.com
+                 HUAXUANYANG        HXY                                                        ICM-42688P
+                 ELECTRONICS CO.,LTD                                                     六轴惯性传感器模块
+
+   5.29 AOI2_THS(36h)
+
+            B7           B6          B5          B4           B3          B2              B1          B0
+            --          THS6        THS5        THS4         THS3        THS2            THS1        THS0
+
+
+                          中断 2 阈值。 默认值： 000 0000
+                          1LSB=16mg @ FS=2g
+       THS6 - THS0        1LSB=32mg @ FS=4g
+                          1LSB=64mg @ FS=8g
+                          1LSB=128mg @ FS=16g
+
+   5.30 AOI2_DUR(37h)
+
+            B7           B6          B5          B4           B3          B2              B1          B0
+            D7          D6           D5         D4            D3          D2              D1          D0
+
+
+                          持续时间计数值。默认值： 000 0000
+            D6 - D0       D6 - D0 位设置识别到中断 2 事件的最小持续时间。持续时间寄存器的最大时间和时间步进是
+                          以 ODR 为时钟的。
+        AOI2 功能与 AOI1 功能的配置方法相同。详细使用说明请参考 AOI1_DURATION。
+
+
+   5.31 CLICK_CRTL_REG(38h)
+
+      B7          B6          B5          B4           B3           B2              B1              B0
+       --          --          --   CLICK_SEL    LIR_CLICK     CLICK_X_EN       CLICK_Y_EN       CLICK_Z_EN
+
+
+                              0：敲击事件不为 0 时输出中断；
+        CLICK_SEL
+                              1：输出中断必须满足设置的敲击阈值个数才能输出中断，否则无中断输出；
+                              CLICK 中断状态锁存控制位。默认值：0
+        LIR_CLICK             0：不锁存中断信号；1：锁存中断信号；
+                              当三轴数据满足敲击条件且触发引脚中断信号时，通过预置位 LIR CLICK，可以锁存引脚中断
+                              电平，直到读取 CLICK_SRC 后，中断状态以及中断电平才会自动复位为 0；
+                              ACC_X 轴敲击功能使能位。默认值：0
+       CLICK_X_EN
+                              0：禁止 ACC_X 轴数据参与敲击检测；1：使能 ACC_X 轴数据参与敲击检测；
+                              ACC_Y 轴敲击功能使能位。默认值：0
+       CLICK_Y_EN
+                              0：禁止 ACC_Y 轴数据参与敲击检测；1：使能 ACC_Y 轴数据参与敲击检测；
+                              ACC_Z 轴敲击功能使能位。默认值：0
+       CLICK_Z_EN
+                              0：禁止 ACC_Z 轴数据参与敲击检测；1：使能 ACC_Z 轴数据参与敲击检测；
+
+
+
+
+Shenzhen HuaXuanYang Electronics CO.,LTD                                                         www.hxymos.com
+                 HUAXUANYANG               HXY                                                      ICM-42688P
+                 ELECTRONICS CO.,LTD                                                           六轴惯性传感器模块
+
+
+   5.32 CLICK_SRC(39h)
+
+        B7                 B6              B5             B4              B3         B2        B1          B0
+            --                 --           --            --        CLICK_SRC3 CLICK_SRC2 CLICK_SRC1 CLICK_SRC0
+
+
+                                    敲击检测中断状态值。默认值：0000
+     CLICK_SRC[3：0]                 0000：无敲击事件触发；0001：单击事件触发；0010：双击事件触发；
+                                    0011：三击事件触发；… 1111：十五击事件触发；
+
+   5.33 STEP_CFG(3Ah)
+
+       B7           B6                B5          B4                 B3              B2        B1          B0
+       --            --               --          --           MUSIC_MOTOR_EN     STEP_CLR     --       STEP_EN
+
+
+                                    抗马达和音乐干扰控制位。默认值：1
+     MUSIC_MOTOR_EN
+                                    (0：抗马达和音乐干扰禁止；1：抗马达和音乐干扰使能)
+                                    计步值寄存器清除控制位。默认值：0
+            STEP_CLR
+                                    用于清除（3Ch，3Dh）寄存器数据；该位置 1 后，该位可自动复位为 0；
+                                    计步功能使能位。默认值：0
+             STEP_EN
+                                    (0：计步功能禁止；1：计步功能使能)
+
+   5.34 STEP_SRC(3Bh)
+
+       B7                 B6               B5             B4              B3         B2        B1          B0
+        --                --          M_STATE1         M_STATE0           --      WTM_STEP DELTA_STEP OVER_STEP
+
+
+                                    计步功能的运动状态值。默认值：00
+       M_STATE[1：0]
+                                    00：静坐        01：慢走         10：快走      11：跑步
+                                    步数阈值状态位。默认值：0
+        WTM_STEP                    0：当前计步值未超过设定阈值；
+                                    1：当前计步值已超过设定阈值；
+                                    步数改变量判断状态位。默认值：0
+        DELTA_STEP                  0：当前计步值改变量未超过设定改变量阈值；
+                                    1：当前计步值改变量已超过设定改变量阈值；
+                                    步数溢出状态位。默认值：0
+        OVER_STEP
+                                    0：未溢出；
+                                    1：已溢出（3Ch，3Dh 都为 0xFF）；
+
+
+
+
+Shenzhen HuaXuanYang Electronics CO.,LTD                                                              www.hxymos.com
+                 HUAXUANYANG      HXY                                              ICM-42688P
+                 ELECTRONICS CO.,LTD                                          六轴惯性传感器模块
+
+
+   5.35   STEP_COUNTER_L(3Ch), STEP_COUNTER_H(3Dh)
+
+                      STEP_COUNTER_L                             STEP_COUNTER [7:0]
+                      STEP_COUNTER_H                            STEP_COUNTER [15:8]
+
+
+   步数值拼接方法如下：
+    unsigned char STEP_REG[2]；                              //计步值寄存器的数据
+    signed int        SL_STEP；                              //计步值
+    SL_I2C_SPI_READ(0x3C,&STEP_REG[0])；                     //0x3C 寄存器开始连读向后读取 2 个字节
+    SL_STEP = (STEP_REG[1]<< 8)|(STEP_REG[0])；              //拼接计步值
+
+   5.36 AOI1&AOI2_CFG(3Fh)
+
+          B7           B6          B5        B4        B3           B2        B1           B0
+          --         AOI_EN       HPIS2     HPIS1    D4D_AOI2   D4D_AOI1   LIR_AOI2     LIR_AOI1
+
+
+                            AOI 中断禁止位。默认值：0
+          AOI_EN
+                            (0：AOI 中断使能；1：AOI 中断禁止)
+                            中断 AOI2 功能高通滤波使能位。 默认值：0
+           HPIS2
+                            (0：滤波禁止；1：滤波使能)
+                            中断 AOI1 功能高通滤波使能位。默认值：0
+           HPIS1
+                            (0：滤波禁止；1：滤波使能)
+          D4D_AOI2          4D 使能：使能 4D 检测，同时要把 AOI2_CFG 中的 6D 为置 1。默认值：0
+          D4D_AOI1          4D 使能：使能 4D 检测，同时要把 AOI1_CFG 中的 6D 为置 1。默认值：0
+                            锁存 AOI2_CFG 寄存器上指定的中断响应。
+          LIR_AOI2          通过读 AOI2_STAT（AOI2 中断状态寄存器）可以清除相应的中断锁存信号。默认值：0
+                            (0：不锁存中断信号；1：锁存中断信号)
+                            锁存 AOI1_CFG 寄存器上指定的中断响应。
+          LIR_AOI1          通过读 AOI1_STAT（AOI1 中断状态寄存器）可以清除相应的中断锁存信号。默认值：0
+                            (0：不锁存中断信号；1：锁存中断信号)
+
+
+   5.37 ACC_CONF(40h)
+
+          B7           B6          B5        B4        B3           B2        B1           B0
+    ACC_FILTE        ACC_BWP     ACC_BWP   ACC_BWP   ACC_ODR    ACC_ODR    ACC_ODR      ACC_ODR
+      R_PERF            2           1         0         3           2          1           0
+
+
+                             低功耗模式使能位，默认值：1。
+    ACC_FILTER_PERF
+                             (0: 低功耗模式使能，1：高性能模式使能)
+      ACC_BWP[2：0]           带宽选择、滤波模式选择位。默认值：010。
+      ACC_ODR[3：0]           数据率选择位。默认值：1000。
+
+
+
+
+Shenzhen HuaXuanYang Electronics CO.,LTD                                              www.hxymos.com
+               HUAXUANYANG       HXY                                                ICM-42688P
+               ELECTRONICS CO.,LTD                                                六轴惯性传感器模块
+
+
+   ACC_BWP<2:0> 用来设置带宽和滤波模式的选择。下表通过设置 ACC_BWP <2:0>的值来设置带宽和滤波模式。
+    ACC_B      ACC_B    ACC_B                                           描述
+                                   符号
+     WP2        WP1      WP0                            高性能模式                     低功耗模式
+                                                                          不做平均（仅 ODR=0.78Hz~400Hz
+                                             平均次数=1.6kHz/ODR              时允许）;
+       0         0          0   OSR4_AVG1
+                                             （ODR=12.5Hz~1.6kHz 时）        连续 2 个数据平均一次（仅
+                                                                          ODR=800Hz 时允许）
+                                             平均次数=1.6kHz/(ODR*2)
+                                                                          连续 2 个数据平均一次（仅
+       0         0          1   OSR2_AVG2    （ODR=12.5Hz~800Hz 时）
+                                                                ；
+                                                                          ODR=0.78Hz~400Hz 时允许）
+                                             平均次数=1（ODR=1.6kHz 时）
+                                             平均次数=1.6kHz/(ODR*4)
+                                             （ODR=12.5Hz~400Hz 时）
+                                                                ；         连续 4 个数据平均一次（仅
+       0         1          0   NORM_AVG4
+                                             平均次数=1（ODR=800Hz、            ODR=0.78Hz~200Hz 时允许）；
+                                             1.6kHz 时）；
+                                             平均次数=1.6kHz/ODR；             连续 8 个数据平均一次（仅
+       0         1          1    CIC_AVG8
+                                             （ODR=12.5Hz~1.6kHz 时）        ODR=0.78Hz~100Hz 时允许）；
+                                                                          连续 16 个数据平均一次（仅
+       1         0          0   RES_AVG16    Reserved
+                                                                          ODR=0.78Hz~50Hz 时允许）
+                                                                          连续 32 个数据平均一次（仅
+       1         0          1   RES_AVG32    Reserved
+                                                                          ODR=0.78Hz~25Hz 时允许）
+                                                                                             ；
+                                                                          连续 64 个数据平均一次（仅
+       1         1          0   RES_AVG64    Reserved
+                                                                          ODR=0.78Hz~12.5Hz 时允许）；
+                                                                          连续 128 个数据平均一次（仅
+       1         1          1   RES_AVG128   Reserved
+                                                                          ODR=0.78Hz~6.25Hz 时允许）
+   备注：Reserved 表示高性能模式下无该 ODR 设置，如强制设置该 ODR 则会自动转换为默认值 0xA8 并且 ACC_CONF_ERR=1。
+
+
+   ACC_ODR <3:0> 用来设置电源模式和数据率的选择。下表通过设置 ACC_ODR <3:0>的值来设置电源模式和数据率。
+    ACC_ODR3         ACC_ODR2   ACC_ODR1    ACC_ODR0     电源模式和数据率选择
+           0            0          0           1         低功耗模式(0.78Hz)
+           0            0          1           0         低功耗模式(1.5Hz)
+           0            0          1           1         低功耗模式(3.125Hz)
+           0            1          0           0         低功耗模式(6.25Hz)
+           0            1          0           1         高性能模式/低功耗模式(12.5Hz)
+           0            1          1           0         高性能模式/低功耗模式(25Hz)
+           0            1          1           1         高性能模式/低功耗模式(50Hz)
+           1            0          0           0         高性能模式/低功耗模式(100Hz)
+           1            0          0           1         高性能模式/低功耗模式(200Hz)
+           1            0          1           0         高性能模式/低功耗模式(400Hz)
+           1            0          1           1         高性能模式/低功耗模式(800Hz)
+           1            1          0           0         高性能模式(1600Hz)
+   备注：传感器正常工作时，在 ODR 较小时，DLPF_EN 置 1 后会一定程度影响运动物体的加速度幅值。
+
+
+
+
+Shenzhen HuaXuanYang Electronics CO.,LTD                                                www.hxymos.com
+              HUAXUANYANG        HXY                                                          ICM-42688P
+              ELECTRONICS CO.,LTD                                                        六轴惯性传感器模块
+
+
+   5.38 ACC_RANGE(41h)
+
+        B7            B6           B5            B4           B3            B2           B1            B0
+         --           --            --           --            --           --           FS1          FS0
+
+
+                           全量程选择。默认值：10
+         FS[1：0]
+                           (00：+/- 2G； 01： +/- 4G； 10： +/- 8G； 11： +/- 16G)
+
+   5.39 GYR_CONF(42h)
+
+        B7           B6            B5            B4           B3            B2           B1            B0
+    GYR_FILTE    GYR_NOIS      GYR_BWP       GYR_BWP      GYR_ODR       GYR_ODR       GYR_ODR      GYR_ODR
+      R_PERF       E_PERF           1            0             3            2             1             0
+
+
+                           低功耗模式使能位，默认值：1。
+    GYR_FILTER_PERF
+                           (0: 低功耗模式使能，1：高性能/正常模式使能)
+                           噪声优化模式使能位，默认值：0
+     GYR_NOISE_PERF
+                           (0: 噪声优化模式不使能，1：噪声优化模式使能)
+      GYR_BWP[1：0]         带宽和滤波模式的选择位。默认值：10。
+      GYR_ODR[3：0]         数据率选择位。默认值：1001。
+   备 注 ： GYR_NOISE_PERF 在 切 换 配 置 时 需 要 先 将 加 速 度 计 和 陀 螺 仪 关 闭 再 进 行 配 置 ， 然 后 再 打 开 加 速 度 计 和 陀 螺 仪 ， 就 可 以 将
+   GYR_NOISE_PERF 配置成功。
+
+
+   GYR_BWP<1:0> 用来设置带宽和滤波模式的选择。下表通过设置 GYR_BWP<1:0>的值来设置带宽和滤波模式。
+                                                                             描述
+    GYR_BWP1       GYR_BWP0         符号
+                                                      高性能/正常模式                           低功耗模式
+                                                                                 不做平均（仅 ODR=25Hz、50Hz、
+         0             0        OSR4_AVG1         平均次数=3.2kHz/ODR；
+                                                                                      100Hz 时允许）
+                                                                                               ；
+                                                                                   连续 2 个数据平均一次（仅
+         0             1        OSR2_AVG2       平均次数=3.2kHz/(ODR*2)；
+                                                                                 ODR=25Hz、50Hz、100Hz 时允许）
+                                                                                                        ；
+                                                                                   连续 4 个数据平均一次（仅
+         1             0        NORM_AVG4       平均次数=3.2kHz/(ODR*4)；
+                                                                                 ODR=25Hz、50Hz、100Hz 时允许）
+                                                                                                        ；
+
+
+   GYR_ODR<3:0> 用来设置电源模式和数据率的选择。下表通过设置 GYR_ODR<3:0>的值来设置电源模式和数据率。
+    GYR_ODR3       GYR_ODR2     GYR_ODR1     GYR_ODR0      电源模式选择
+         0             1             1            0        高性能/正常/低功耗模式(25Hz)
+         0             1             1            1        高性能/正常/低功耗模式(50Hz)
+         1             0             0            0        高性能/正常/低功耗模式(100Hz)
+         1             0             0            1        高性能/正常模式(200Hz)
+         1             0             1            0        高性能/正常模式(400Hz)
+         1             0             1            1        高性能/正常模式(800Hz)
+         1             1             0            0        高性能/正常模式(1600Hz)
+         1             1             0            1        高性能/正常模式(3200Hz)
+   备注：如强制设置此表以外的配置则会自动转换为默认值 0xA9 并且 GYR_CONF_ERR=1。
+
+
+Shenzhen HuaXuanYang Electronics CO.,LTD                                                        www.hxymos.com
+                 HUAXUANYANG           HXY                                                           ICM-42688P
+                 ELECTRONICS CO.,LTD                                                            六轴惯性传感器模块
+
+
+   5.40 GYR_RANGE(43h)
+
+            B7          B6                 B5          B4           B3           B2              B1             B0
+            --           --                 --         --        OIS_RANGE      FS2              FS1            FS0
+
+
+                               OIS 量程选择。默认值：0
+       OIS_RANGE
+                               (0: ±250dps：1: ±2000dps)
+                               全量程选择。默认值：000
+            FS[2：0]
+                               (000：±2000dps；001：±1000dps；010：±500dps；011：±250dps： 100：±125dps)
+
+   5.41 FIFO_DOWNS (45h)
+
+            B7            B6                B5         B4            B3           B2              B1            B0
+    ACC_FIFO_F         ACC_FIFO       ACC_FIFO      ACC_FIFO     GYR_FIFO_F    GYR_FIFO        GYR_FIFO    GYR_FIFO
+      ILT_DATA          _Down2         _Down1        _Down0       ILT_DATA      _Down2          _Down1      _Down0
+
+
+                                   ACC_FIFO 滤波数据保存选择。默认值：1
+    ACC_FIFO_FILT_DATA
+                                   (0：ACC_FIFO 保存未滤波的数据；1：ACC_FIFO 保存滤波后的数据)
+    ACC_FIFO_Down[2：0]             ACC_FIFO 每 2FIFO_Downs 个数据存一次。
+                                   GYR_FIFO 滤波数据保存选择。默认值：1
+    GYR_FIFO_FILT_DATA
+                                   (0：GYR_FIFO 保存未滤波的数据；1：GYR_FIFO 保存滤波后的数据)
+    GYR_FIFO_Down[2：0]             GYR_FIFO 每 2FIFO_Downs 个数据存一次。
+
+   5.42 SOFT_RST(4Ah)
+
+           B7           B6                 B5          B4           B3          B2              B1              B0
+           SR7          SR6                SR5        SR4          SR3         SR2              SR1          SR0
+   备注：本寄存器写入 0xA5，复位整个电路，数据清零。
+
+
+   5.43 ACC_SELF_TEST(6Dh)
+
+      B7         B6       B5          B4              B3                  B2              B1               B0
+      --          --          --      --         SELF_TEST_AMP     SELF_TEST_SIGN         --          SELF_TEST_EN
+
+
+                                   加速度计自测试模式偏转振幅选择。默认值为 0。
+       SELF_TEST_AMP
+                                   (0: 偏转低振幅，1：偏转高振幅)
+                                   加速度计自测试模式激励方向选择。默认值为 0。
+      SELF_TEST_SIGN
+                                   (0: 负方向，1：正方向)
+                                   加速度计自测试模式使能位。默认值为 0。
+           SELF_TEST_EN
+                                   (0: 自测试模式禁止，1：自测试模式使能)
+   备注：自测试模式使能后等待 50ms 再读取数据，分别测试两个不同符号的值并相减来判断功能是否正常。建议在自检完成后复位设备，如果
+   不能复位，为了避免产生不必要的中断，需要保持如下顺序：禁用中断、修改中断参数、至少等待 50ms、启用所需的中断。
+
+
+
+
+Shenzhen HuaXuanYang Electronics CO.,LTD                                                                 www.hxymos.com
+                 HUAXUANYANG          HXY                                             ICM-42688P
+                 ELECTRONICS CO.,LTD                                             六轴惯性传感器模块
+
+
+          加速度计自测试模式配置步骤：
+          1． 使能加速度计 ACC_EN = 1，并延时 10ms;
+          2． 设置加速度计量程为±16g；
+          3． 设置 ACC_FILTER_PERF = 1，ACC_ODR = 1.6kHz，ACC_BWP[0:2] = NORM_AVG4（寄存器 0x40 配置
+                0xAC）
+                    ，并延时 2ms；
+          4． 使能自测试模式 SELF_TEST_EN = 1，选择激励方向以及偏转振幅，并延时 50ms；
+          5． 读取三轴数据，计算正负激励方向的加速度值的差值。
+
+   5.44 GYR_SELF_TEST(6Fh)
+
+          B7              B6           B5       B4         B3        B2         B1           B0
+                                                                                         GYR_ST_ME
+           --             --           --       --         --         --        --
+                                                                                          MS_START
+
+
+                                    陀螺仪自测试模式使能位。默认值为 0。
+    GYR_ST_MEMS_START
+                                    (0: 自测试模式禁止，1：自测试模式使能)
+   备注：自测试模式使能后等待 50ms 再读取数据，通过判断 GYR_MEMS_OK 来确定陀螺仪自测试功能是否正常。建议在自检完成后复位设备，
+   如果不能复位，为了避免产生不必要的中断，需要保持如下顺序：禁用中断、修改中断参数、至少等待 50ms、启用所需的中断。
+          陀螺仪自测试模式配置步骤：
+          1． 使能陀螺仪 GYR_EN = 1，并延时 250ms;
+          2． 设置陀螺仪量程，通常设置为±2000dps；
+          3． 设置陀螺仪的 ODR，通常设置 42h 寄存器为 0x8C，并延时 2ms；
+          4． 使能自测试模式 GYR_ST_MEMS_START = 1，并延时 50ms；
+          5． 通过判断 GYR_MEMS_OK 来确定陀螺仪自测试功能是否正常。
+
+   5.45 PWR_CTRL (7Dh)
+
+          B7              B6           B5       B4         B3         B2         B1           B0
+           --             --           --       --      TEMP_EN    ACC_EN     GYR_EN          --
+
+
+                                    温度传感器使能位。默认值为 0。
+                TEMP_EN
+                                    (0: 温度传感器禁止，1：温度传感器使能)
+                                    加速度计使能位。默认值为 0。
+                ACC_EN
+                                    (0: 加速度计禁止，1：加速度计使能)
+                                    陀螺仪使能位。默认值为 0。
+                GYR_EN
+                                    (0: 陀螺仪禁止，1：陀螺仪使能)
+   备注：0x7D 要先写入 0x0E 并延时 10ms 之后再进行其他配置。另外，在配置完寄存器后建议延时 1ms 再进行寄存器读取操作。
+
+
+
+   5.46    SEG_SEL(7Fh)
+
+                B7             B6      B5       B4         B3         B2         B1           B0
+     SEL_SEG_ADR               --       --   SEG_ADR4   SEG_ADR3   SEG_ADR2   SEG_ADR1    SEG_ADR0
+
+
+
+
+Shenzhen HuaXuanYang Electronics CO.,LTD                                                 www.hxymos.com
+              HUAXUANYANG             HXY                                                      ICM-42688P
+              ELECTRONICS CO.,LTD                                                     六轴惯性传感器模块
+
+
+        SEL_SEG_ADR                 Seg 地址设置位。默认值：0
+                                    (0: Seg 禁止；1：Seg 使能)
+        SEG_ADR[4：0]                Seg 地址设置。默认值 00000
+   备注：通过本寄存器可以选择不同的寄存器段，进而对特殊寄存器进行配置。完成特殊寄存器配置后需退出 Seg 地址（0x7F 配置 0x00）再对
+   其他通用寄存器进行配置。
+
+
+   6    特殊寄存器 1 描述
+
+   6.1 I2C_UN(6Fh)
+
+        B7              B6                 B5        B4         B3            B2      B1              B0
+        --                  --             --        --         --        I2C_UN          --          --
+
+
+                                    I²C 通讯功能禁止位。默认值：0
+              I2C_UN                0：I²C 通信使能；
+                                    1：I²C 通信关闭，配置 4Ah(SOFT_RST)为 66h 后，再配置本寄存器才能生效
+
+   7    特殊寄存器 2 描述
+
+   7.1 DIG_CTRL (30h)
+
+        B7             B6             B5        B4         B3            B2          B1              B0
+        --             --             --        --         --        OCSB_PU_EN    SDO_PU        CS_PU_EN
+
+
+                                 OCSB 引脚上拉电阻控制位。默认值：0
+       OCSB_PU_EN
+                                 0：上拉电阻使能；1：禁止上拉电阻；
+                                 SDO 内部上拉电阻控制位，在 CS=1 时有效。默认值：0
+         SDO_PU                  0：上拉电阻使能；1：禁止上拉电阻；
+                                 禁止上拉电阻后，该引脚为浮空输入模式，请保证引脚外围电平确定，否则 I²C 通讯会异常。
+                                 CS 引脚上拉电阻控制位。默认值：0
+        CS_PU_EN
+                                 0：上拉电阻使能；1：禁止上拉电阻；
+   备注：配置本寄存器需严格进行按位操作。
+
+
+
+   8    特殊寄存器 3 描述
+
+   8.1 WRIST_SRC(3Eh)
+
+        B7              B6                 B5        B4         B3            B2      B1              B0
+                                                                        WRIST_DO   WRIST_ON        WRIST_FL
+         --                 --             --   WRIST_EN        --
+                                                                         WN_FLAG     _FLAG           AG
+
+
+
+
+Shenzhen HuaXuanYang Electronics CO.,LTD                                                         www.hxymos.com
+             HUAXUANYANG         HXY                                                   ICM-42688P
+             ELECTRONICS CO.,LTD                                                 六轴惯性传感器模块
+
+
+                            手腕检测使能位。默认值：0
+         WRIST_EN
+                            (0：手腕检测禁止；1：手腕检测使能)
+                            是否触发放下动作。默认值：0
+    WRIST_DOWN_FLAG
+                            (0：未检测到手腕放下动作；1：检测到手腕放下动作)
+                            是否触发抬手动作。默认值：0
+      WRIST_ON_FLAG
+                            (0：未检测到手腕抬起动作；1：检测到手腕抬起动作)
+                            检测手腕动作。默认值：0
+        WRIST_FLAG
+                            (0：未处于抬手状态；1：已处于抬手状态，直到离开该状态，该值清零)
+
+
+
+   8.2 CLICK_COEFF1(40h)
+
+        B7           B6           B5          B4          B3         B2          B1            B0
+     PRE_QT1     PRE_QT0       PRE_NTH2    PRE_NTH1    PRE_NTH0    SCTH1_2     SCTH1_1      SCTH1_0
+
+
+                          敲击前数据稳定时长设置。默认值：01
+                          对应的时长为：0ms、20ms、40ms、80ms
+                          00：ODR 计数阈值为 4、8、16（推荐 200Hz 配置）；
+      PRE_QT[1：0]         01：ODR 计数阈值为 8、16、32（推荐 400Hz 配置）；
+                          10：ODR 计数阈值为 16、32、64（推荐 400Hz 配置）；
+                          11：ODR 计数阈值为 32、64、128（推荐 400Hz 配置）
+                                                            ；
+                          详见 41h 寄存器 B7B6 配置。
+                          敲击前数据稳定阈值设置。默认值：010
+                          000：2LSB；    001：4LSB；      010：6LSB；    011：8LSB；
+     PRE_NTH[2：0]
+                          100：10LSB； 101：14LSB； 110：18LSB；         111：24LSB；
+                          该数据相比较的等效条件：±4g 量程、12bits 数据、相当于 1lsb=32mg
+                          敲击时识别有效时的数据阈值 1 设置。默认值：010
+                          000：2LSB；    001：4 LSB；     010：8 LSB；   011：12LSB；
+       SCTH1[2：0]
+                          100：16 LSB； 101：20 LSB；     110：24LSB；   111：30 LSB；
+                          该数据相比较的等效条件：±4g 量程、12bits 数据、相当于 1lsb=32mg；
+
+
+
+   8.3 CLICK_COEFF2(41h)
+
+        B7           B6           B5          B4          B3          B2          B1           B0
+      QT_MT1      QT_MT0       SCTH2_2     SCTH2_1      SCTH2_0    SCTH1T_2    SCTH1T_1    SCTH1T_0
+
+
+
+
+Shenzhen HuaXuanYang Electronics CO.,LTD                                                  www.hxymos.com
+                HUAXUANYANG     HXY                                                     ICM-42688P
+                ELECTRONICS CO.,LTD                                                六轴惯性传感器模块
+
+
+                               敲击前必须保证数据平稳的最小时间设置，需要大于该阈值。默认值：10
+                               00：ODR 计数阈值设置为 0（ODR=任意值）；
+                               01：ODR 计数阈值设置为 4（ODR=200Hz）
+                                                         ；
+          QT_MT[1：0]
+                               10：ODR 计数阈值设置为 8（ODR=200Hz）
+                                                         ；
+                               11：ODR 计数阈值设置为 16（ODR=200Hz）；
+                               若 ODR=400Hz，对应的计数值*2，这样才可以保证计数对应时长不变，以此类推；
+                               敲击时识别有效时的数据阈值 2 设置。默认值：011
+                               000：4LSB；    001：8LSB； 010：16LSB；          011：24LSB；
+          SCTH2[2：0]           100：32LSB； 101：40 LSB； 110：48LSB；          111：56LSB；
+                               该数据相比较的等效条件：±4g 量程、12bits 数据、相当于 1lsb=32mg；
+                               敲击过程中，需要数据超过该阈值至少 1 次；
+                               敲击过程中数据大于 SCTH1 阈值的时间上限设置。默认值：010
+                               000：2；     001：4；     010：8；     011：12；
+          SCTH1T[2：0]
+                               100：16； 101：20；       110：24； 111：28；
+                               1LSB=1/ODR，此阈值保证敲击过程数据脉冲的宽度上限；
+
+
+   8.4 CLICK_COEFF3(42h)
+
+        B7            B6          B5          B4          B3          B2           B1           B0
+         --               --      --        SCNTT1      SCNTT0       SCST2        SCST1       SCST0
+
+
+                               满足敲击事件前数据平静条件后，允许数据大于数据噪声阈值的最大时长。默认值：00
+          SCNTT[1：0]
+                               00：5； 01：10；        10：15； 11：20；1LSB=1/ODR。
+                               敲击事件后所允许的最大恢复平静时长设置。默认值：100
+              SCST[2：0]        000：5；     001：10；     010：20；    011：40；
+                               100：80； 101：120； 110：160；         111：200；1LSB=1/ODR。
+
+   8.5 CLICK_COEFF4(43h)
+
+        B7            B6          B5          B4          B3          B2           B1           B0
+      SCMT3          SCMT2      SCMT1       SCMT0       MCNTH3      MCNTH1       MCNTH1      MCNTH0
+
+
+                               单击检测的最大允许时长。默认值：0101
+              SCMT[3：0]        实际时长=（设置值*64+20）/ODR；
+                               例如：ODR=200，设置为：0101，相当于是单击检测最大允许时长为 1.7s；
+                               多击检测最大检测次数设置。默认值：0111
+          MCNTH[3：0]
+                               例如：设置最大检测次数为 3 次，此时检测到三击后会立即输出三击状态以及中断；
+
+
+   8.6 PEDO_COEFF1(46h)
+
+        B7            B6          B5          B4          B3          B2           B1           B0
+     PEDO_HP       PEDO_HP     PEDO_DLP    PEDO_DLP    PEDO_DLP    PEDO_DLP     PEDO_DLP    PEDO_DLP
+       CF1            CF0        F1_1        F1_0        F2_1        F2_0         F3_1         F3_0
+
+
+
+
+Shenzhen HuaXuanYang Electronics CO.,LTD                                                   www.hxymos.com
+                HUAXUANYANG         HXY                                                   ICM-42688P
+                ELECTRONICS CO.,LTD                                                  六轴惯性传感器模块
+
+
+       PEDO_HPCF [1：0]             计步模块高通滤波器设置。默认值：01
+      PEDO_DLPF1 [1：0]             计步模块低通 1 设置。默认值：00
+      PEDO_DLPF2 [1：0]             计步模块低通 2 设置。默认值：11
+      PEDO_DLPF3 [1：0]             计步模块低通 3 设置。默认值：11
+   备注：以上默认值为测试的最优值，如需修改请联系我司。
+
+
+   8.7 PEDO_COEFF2(47h)
+
+         B7            B6             B5         B4          B3         B2           B1             B0
+         --                --      PSen_Th2   PSen_Th1    PSen_Th0       --       STEP_BN1      STEP_BN0
+
+
+                                   计步灵敏度控制位。默认：100
+         PSen_Th[2：0]              设置值越小，所需触发计步的运动幅度越小；
+                                   设置值越大，所需触发计步的运动幅度越大；
+                                   最优计步轴时间阈值设置（配合 AXC_TH 使用）。默认值：11
+         STEP_BN[1：0]
+                                   设置值越小，数据源切换难度越小；
+
+   8.8 PEDO_COEFF3(48h)
+
+         B7            B6             B5         B4          B3         B2           B1             B0
+     AXC_TH1        AXC_TH0        ST_Step2    ST_Step1   ST_Step0   Pedo_Diff2   Pedo_Diff1     Pedo_Diff0
+
+
+                                   最佳数据源切换阈值设置位。默认值：10
+             AXC_TH[1：0]           设置值越小，数据源之间相互切换越容易；
+                                   设置值越大，数据源之间相互切换越困难；
+                                   起始步数设置。默认值：101
+             ST_Step[2：0]          设置值越小，起始计步值阈值越小；
+                                   设置值越大，起始计步值阈值越大；
+                                   规律计步等级设置位。默认值：100
+         Pedo_Diff[2：0]            设置值越小，对运动的规律性的要求越高；
+                                   设置值越大，对运动的规律性的要求越低；
+
+
+   8.9 PEDO_COEFF4(49h)
+
+       B7             B6             B5          B4         B3          B2           B1             B0
+        --            --          STEP_BL2    STEP_BL1    STEP_BL0   STEP_UL2     STEP_UL1       STEP_UL0
+
+
+                                单步阈值下限控制位。默认值：100
+       STEP_BL[2:0]
+                                设置值越小，能检测到越快的计步动作；
+                                单步阈值上限控制位。默认值：011
+       STEP_UL[2:0]
+                                设置值越大，能检测到越慢的计步动作；
+
+
+
+
+Shenzhen HuaXuanYang Electronics CO.,LTD                                                       www.hxymos.com
+              HUAXUANYANG         HXY                                                   ICM-42688P
+              ELECTRONICS CO.,LTD                                                 六轴惯性传感器模块
+
+   8.10 PEDO_COEFF5(4Ah)
+
+       B7              B6          B5           B4           B3         B2         B1           B0
+        --       ZAxis_En       YAxis_En     XAxis_En     PN_TH1_3   PN_TH1_2   PN_TH1_1     PN_TH1_0
+
+                             ACC_Z 轴参与计步位禁止位。默认值：0
+         ZAxis_En
+                             0：ACC_Z 轴参与计步；1：ACC_Z 轴不参与计步；
+                             ACC_Y 轴参与计步禁止位。默认值：0
+         YAxis_En
+                             0：ACC_Y 轴参与计步；1：ACC_Y 轴不参与计步；
+                             ACC_X 轴参与计步禁止位。默认值：0
+         XAxis_En
+                             0：ACC_X 轴参与计步；1：ACC_X 轴不参与计步；
+       PN_TH1[3:0]           计步噪声阈值 1。默认值：0100
+
+   8.11 PEDO_COEFF6(4Bh)
+
+        B7             B6          B5           B4           B3         B2         B1           B0
+     NC_TH2       NC_TH1        NC_TH0       PN_TH2_4     PN_TH2_3   PN_TH2_2   PN_TH2_1     PN_TH2_0
+
+
+       NC_TH[2：0]            噪声计数阈值设置。默认值：100
+       PN_TH2[4：0]           计步噪声阈值 2。默认值：01100
+
+   8.12 WRIST_CTRL1(51h)
+
+        B7              B6          B5           B4          B3         B2        B1            B0
+         --         A_Scale 2    A_Scale 1    A_Scale 0      --       P_Pos2    P_Pos1        P_Pos0
+
+
+                             允许角度误差设置位。默认值：011
+       A_Scale [2:0]         实际允许角度误差=（设定值+1）*4；
+                             例如：设定值=3，允许的角度误差=16LSB（1G=64LSB）；
+                             贴片位置设置。默认值：000
+
+
+
+
+         P_Pos[2:0]
+
+
+
+
+Shenzhen HuaXuanYang Electronics CO.,LTD                                                   www.hxymos.com
+               HUAXUANYANG        HXY                                                  ICM-42688P
+               ELECTRONICS CO.,LTD                                                六轴惯性传感器模块
+
+
+   8.13 WRIST_CTRL2(52h)
+
+        B7               B6        B5         B4          B3          B2          B1           B0
+        --           T_Angle6   T_Angle5    T_Angle4    T_Angle3    T_Angle2   T_Angle1     T_Angle0
+
+
+                                抬手目标角度值设置位。默认值：0001111
+                                设定值为补码值，补码转原码后乘 2 为设定角度对应的加速度值；
+                                例如：设定值 000 0001，对应加速度值 2
+             T_Angle[6:0]       设定值 000 0101，对应加速度值 10
+                                设定值 111 1111，对应加速度值-2
+                                设定值 111 1011，对应加速度值-10
+                                其中，静止时加速度值最大值 64（约 90°），加速度值最小值-64（约-90°）；
+
+   8.14 WRIST_CTRL3(53h)
+
+        B7               B6        B5          B4         B3          B2          B1           B0
+       Sen1            Sen0      TT_TH2     TT_TH1      TT_TH0      FT_TH2     FT_TH1        FT_TH0
+
+
+                                抬手识别灵敏度设置位。默认值：10
+              Sen[1：0]          实际灵敏度值=（设定值+2）*4；
+                                例如：设定值=2，实际灵敏度值=16LSB（1g=64LSB）；
+                                抬手状态触发所需持续时间的设置位。默认值：010
+                                设置值越大，需要触发抬手状态的时间越长；
+             TT_TH[2：0]
+                                实际所需持续时间=（2^设定值）*0.1s；
+                                例如：设定值=2，实际所需持续时间=0.4s；
+                                离开抬手状态触发所需持续时间的设置位。默认值：011
+                                设置值越大，需要出发离开抬手状态的时间越长；
+             FT_TH[2：0]         实际所需持续时间=（2^设定值）*0.1s；
+                                例如：设定值=3，实际所需持续时间=0.8s；
+                                100：1.6s；   101：3.2s；   110：6.4s；    111：12.8s；
+
+
+
+
+Shenzhen HuaXuanYang Electronics CO.,LTD                                                  www.hxymos.com
+            HUAXUANYANG              HXY                                                                                                              ICM-42688P
+            ELECTRONICS CO.,LTD                                                                                                                      六轴惯性传感器模块
+
+
+   典型应用电路图
+                                                                            SDA              SCL                         VDD
+                                         VDDIO
+
+                                                        R2
+
+
+
+
+                                                        R1
+
+
+
+                               SDO                                           14               13         12       11
+                                                             1
+                                                             SDO             SDX              SCX          CSB   OSDO
+
+
+
+
+                                                             2                                                    10
+                                                         ASDX                                                    OCSB
+
+
+
+                                                                                          俯视图
+                                                             3                                                    9                 INT2
+                                                         ASCX                                                     INT2
+
+
+
+
+                                                             4               5                6            7      8
+                                                             INT1           VDDIO            GNDIO       GND      VDD
+
+
+
+                                                                                                                               C2
+
+
+
+
+                                                                                    C1
+
+                                                        INT1
+
+
+
+                                                                         IIC通信方式连接原理图
+
+    注意：SDO（Pin1）脚接地情况下，会引起上拉电阻漏电。推荐悬空或接高电平，也可需要通过IIC配置关闭内部上拉功能。
+
+
+                                 VDDIO     SDO/MISO SDI/MOSI                             SCK         CS                   VDD
+
+
+
+
+                                                                                                                                            OIS 接口
+
+                                                  1                  14               13             12          11                        OIS MISO
+                                                 SDO                 SDX              SCX            CSB         OSDO
+
+                    OIS 接口
+
+                    OIS MOSI                      2                                                              10                        OIS CSB
+                                                 ASDX                                                            OCSB
+
+
+
+                                                                                    俯视图
+
+                    OIS SCK                       3                                                               9                      INT2
+                                                 ASCX                                                            INT2
+
+
+
+
+                                                  4                  5                6              7            8
+                                                 INT1               VDDIO            GNDIO           GND         VDD
+
+
+
+                                                                                                                                    C2
+
+
+
+
+                                                                            C1
+
+                                             INT1
+
+
+                                           4线SPI通信方式+4线SPI的OIS接口连接原理图
+
+
+
+
+Shenzhen HuaXuanYang Electronics CO.,LTD                                                                                                                www.hxymos.com
+            HUAXUANYANG         HXY                                                                     ICM-42688P
+            ELECTRONICS CO.,LTD                                                                      六轴惯性传感器模块
+
+
+                                VDDIO            SDA           SCK    CS           VDD
+
+
+
+
+                                                                                              OIS 接口
+
+                                           1      14           13     12    11
+                                          SDO     SDX          SCX    CSB   OSDO
+
+                     OIS 接口
+
+                     OIS MOSI              2                                10                OIS CSB
+                                          ASDX                              OCSB
+
+
+
+                                                              俯视图
+
+                     OIS SCK               3                                 9                INT2
+                                          ASCX                              INT2
+
+
+
+
+                                           4      5            6      7      8
+                                          INT1   VDDIO        GNDIO   GND   VDD
+
+
+
+                                                                                         C2
+
+
+
+
+                                                         C1
+
+                                         INT1
+
+
+
+                                        3线SPI通信方式+3线SPI的OIS接口连接原理图
+
+
+
+
+    注意：C1，C2 的推荐值为 100nF，R1，R2 的推荐值为 4.7KΩ
+
+   电 路 的 核 心 部 分 以 VDD 供 电 ， 而 IO 接 口 部 分 以 VDDIO 供 电 。 为 了 保 证 正 常 功 能 ， 所 有 的 电 源 上 电 时 间 相 同 。
+   CS/SDO/SCL/SDA/INT1/INT2管脚的最大电压不超过VDDIO+0.3V。
+
+
+
+
+Shenzhen HuaXuanYang Electronics CO.,LTD                                                                  www.hxymos.com
+            HUAXUANYANG        HXY                ICM-42688P
+            ELECTRONICS CO.,LTD                 六轴惯性传感器模块
+
+   封装外形图
+    LGA-14-2.5x3x1.00单位：mm
+
+
+
+
+                注意！
+              静电敏感器件
+            操作 ESDS 产品应采取
+                防护措施
+
+
+
+
+   MOS电路操作注意事项：
+       静电在很多地方都会产生，采取下面的预防措施，可以有效防止 MOS 电路由于受静电放电影响而引起的损坏：
+       操作人员要通过防静电腕带接地。
+       设备外壳必须接地。
+       装配过程中使用的工具必须接地。
+       必须采用导体包装或抗静电材料包装或运输。
+
+
+
+
+Shenzhen HuaXuanYang Electronics CO.,LTD            www.hxymos.com
+                 HUAXUANYANG                 HXY                                                                            ICM-42688P
+                 ELECTRONICS CO.,LTD                                                                                    六轴惯性传感器模块
+
+
+
+                                                                       Attention
+
+    ■ Any and all HUA XUAN YANG ELECTRONICS products described or contained herein do not have specifications that can handle
+    applications that require extremely high levels of reliability, such as life-support systems, aircraft's control systems, or other applications
+    whose failure can be reasonably expected to result in serious physical and/or material damage. Consult with your HUA XUAN YANG
+    ELECTRONICS representative nearest you before using any HUA XUAN YANG ELECTRONICS products described or contained herein
+    in such applications.
+
+
+    ■ HUA XUAN YANG ELECTRONICS assumes no responsibility for equipment failures that result from using products at values that
+    exceed, even momentarily, rated values (such as maximum ratings, operating condition ranges, or other parameters) listed in products
+    specifications of any and all HUA XUAN YANG ELECTRONICS products described or contained herein.
+
+
+    ■ Specifications of any and all HUA XUAN YANG ELECTRONICS products described or contained herein stipulate the performance,
+    characteristics, and functions of the described products in the independent state, and are not guarantees of the performance,
+    characteristics, and functions of the described products as mounted in the customer’s products or equipment. To verify symptoms and
+    states that cannot be evaluated in an independent device, the customer should always evaluate and test devices mounted in the
+    customer’s products or equipment.
+
+
+    ■ HUA XUAN YANG ELECTRONICS CO.,LTD. strives to supply high-quality high-reliability products. However, any and all semiconductor
+    products fail with some probability. It is possible that these probabilistic failures could
+    give rise to accidents or events that could endanger human lives, that could give rise to smoke or fire, or that could cause damage to other
+    property. When designing equipment, adopt safety measures so that these kinds of accidents or events cannot occur. Such measures
+    include but are not limited to protective circuits and error prevention circuits for safe design, redundant design, and structural design.
+
+
+    ■ In the event that any or all HUA XUAN YANG ELECTRONICS products(including technical data, services) described or contained herein
+    are controlled under any of applicable local export control laws and regulations, such products must not be exported without obtaining the
+    export license from the authorities concerned in accordance with the above law.
+
+
+    ■ No part of this publication may be reproduced or transmitted in any form or by any means, electronic or mechanical, including
+    photocopying and recording, or any information storage or retrieval system, or otherwise, without the prior written permission of HUA
+    XUAN YANG ELECTRONICS CO.,LTD.
+
+
+    ■ Information (including circuit diagrams and circuit parameters) herein is for example only ; it is not guaranteed for volume production.
+    HUA XUAN YANG ELECTRONICS believes information herein is accurate and reliable, but no guarantees are made or implied regarding
+    its use or any infringements of intellectual property rights or other rights of third parties.
+
+
+    ■ Any and all information described or contained herein are subject to change without notice due to product/technology improvement, etc.
+    When designing equipment, refer to the "Delivery Specification" for the HUA XUAN YANG ELECTRONICS product that you intend to use.
+
+
+
+
+Shenzhen HuaXuanYang Electronics CO.,LTD                                                                                         www.hxymos.com
+

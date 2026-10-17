@@ -1,0 +1,43 @@
+Open On-Chip Debugger 0.12.0
+Licensed under GNU GPL v2
+For bug reports, read
+	http://openocd.org/doc/doxygen/bugs.html
+Info : The selected transport took over low-level target control. The results might differ compared to plain JTAG/SWD
+Info : clock speed 1000 kHz
+Info : STLINK V2J46S7 (API v2) VID:PID 0483:3748
+Info : Target voltage: 3.232490
+Info : [stm32h7x.cpu0] Cortex-M7 r1p1 processor detected
+Info : [stm32h7x.cpu0] target has 8 breakpoints, 4 watchpoints
+Info : starting gdb server for stm32h7x.cpu0 on 3333
+Info : Listening on port 3333 for gdb connections
+[stm32h7x.cpu0] halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x0802c390 psp: 0x2400cfd8
+### SENS5 BEGIN ###
+进入时: 0x40=AC 0x41=03 0x42=A9 0x43=00 0x45=88 0x7D=0E 0x0B=07 0x08=80 0x6D=00 0x0A=00
+
+== ① 正常配置 vs ERR 配置：|a| 与自测 Δ 对比 ==
+  正常 0xAC(BWP010,ERR=0)      回读AC ERR=0  基线|a|= 1176.9  N|a|=23760.5  P|a|=21855.5
+     自测 Δ = (   8690,  -36221,  -26194)  counts
+     F=Δ/(2·基线|a|) = (3.692, -15.388, -11.128) g   ← 单位是 g，与灵敏度无关
+     Δ/基线|a| 比 = (7.38, -30.78, -22.26)   ← 若配置只是去掉零偏"，这三个数不变"
+  ERR 0xCC(BWP100,ERR=1)     回读CC ERR=1  基线|a|= 2300.4  N|a|= 2302.3  P|a|= 2302.3
+     自测 Δ = (      0,       0,       0)  counts
+     F=Δ/(2·基线|a|) = (0.000, 0.000, 0.000) g   ← 单位是 g，与灵敏度无关
+     Δ/基线|a| 比 = (0.00, 0.00, 0.00)   ← 若配置只是去掉零偏"，这三个数不变"
+
+== ② 饱和扫描：正常配置下自测把输出打到饱和，看最大码值 ==
+  0x41=00(± 2g)  基线|a|=  9234.6 自测正激励各轴最大码=( 32767, 32768, 32768)  理论满量程码= 16384
+  0x41=01(± 4g)  基线|a|=  4653.1 自测正激励各轴最大码=( 17547, 32768, 32768)  理论满量程码=  8192
+  0x41=02(± 8g)  基线|a|=  2306.6 自测正激励各轴最大码=(  8704, 32768, 22773)  理论满量程码=  4096
+  0x41=03(±16g)  基线|a|=  1174.0 自测正激励各轴最大码=(  4373, 18121, 11457)  理论满量程码=  2048
+
+== ③ ERR 配置下的量程阶梯（看 ERR 时是否还守 8:4:2:1）==
+  0x41=00  |a|=  2302.8  手册应 16384 ⇒ ratio=0.1406
+  0x41=01  |a|=  2300.3  手册应  8192 ⇒ ratio=0.2808
+  0x41=02  |a|=  2299.8  手册应  4096 ⇒ ratio=0.5615
+  0x41=03  |a|=  2300.0  手册应  2048 ⇒ ratio=1.1230
+
+恢复后: 0x40=AC 0x41=03 0x42=A9 0x43=00 0x45=88 0x7D=0E 0x0B=07 0x08=80 0x6D=00 0x0A=07
+恢复后 mean=(-38.8, 50.0, 1177.4) sd=(7.9, 39.3, 7.6) |a|=1179.7 sd|a|=7.8
+### SENS5 END ###
+shutdown command invoked

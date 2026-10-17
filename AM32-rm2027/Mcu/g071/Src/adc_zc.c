@@ -1,0 +1,195 @@
+/*
+ * adc_zc.c —— 【环形缓冲 + 变号触发 + 回看单调】版过零检测器（实现）
+ * 判据与参数依据见 adc_zc.h 顶部说明。
+ */
+#include "adc_zc.h"
+
+#if ADC_ZC_BUF_LEN < ADC_ZC_MONO_N
+#error "ADC_ZC_BUF_LEN 必须 >= ADC_ZC_MONO_N"
+#endif
+#if ADC_ZC_MONO_N < 2
+#error "ADC_ZC_MONO_N 至少要是 2（否则没有相邻两点可比）"
+#endif
+
+/* ---- 环形缓冲区 ----
+ * 写指针一直往前推，读的时候按"往回数 back 个"取值。
+ * 只存 int16：本板悬空相 − V0 的摆幅约 ±1200 码，int16 绰绰有余。 */
+static int16_t zc_buf[ADC_ZC_BUF_LEN];
+static uint8_t zc_head  = 0;   /* 下一个要写入的位置 */
+static uint8_t zc_count = 0;   /* 已写入的有效样本数（封顶到 BUF_LEN） */
+
+volatile uint32_t adc_zc_n_rise   = 0;
+volatile uint32_t adc_zc_n_fall   = 0;
+volatile uint32_t adc_zc_n_reject = 0;
+volatile uint16_t adc_zc_ev_cnt[ADC_ZC_EV_N]  = { 0 };
+volatile uint8_t  adc_zc_ev_kind[ADC_ZC_EV_N] = { 0 };
+volatile uint8_t  adc_zc_ev_idx      = 0;
+
+void adc_zc_reset(void)
+{
+    for (uint8_t i = 0; i < ADC_ZC_BUF_LEN; i++) {
+        zc_buf[i] = 0;
+    }
+    zc_head  = 0;
+    zc_count = 0;
+}
+
+/* 取"往回数 back 个"的样本：back=0 是最新那个，back=1 是前一个 …… */
+static int16_t zc_at(uint8_t back)
+{
+    uint8_t i = (uint8_t)((zc_head + ADC_ZC_BUF_LEN - 1u - back) % ADC_ZC_BUF_LEN);
+    return zc_buf[i];
+}
+
+/* ★★ 2026-10-11 诊断：记录【被拒收现场】★★
+ *   实测：闭环期 77% 的换相步 thiszctime=0 ⇒ 过零被拒收（认到 2496 次、
+ *   拒收 6523 次）。要修判据就必须先看"被拒时的波形到底长什么样"：
+ *     · 若拒收点集中在 CNT 很小处（换相刚过）⇒ 那是换相跳变，判据没错；
+ *     · 若拒收点散布在真过零附近、且样本是"基本单调但不严格"⇒ 就是过零
+ *       附近的噪声破坏了严格单调 ⇒ 该给单调判据加容差。
+ *   存最近 RJ_N 次拒收：每次 8 个样本（b=0 最新，单位 ADC 码）+ 原因码 + CNT。 */
+#define ADC_ZC_RJ_N 32
+volatile int16_t  adc_zc_rj_snap[ADC_ZC_RJ_N][8] = {{0}};
+volatile uint8_t  adc_zc_rj_code[ADC_ZC_RJ_N] = {0};
+volatile uint16_t adc_zc_rj_cnt[ADC_ZC_RJ_N] = {0};
+volatile uint16_t adc_zc_rj_idx   = 0;
+volatile uint32_t adc_zc_rj_total = 0;
+
+static void zc_snap_reject(uint8_t code, uint16_t cnt)
+{
+    uint16_t i = adc_zc_rj_idx;
+    for (uint8_t b = 0; b < 8u; b++) {
+        adc_zc_rj_snap[i][b] = zc_at(b);
+    }
+    adc_zc_rj_code[i]  = code;
+    adc_zc_rj_cnt[i]   = cnt;
+    adc_zc_rj_idx   = (uint16_t)((i + 1u) & (ADC_ZC_RJ_N - 1u));
+    adc_zc_rj_total++;
+}
+
+uint8_t adc_zc_push(int16_t e, uint16_t t_cnt)
+{
+    /* ---- 入队 ---- */
+    zc_buf[zc_head] = e;
+    zc_head = (uint8_t)((zc_head + 1u) % ADC_ZC_BUF_LEN);
+    if (zc_count < ADC_ZC_BUF_LEN) {
+        zc_count++;
+    }
+    if (zc_count < ADC_ZC_MONO_N) {
+        return 0;   /* 历史还不够长，单调判不了（上电头 MONO_N-1 帧的盲区） */
+    }
+
+    int16_t now  = zc_at(0);
+    int16_t prev = zc_at(1);
+
+    /* ---- 第 1 关：变号 ----
+     * 只认"跨过 0"这一件事，方向由它决定。
+     * 用 <=0 / >=0 把"恰好等于 0"归到前一侧，避免 0 值被两边都算一遍。 */
+    uint8_t rise = (prev <= 0 && now > 0);
+    uint8_t fall = (prev >= 0 && now < 0);
+    if (!rise && !fall) {
+        return 0;
+    }
+
+    /* ---- 第 2 关：斜率上限（默认关）----
+     * MONO_N>=4 时不需要；K 调小到 2~3 时靠它才压得住换相跳变。 */
+#if ADC_ZC_SLOPE_CAP > 0
+    int16_t dd = (int16_t)(now - prev);
+    if (dd < 0) {
+        dd = (int16_t)(-dd);
+    }
+    if (dd > (int16_t)ADC_ZC_SLOPE_CAP) {
+        adc_zc_n_reject++;
+        zc_snap_reject(3u, t_cnt);
+        return 0;
+    }
+#endif
+
+    /* ---- 第 3 关：回看 MONO_N 个样本必须严格单调 ----
+     * 由旧到新逐对比较：b 从 MONO_N-1 数到 1，比 (b) 与 (b-1)。
+     * 覆盖的就是"最新 MONO_N 个样本"之间的全部相邻对。
+     * 换相跳变让某一对反向（甚至只是相等）⇒ 整关不过 ⇒ 不会被误认成过零。 */
+    for (uint8_t b = (uint8_t)(ADC_ZC_MONO_N - 1u); b > 0u; b--) {
+        int16_t older = zc_at(b);
+        int16_t newer = zc_at((uint8_t)(b - 1u));
+        if (rise && !(older < newer)) {
+            adc_zc_n_reject++;
+            zc_snap_reject(1u, t_cnt);
+            return 0;
+        }
+        if (fall && !(older > newer)) {
+            adc_zc_n_reject++;
+            zc_snap_reject(2u, t_cnt);
+            return 0;
+        }
+    }
+
+    /* ---- 过零成立 ----
+     * ev_cnt = 本次过零时的 INTERVAL_TIMER 读数。该定时器每次换相都被清零
+     * ⇒ 这个值恒等于【换相 → 过零】的延迟（拍）。语义与实测值见 adc_zc.h。 */
+    adc_zc_ev_cnt[adc_zc_ev_idx]  = t_cnt;
+    adc_zc_ev_kind[adc_zc_ev_idx] = rise ? ADC_ZC_RISE : ADC_ZC_FALL;
+    adc_zc_ev_idx = (uint8_t)((adc_zc_ev_idx + 1u) & (ADC_ZC_EV_N - 1u));
+
+    if (rise) {
+        adc_zc_n_rise++;
+        return ADC_ZC_RISE;
+    }
+    adc_zc_n_fall++;
+    return ADC_ZC_FALL;
+}
+
+/* ================= 闭环波形捕获（多窗口版） =================
+ * 用户要求"窗口采样，多采几个" ⇒ 连续采 ZCW_WIN(4) 个窗口，
+ * 每样本压到 4 字节（delta i16 + step u8 + zc u8）才装得下。
+ *
+ * 时序：交棒时 arm() ⇒ 进入"滚动"状态（只在第 0 窗口内环形滚动，记录触发前 10.7ms）
+ *       触发（ci 涨过阈值）⇒ 记下 trig_idx、写指针跳到第 1 窗口
+ *       ⇒ 之后线性填满第 1~3 窗口 ⇒ 冻结
+ * ⇒ 冻结后 = 【触发前 10.7ms】 + 【触发后 32ms】 = 42.7ms 连续波形。
+ * （第 0 窗口是环形滚动的 ⇒ dump 时要用 trig_idx 旋转还原，见 zcw-dump.py） */
+volatile int16_t  zcw_d[ZCW_WIN * ZCW_N]    = { 0 };
+volatile uint8_t  zcw_step[ZCW_WIN * ZCW_N] = { 0 };
+volatile uint8_t  zcw_zc[ZCW_WIN * ZCW_N]   = { 0 };
+volatile uint16_t zcw_idx      = 0;
+volatile uint8_t  zcw_win      = 0;
+volatile uint8_t  zcw_state    = 0;   /* 0=滚动(未触发) 1=触发后填充 2=冻结 */
+volatile uint16_t zcw_trig_idx = 0;
+volatile uint32_t zcw_n_trig   = 0;
+volatile uint32_t zcw_ci_trig  = 0;
+
+void adc_zc_wave_arm(uint32_t ci_trig)
+{
+    zcw_ci_trig = ci_trig;
+    zcw_state   = 0;      /* 滚动：只在第 0 窗口环形记录 */
+    zcw_idx     = 0;
+    zcw_win     = 0;
+}
+
+/* 触发：由 ISR 在"已武装且 ci 超阈值"时调用 */
+void adc_zc_wave_trigger(void)
+{
+    if (zcw_state != 0u) { return; }      /* 只触发一次 */
+    zcw_trig_idx = zcw_idx;               /* 记下触发点在滚动环里的位置 */
+    zcw_idx      = ZCW_N;                 /* 写指针跳到第 1 窗口，之后线性填 */
+    zcw_state    = 1u;
+    zcw_n_trig++;
+}
+
+void adc_zc_wave_push(int16_t delta, uint8_t step, uint8_t zc_kind)
+{
+    if (zcw_state == 2u) { return; }      /* 冻结 */
+    zcw_d[zcw_idx]    = delta;
+    zcw_step[zcw_idx] = step;
+    zcw_zc[zcw_idx]   = zc_kind;
+    if (zcw_state == 0u) {
+        zcw_idx = (uint16_t)((zcw_idx + 1u) % ZCW_N);   /* 滚动 */
+    } else {
+        zcw_idx++;
+        zcw_win = (uint8_t)(zcw_idx / ZCW_N);
+        if (zcw_idx >= ZCW_WIN * ZCW_N) {               /* 4 窗填满 ⇒ 冻结 */
+            zcw_state = 2u;
+            zcw_win   = ZCW_WIN;
+        }
+    }
+}

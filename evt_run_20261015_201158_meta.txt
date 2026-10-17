@@ -1,0 +1,39 @@
+# 采集轮档案  evt_run_20261015_201158.csv
+时间      : 2026-10-15 20:11:59   采集 11s
+分支/提交 : lsjdiad/test-11-丢过零滤波 @ 7158825
+二进制    : 21e92a67c7748e5d
+
+## 关键开关（从当前 targets.h 解析）
+  USE_ADC_BEMF = #define BEMF_ADC_PHASE_A_CH LL_ADC_CHANN
+  RM2027_CL_RUN_MS = 6000    /* ★ 2026-10-13 6000→3000→1500：
+  RM2027_CL_ANCHOR_DUTY = 300
+  RM2027_STEP_GAINOFF = 1
+  RM2027_ADC_GAIN_CAL = 0
+  RM2027_V0_SOFTMEAN = 0
+  RM2027_ADC_AC_SWAP = 0
+  RM2027_NO_DESYNC_DUTYCUT = 1
+  RM2027_CL_PARITY_OFF = 0   /* 本分支=纯基线，不补偿；复测时逐个打开 */
+  RM2027_LOCK_DETECT = 1
+  ADC_TRIGGER_CCR4 = 200   /* 保持 200：3.1µs 之后采，越过开关振铃（实测定案） *
+  RM2027_NEVER_HANDOVER = 0
+  RM2027_OL_ARM_ONLY = 0
+  RM2027_ZCL_FILTER = 1
+  RM2027_ZCL_MARGIN_SHIFT = 5   /* 阈值余量 = ci>>5 ≈ 3.1%（防抢在正常过零之前触发） 
+  RM2027_ZCL_SLOW_AFTER = 2   /* 连续丢 > 2 个（第 3 个起）开始降频 */
+  RM2027_ZCL_SLOW_SHIFT = 6   /* 降频斜率上限：每步 ci += ci>>6 ≈ +1.56%（限速
+
+## 判分
+  事件 4582（开环 1944 / stage0 2638）
+     判分窗口 = 锚定闭环：2637 条事件 / 1.88s（占"被驱动时间" 100%）
+     工况：duty 中位 300   电流中位 25（P90 26）
+     ① ★漏过零（bemf_timeout 窗口内增量）= 255   ⇒ 135.49 次/秒
+        按事件 step 分布 1:172 2:193 3:162 4:195 5:125 6:327
+     ② 六步真实换相间隔（Δts 中位，拍）—— 只在锚定窗口内：
+          step1: n=  438  中位    1417 拍   P10    917  P90    2250
+          step2: n=  440  中位    1417 拍   P10    917  P90    2250
+          step3: n=  441  中位    1250 拍   P10    833  P90    2167
+          step4: n=  435  中位    1167 拍   P10    833  P90    2167
+          step5: n=  442  中位    1250 拍   P10    917  P90    2158
+          step6: n=  440  中位     917 拍   P10    500  P90    2167
+        ⇒ 六步中位 917~1417 拍，极差 40.4%  ★越小越均匀
+     ③ zc_reject 末值 2323（判据拒收累计，与"超时"互补：拒收=来了不认）

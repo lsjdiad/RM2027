@@ -1,0 +1,68 @@
+
+Discarded input sections
+
+ .data          0x00000000        0x0 /tmp/ccIWvqEZ.o
+ .bss           0x00000000        0x0 /tmp/ccIWvqEZ.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+FLASH            0x08001000         0x0001f000         xr
+RAM              0x20000000         0x00009000         xrw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+                0x20009000                        _estack = (ORIGIN (RAM) + LENGTH (RAM))
+
+.vectors        0x08001000        0x8
+ *(.vectors)
+ .vectors       0x08001000        0x8 /tmp/ccIWvqEZ.o
+                0x08001000                vectors
+
+.text           0x08001008       0x7c
+ *(.text*)
+ .text          0x08001008       0x7c /tmp/ccIWvqEZ.o
+                0x08001008                main
+                0x08001070                Reset_Handler
+ *(.rodata*)
+
+.glue_7         0x08001084        0x0
+ .glue_7        0x08001084        0x0 linker stubs
+
+.glue_7t        0x08001084        0x0
+ .glue_7t       0x08001084        0x0 linker stubs
+
+.vfp11_veneer   0x08001084        0x0
+ .vfp11_veneer  0x08001084        0x0 linker stubs
+
+.v4_bx          0x08001084        0x0
+ .v4_bx         0x08001084        0x0 linker stubs
+
+.iplt           0x08001084        0x0
+ .iplt          0x08001084        0x0 /tmp/ccIWvqEZ.o
+
+.rel.dyn        0x08001084        0x0
+ .rel.iplt      0x08001084        0x0 /tmp/ccIWvqEZ.o
+
+.data
+ *(.data*)
+
+.igot.plt       0x20000000        0x0 load address 0x08001084
+ .igot.plt      0x20000000        0x0 /tmp/ccIWvqEZ.o
+
+.bss
+ *(.bss*)
+ *(COMMON)
+LOAD /tmp/ccIWvqEZ.o
+OUTPUT(test_a_low_static.elf elf32-littlearm)
+LOAD linker stubs
+
+.comment        0x00000000       0x26
+ .comment       0x00000000       0x26 /tmp/ccIWvqEZ.o
+                                 0x27 (size before relaxing)
+
+.ARM.attributes
+                0x00000000       0x2c
+ .ARM.attributes
+                0x00000000       0x2c /tmp/ccIWvqEZ.o

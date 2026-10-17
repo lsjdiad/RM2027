@@ -1,0 +1,7719 @@
+PROTEL NETLIST 2.0
+[
+DESIGNATOR
+U1
+FOOTPRINT
+LQFP-100_L14.0-W14.0-P0.50-LS16.0-BL
+PARTTYPE
+STM32H743VIT6
+DESCRIPTION
+CPU内核:-;GPIO端口数量:82;工作电压范围:1.71V~3.6V;CPU最大主频:480MHz;
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Symbol
+STM32H743VIT6
+Designator
+U1
+Device
+STM32H743VIT6
+Unique ID
+gge12
+Name
+STM32H743VIT6
+Reuse Block
+
+Group ID
+
+Channel ID
+
+LCSC Part Name
+带DSP和DP-FPU的高性能ARM Cortex-M7 MCU，具有2 MB Flash、1 MB RAM、480 MHz CPU、ART加速器、一级缓存、外部存储器接口和大量外设
+Supplier Part
+C529058
+Manufacturer
+ST(意法半导体)
+Manufacturer Part
+STM32H743VIT6
+Supplier Footprint
+LQFP-100(14x14)
+JLCPCB Part Class
+Extended Part
+Datasheet
+https://atta.szlcsc.com/upload/public/pdf/source/20200508/C529058_DA70143F266D6D825C3A912656F12A87.pdf
+Supplier
+LCSC
+3D Model Title
+LQFP-100_L14.0-W14.0-H1.4-LS16.0-P0.50
+CPU Core
+-
+GPIO Ports Number
+82
+Operating Voltage Range
+1.71V~3.6V
+CPU Maximum Speed
+480MHz
+Operating Temperature Range
+-40℃~+85℃
+ADC (Bit)
+16bit
+DAC (Bit)
+12bit
+Universal Serial Bus
+有
+Secure Digital Input and Output
+有
+Direct Memory Access
+有
+Description
+CPU内核:-;GPIO端口数量:82;工作电压范围:1.71V~3.6V;CPU最大主频:480MHz;
+
+*
+]
+[
+DESIGNATOR
+U7
+FOOTPRINT
+HI04XX
+PARTTYPE
+HI04MX
+DESCRIPTION
+
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Designator
+U7
+Symbol
+HI04MX
+Device
+HI04MX
+Unique ID
+gge11
+Name
+HI04MX
+Reuse Block
+
+Group ID
+
+Channel ID
+
+Description
+
+componentDisplayMode
+-1
+
+*
+]
+[
+DESIGNATOR
+C33
+FOOTPRINT
+C0603
+PARTTYPE
+CAP_0603
+DESCRIPTION
+
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Designator
+C33
+Symbol
+Capacitance
+Device
+CAP_0603
+Unique ID
+gge103
+Supplier Footprint
+0603
+3D Model Title
+C0603_L1.6-W0.8-H0.8
+Value
+12pF
+Name
+12pF
+Description
+
+Sim Model
+
+Sim Model Title
+
+Sim Model Path
+
+NGSpice Model
+
+NGSpice Model Title
+
+NGspice Model Path
+
+Reuse Block
+
+Group ID
+
+Channel ID
+
+
+*
+]
+[
+DESIGNATOR
+C34
+FOOTPRINT
+C0603
+PARTTYPE
+CAP_0603
+DESCRIPTION
+
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Designator
+C34
+Symbol
+Capacitance
+Device
+CAP_0603
+Unique ID
+gge104
+Supplier Footprint
+0603
+3D Model Title
+C0603_L1.6-W0.8-H0.8
+Value
+12pF
+Name
+12pF
+Description
+
+Sim Model
+
+Sim Model Title
+
+Sim Model Path
+
+NGSpice Model
+
+NGSpice Model Title
+
+NGspice Model Path
+
+Reuse Block
+
+Group ID
+
+Channel ID
+
+
+*
+]
+[
+DESIGNATOR
+X1
+FOOTPRINT
+CRYSTAL-SMD_4P-L3.2-W2.5-BL
+PARTTYPE
+X322525MOB4SI
+DESCRIPTION
+晶振类型:贴片晶振;频率:25MHz;常温频差:±10ppm;负载电容:12pF;频率稳定度:±20ppm;
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Symbol
+X322525MOB4SI
+Designator
+X1
+Device
+X322525MOB4SI
+Unique ID
+gge102
+Name
+25MHz
+Reuse Block
+
+Group ID
+
+Channel ID
+
+LCSC Part Name
+YSX321SL 25MHZ 4P 3225 12PF ±10PPM -40~85℃ (±20PPM)
+Supplier Part
+C9006
+Manufacturer
+YXC(扬兴晶振)
+Manufacturer Part
+X322525MOB4SI
+Supplier Footprint
+SMD3225-4P
+JLCPCB Part Class
+Basic Part
+Datasheet
+https://item.szlcsc.com/datasheet/X322525MOB4SI/9526.html
+Supplier
+LCSC
+3D Model Title
+CRYSTAL-SMD_4P-L3.2-W2.5-BL
+Type
+贴片晶振
+Value
+25MHz
+Normal temperature Frequency Tolerance
+±10ppm
+Load Capacitance
+12pF
+Frequency Stability
+±20ppm
+Operating Temperature
+-40℃~+85℃
+Description
+晶振类型:贴片晶振;频率:25MHz;常温频差:±10ppm;负载电容:12pF;频率稳定度:±20ppm;
+
+*
+]
+[
+DESIGNATOR
+C7
+FOOTPRINT
+C0603
+PARTTYPE
+CAP_0603
+DESCRIPTION
+
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Designator
+C7
+Symbol
+Capacitance
+Device
+CAP_0603
+Unique ID
+gge177
+Supplier Footprint
+0603
+3D Model Title
+C0603_L1.6-W0.8-H0.8
+Value
+100nF
+Name
+100nF
+Description
+
+Sim Model
+
+Sim Model Title
+
+Sim Model Path
+
+NGSpice Model
+
+NGSpice Model Title
+
+NGspice Model Path
+
+Reuse Block
+
+Group ID
+
+Channel ID
+
+
+*
+]
+[
+DESIGNATOR
+SW5
+FOOTPRINT
+SW-SMD_L3.9-W3.0-P4.45
+PARTTYPE
+TS-1088-AR02016
+DESCRIPTION
+电路结构:单刀单掷;按钮形状:圆形按钮;作用力:1.6N;安装方式:立贴;开关长度:3.9mm;开关宽度:3mm;开关高度:2mm;带支架:不带支架;触点电流:50mA;额定电压:12V;带灯:-;工作寿命:10万次;
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Symbol
+TS-1088-AR02016
+Designator
+SW5
+Device
+TS-1088-AR02016
+Name
+TS-1088-AR02016
+Unique ID
+gge175
+Reuse Block
+
+Group ID
+
+Channel ID
+
+LCSC Part Name
+3.9*3*2mm 立贴 轻触开关
+Supplier Part
+C720477
+Manufacturer
+XUNPU(讯普)
+Manufacturer Part
+TS-1088-AR02016
+Supplier Footprint
+SMD,4x3mm
+JLCPCB Part Class
+Basic Part
+Datasheet
+https://item.szlcsc.com/datasheet/TS-1088-AR02016/763484.html
+Supplier
+LCSC
+3D Model Title
+SW-SMD_L3.9-W2.9-H2.0-LS4.8
+Circuit
+单刀单掷
+Actuator Style
+圆形按钮
+Operating Force
+1.6N
+Mounting Type
+立贴
+Length
+3.9mm
+Width
+3mm
+Switch Height
+2mm
+with Bracket
+不带支架
+Contact Current
+50mA
+Voltage Rating
+12V
+Actuator/Cap Color
+黑色
+With Lamp
+-
+IP Rating
+-
+Termination Style
+SMD接片
+Life
+10万次
+Operating Temperature
+-30℃~+80℃
+Description
+电路结构:单刀单掷;按钮形状:圆形按钮;作用力:1.6N;安装方式:立贴;开关长度:3.9mm;开关宽度:3mm;开关高度:2mm;带支架:不带支架;触点电流:50mA;额定电压:12V;带灯:-;工作寿命:10万次;
+
+*
+]
+[
+DESIGNATOR
+R14
+FOOTPRINT
+R0603
+PARTTYPE
+Res_0603
+DESCRIPTION
+
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Designator
+R14
+Symbol
+电阻
+Device
+Res_0603
+Unique ID
+gge176
+Supplier Footprint
+0603
+3D Model Title
+R0603
+Value
+10K
+Name
+10K
+Description
+
+Sim Model
+
+Sim Model Title
+
+Sim Model Path
+
+NGSpice Model
+
+NGSpice Model Title
+
+NGspice Model Path
+
+Reuse Block
+
+Group ID
+
+Channel ID
+
+
+*
+]
+[
+DESIGNATOR
+R1
+FOOTPRINT
+R0603
+PARTTYPE
+Res_0603
+DESCRIPTION
+
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Designator
+R1
+Symbol
+电阻
+Device
+Res_0603
+Unique ID
+gge178
+Supplier Footprint
+0603
+3D Model Title
+R0603
+Value
+10K
+Name
+10K
+Description
+
+Sim Model
+
+Sim Model Title
+
+Sim Model Path
+
+NGSpice Model
+
+NGSpice Model Title
+
+NGspice Model Path
+
+Reuse Block
+
+Group ID
+
+Channel ID
+
+
+*
+]
+[
+DESIGNATOR
+C1
+FOOTPRINT
+C0603
+PARTTYPE
+CAP_0603
+DESCRIPTION
+
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Designator
+C1
+Symbol
+Capacitance
+Device
+CAP_0603
+Unique ID
+gge179
+Supplier Footprint
+0603
+3D Model Title
+C0603_L1.6-W0.8-H0.8
+Value
+2.2uF
+Name
+2.2uF
+Description
+
+Sim Model
+
+Sim Model Title
+
+Sim Model Path
+
+NGSpice Model
+
+NGSpice Model Title
+
+NGspice Model Path
+
+Reuse Block
+
+Group ID
+
+Channel ID
+
+
+*
+]
+[
+DESIGNATOR
+C2
+FOOTPRINT
+C0603
+PARTTYPE
+CAP_0603
+DESCRIPTION
+
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Designator
+C2
+Symbol
+Capacitance
+Device
+CAP_0603
+Unique ID
+gge180
+Supplier Footprint
+0603
+3D Model Title
+C0603_L1.6-W0.8-H0.8
+Value
+100nF
+Name
+100nF
+Description
+
+Sim Model
+
+Sim Model Title
+
+Sim Model Path
+
+NGSpice Model
+
+NGSpice Model Title
+
+NGspice Model Path
+
+Reuse Block
+
+Group ID
+
+Channel ID
+
+
+*
+]
+[
+DESIGNATOR
+R3
+FOOTPRINT
+R0603
+PARTTYPE
+Res_0603
+DESCRIPTION
+
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Designator
+R3
+Symbol
+电阻
+Device
+Res_0603
+Unique ID
+gge5
+Name
+120R
+Reuse Block
+
+Group ID
+
+Channel ID
+
+Value
+120R
+Supplier Footprint
+0603
+3D Model Title
+R0603
+Description
+
+Sim Model
+
+Sim Model Title
+
+Sim Model Path
+
+NGSpice Model
+
+NGSpice Model Title
+
+NGspice Model Path
+
+
+*
+]
+[
+DESIGNATOR
+U3
+FOOTPRINT
+DFN-8_L3.0-W3.0-P0.65-BL-EP
+PARTTYPE
+SIT3051TK
+DESCRIPTION
+类型:CAN收发器;数据速率:1Mbps;
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Symbol
+SIT3051TK
+Designator
+U3
+Device
+SIT3051TK
+Unique ID
+gge1
+Name
+SIT3051TK
+Reuse Block
+
+Group ID
+
+Channel ID
+
+LCSC Part Name
+SIT3051 3.3V供电、1Mbps、待机与远程唤醒、低电流CAN总线收发器
+Supplier Part
+C601078
+Manufacturer
+SIT(芯力特)
+Manufacturer Part
+SIT3051TK
+Supplier Footprint
+DFN-8-EP(3x3)
+JLCPCB Part Class
+Extended Part
+Datasheet
+https://item.szlcsc.com/datasheet/SIT3051TK/630348.html
+Supplier
+LCSC
+3D Model Title
+DFN-8_L3.0-W3.0-H0.9-P0.65
+Type
+CAN收发器
+Data Rate
+1Mbps
+Voltage - Supply
+3V~3.6V
+Current - Supply
+70mA
+Operating Temperature
+-40℃~+125℃
+Number of Channels
+-
+Quiescent Supply Current
+15uA
+Description
+类型:CAN收发器;数据速率:1Mbps;
+
+*
+]
+[
+DESIGNATOR
+U4
+FOOTPRINT
+DFN-8_L3.0-W3.0-P0.65-BL-EP
+PARTTYPE
+SIT3051TK
+DESCRIPTION
+类型:CAN收发器;数据速率:1Mbps;
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Symbol
+SIT3051TK
+Designator
+U4
+Device
+SIT3051TK
+Unique ID
+gge1_1
+Name
+SIT3051TK
+Reuse Block
+
+Group ID
+
+Channel ID
+
+LCSC Part Name
+SIT3051 3.3V供电、1Mbps、待机与远程唤醒、低电流CAN总线收发器
+Supplier Part
+C601078
+Manufacturer
+SIT(芯力特)
+Manufacturer Part
+SIT3051TK
+Supplier Footprint
+DFN-8-EP(3x3)
+JLCPCB Part Class
+Extended Part
+Datasheet
+https://item.szlcsc.com/datasheet/SIT3051TK/630348.html
+Supplier
+LCSC
+3D Model Title
+DFN-8_L3.0-W3.0-H0.9-P0.65
+Type
+CAN收发器
+Data Rate
+1Mbps
+Voltage - Supply
+3V~3.6V
+Current - Supply
+70mA
+Operating Temperature
+-40℃~+125℃
+Number of Channels
+-
+Quiescent Supply Current
+15uA
+Description
+类型:CAN收发器;数据速率:1Mbps;
+
+*
+]
+[
+DESIGNATOR
+R2
+FOOTPRINT
+R0603
+PARTTYPE
+Res_0603
+DESCRIPTION
+
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Designator
+R2
+Symbol
+电阻
+Device
+Res_0603
+Unique ID
+gge5_1
+Name
+120R
+Reuse Block
+
+Group ID
+
+Channel ID
+
+Value
+120R
+Supplier Footprint
+0603
+3D Model Title
+R0603
+Description
+
+Sim Model
+
+Sim Model Title
+
+Sim Model Path
+
+NGSpice Model
+
+NGSpice Model Title
+
+NGspice Model Path
+
+
+*
+]
+[
+DESIGNATOR
+U5
+FOOTPRINT
+LGA-14_L3.0-W2.5-P0.50-TL
+PARTTYPE
+ICM-42688-P
+DESCRIPTION
+传感器类型:IMU(加速度计+陀螺仪);接口类型:I2C；SPI;
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Symbol
+ICM-42688-P
+Designator
+U5
+Device
+ICM-42688-P
+Unique ID
+gge181
+Name
+ICM-42688-P
+Reuse Block
+
+Group ID
+
+Channel ID
+
+LCSC Part Name
+高精度六轴MEMS运动跟踪器件
+Supplier Part
+C1850418
+Manufacturer
+TDK InvenSense(应美盛)
+Manufacturer Part
+ICM-42688-P
+Supplier Footprint
+LGA-14(2.5x3)
+JLCPCB Part Class
+Extended Part
+Datasheet
+https://item.szlcsc.com/datasheet/ICM-42688-P/1941231.html
+Supplier
+LCSC
+3D Model Title
+LGA-14_L2.5-W3.0-H0.9-P0.50
+Accelerometer Sensing Axis
+X,Y,Z
+Acceleration Measurement Range (MAX)
+±16g
+Gyroscope Sensing Axis
+X,Y,Z
+Gyroscope Measurement Range (MAX)
+±2000dps
+Sensor Type
+IMU(加速度计+陀螺仪)
+Output Bits
+16bit
+Interface
+I2C；SPI
+Voltage - Supply
+1.71V~3.6V
+Cache Size
+2KB
+Standby Current
+7.5uA
+Operating Temperature
+-40℃~+85℃
+Features
+运动事件检测；同步与时间戳
+Description
+传感器类型:IMU(加速度计+陀螺仪);接口类型:I2C；SPI;
+
+*
+]
+[
+DESIGNATOR
+U2
+FOOTPRINT
+LGA-16_L3.0-W3.0-P0.50-BL_SQ
+PARTTYPE
+IST8310_C2683055
+DESCRIPTION
+IST8310是一款三轴数字磁力计，采用3.0x3.0x1.0mm³、16引脚LGA封装。它是一款集成芯片，集成了三轴磁传感器、数字控制逻辑、内置温度补偿电路和自测试功能
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Symbol
+IST8310_C2683055
+Designator
+U2
+Device
+IST8310_C2683055
+Unique ID
+gge182
+Name
+IST8310
+Reuse Block
+
+Group ID
+
+Channel ID
+
+LCSC Part Name
+三维磁力计
+Supplier Part
+C2683055
+Manufacturer
+iSentek(爱盛科技)
+Manufacturer Part
+IST8310
+Supplier Footprint
+LGA-16(3x3)
+JLCPCB Part Class
+Extended Part
+Datasheet
+https://item.szlcsc.com/datasheet/IST8310/2778854.html
+Supplier
+LCSC
+3D Model Title
+LGA-16_L3.0-W3.0-H0.9-P0.50
+Magnetic Sensing Range(X,Y)
+±1.6mT
+Magnetic Sensing Range(Z)
+±2.5mT
+Output bit
+14bit
+Interface Type
+I2C
+Voltage - Supply
+1.72V~3.6V
+Current - Supply
+600uA
+Operating Temperature
+-40℃~+85℃
+Features
+内置自检(BIST)；内置温度传感器
+Description
+IST8310是一款三轴数字磁力计，采用3.0x3.0x1.0mm³、16引脚LGA封装。它是一款集成芯片，集成了三轴磁传感器、数字控制逻辑、内置温度补偿电路和自测试功能
+
+*
+]
+[
+DESIGNATOR
+C3
+FOOTPRINT
+C0603
+PARTTYPE
+CAP_0603
+DESCRIPTION
+
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Designator
+C3
+Symbol
+Capacitance
+Device
+CAP_0603
+Unique ID
+gge183
+Supplier Footprint
+0603
+3D Model Title
+C0603_L1.6-W0.8-H0.8
+Value
+4.7uF
+Name
+4.7uF
+Description
+
+Sim Model
+
+Sim Model Title
+
+Sim Model Path
+
+NGSpice Model
+
+NGSpice Model Title
+
+NGspice Model Path
+
+Reuse Block
+
+Group ID
+
+Channel ID
+
+
+*
+]
+[
+DESIGNATOR
+U6
+FOOTPRINT
+LGA-8_L2.5-W2.0-P0.65_SPA06-003
+PARTTYPE
+SPA06-003
+DESCRIPTION
+压力范围:30Kpa~1.1bar;接口类型:I2C；SPI;
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Symbol
+SPA06-003
+Designator
+U6
+Device
+SPA06-003
+Unique ID
+gge184
+Name
+SPA06-003
+Reuse Block
+
+Group ID
+
+Channel ID
+
+LCSC Part Name
+数字压力传感器
+Supplier Part
+C30589048
+Manufacturer
+Goertek(歌尔)
+Manufacturer Part
+SPA06-003
+Supplier Footprint
+LGA-8(2x2.5)
+JLCPCB Part Class
+Extended Part
+Datasheet
+https://item.szlcsc.com/datasheet/SPA06-003/32325067.html
+Supplier
+LCSC
+3D Model Title
+LGA-8_L2.5-W2.0-P0.65_SPA06-003
+Pressure range
+30Kpa~1.1bar
+Voltage - Supply
+1.7V~3.6V
+Standby Current
+500nA
+Interface
+I2C；SPI
+Module
+-
+Absolute Accuracy
+0.3hpa
+Relative Accuracy
+0.03hpa
+Features
+待机模式；集成ADC与数字接口；片内温度输出
+Temperature Coefficient of Offset(TCO)
+0.5pa/K
+Response time
+-
+Operating Temperature
+-40℃~+85℃
+Description
+压力范围:30Kpa~1.1bar;接口类型:I2C；SPI;
+
+*
+]
+[
+DESIGNATOR
+CN1
+FOOTPRINT
+CONN-TH_2P-P1.25_XUNPU_WAFER-GH1.25-2PWB
+PARTTYPE
+WAFER-GH1.25-2PWB
+DESCRIPTION
+插针结构:1x2P;间距:1.25mm;安装方式:卧贴;参考系列:GH;总PIN数:2P;排数:1;每排PIN数:2;行距:-;额定电流:1A;触头材质:黄铜;触头镀层:锡;工作温度:-25℃~+85℃;
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Symbol
+WAFER-GH1.25-2PWB
+Designator
+CN1
+Device
+WAFER-GH1.25-2PWB
+Unique ID
+gge185
+Name
+WAFER-GH1.25-2PWB
+Reuse Block
+
+Group ID
+
+Channel ID
+
+LCSC Part Name
+1x2P 间距:1.25mm 卧贴 系列:GH
+Supplier Part
+C3029377
+Manufacturer
+XUNPU(讯普)
+Manufacturer Part
+WAFER-GH1.25-2PWB
+Supplier Footprint
+SMD,P=1.25mm,卧贴
+JLCPCB Part Class
+Extended Part
+Datasheet
+https://item.szlcsc.com/datasheet/WAFER-GH1.25-2PWB/3561389.html
+Supplier
+LCSC
+3D Model Title
+CONN-TH_2P-P1.25_XUNPU_WAFER-GH1.25-2PWB
+Pins Structure
+1x2P
+Pitch
+1.25mm
+Mounting Type
+卧贴
+Reference Series
+GH
+Number of Pins
+2P
+Number of Rows
+1
+Number of PINs Per Row
+2
+Row Spacing
+-
+Current Rating
+1A
+Contact Material
+黄铜
+Contact Plating
+锡
+Operating Temperature
+-25℃~+85℃
+Voltage Rating
+125V
+Plastic Material
+LCP
+Flame Retardant Rating
+-
+Supplementary Features
+辅助焊脚
+Color
+米色
+Z-Height of the Board
+4.35mm
+X-Length of Bottom Edge on Board (Spacing Line)
+5.75mm
+Y-Width of Bottom Edge on Board
+5mm
+Description
+插针结构:1x2P;间距:1.25mm;安装方式:卧贴;参考系列:GH;总PIN数:2P;排数:1;每排PIN数:2;行距:-;额定电流:1A;触头材质:黄铜;触头镀层:锡;工作温度:-25℃~+85℃;
+
+*
+]
+[
+DESIGNATOR
+CN2
+FOOTPRINT
+CONN-TH_2P-P1.25_XUNPU_WAFER-GH1.25-2PWB
+PARTTYPE
+WAFER-GH1.25-2PWB
+DESCRIPTION
+插针结构:1x2P;间距:1.25mm;安装方式:卧贴;参考系列:GH;总PIN数:2P;排数:1;每排PIN数:2;行距:-;额定电流:1A;触头材质:黄铜;触头镀层:锡;工作温度:-25℃~+85℃;
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Symbol
+WAFER-GH1.25-2PWB
+Designator
+CN2
+Device
+WAFER-GH1.25-2PWB
+Unique ID
+gge186
+Name
+WAFER-GH1.25-2PWB
+Reuse Block
+
+Group ID
+
+Channel ID
+
+LCSC Part Name
+1x2P 间距:1.25mm 卧贴 系列:GH
+Supplier Part
+C3029377
+Manufacturer
+XUNPU(讯普)
+Manufacturer Part
+WAFER-GH1.25-2PWB
+Supplier Footprint
+SMD,P=1.25mm,卧贴
+JLCPCB Part Class
+Extended Part
+Datasheet
+https://item.szlcsc.com/datasheet/WAFER-GH1.25-2PWB/3561389.html
+Supplier
+LCSC
+3D Model Title
+CONN-TH_2P-P1.25_XUNPU_WAFER-GH1.25-2PWB
+Pins Structure
+1x2P
+Pitch
+1.25mm
+Mounting Type
+卧贴
+Reference Series
+GH
+Number of Pins
+2P
+Number of Rows
+1
+Number of PINs Per Row
+2
+Row Spacing
+-
+Current Rating
+1A
+Contact Material
+黄铜
+Contact Plating
+锡
+Operating Temperature
+-25℃~+85℃
+Voltage Rating
+125V
+Plastic Material
+LCP
+Flame Retardant Rating
+-
+Supplementary Features
+辅助焊脚
+Color
+米色
+Z-Height of the Board
+4.35mm
+X-Length of Bottom Edge on Board (Spacing Line)
+5.75mm
+Y-Width of Bottom Edge on Board
+5mm
+Description
+插针结构:1x2P;间距:1.25mm;安装方式:卧贴;参考系列:GH;总PIN数:2P;排数:1;每排PIN数:2;行距:-;额定电流:1A;触头材质:黄铜;触头镀层:锡;工作温度:-25℃~+85℃;
+
+*
+]
+[
+DESIGNATOR
+R19
+FOOTPRINT
+R0603
+PARTTYPE
+Res_0603
+DESCRIPTION
+
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Designator
+R19
+Symbol
+电阻
+Device
+Res_0603
+Unique ID
+gge170
+Supplier Footprint
+0603
+3D Model Title
+R0603
+Value
+10K
+Name
+10K
+Description
+
+Sim Model
+
+Sim Model Title
+
+Sim Model Path
+
+NGSpice Model
+
+NGSpice Model Title
+
+NGspice Model Path
+
+Reuse Block
+
+Group ID
+
+Channel ID
+
+
+*
+]
+[
+DESIGNATOR
+H14
+FOOTPRINT
+HDR-TH_3P-P2.54-H-M-W10.4
+PARTTYPE
+PZ254R-11-03P
+DESCRIPTION
+插针结构:1x3P;间距:2.54mm;行距:-;圆针/方针:方针;安装方式:弯插;排数:单排;总PIN位数:3P;额定电流:3A;额定电压:250V;配合针长度:6mm;塑高:2.5mm;端接针长度:-;触头材质:黄铜;触头镀层:-;工作温度:-40℃~+105℃;颜色:黑色;
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Symbol
+PZ254R-11-03P
+Designator
+H14
+Device
+PZ254R-11-03P
+Unique ID
+gge168
+Name
+PZ254R-11-03P
+Reuse Block
+
+Group ID
+
+Channel ID
+
+LCSC Part Name
+1x3P 间距:2.54mm 方针 弯插
+Supplier Part
+C492411
+Manufacturer
+XFCN(兴飞)
+Manufacturer Part
+PZ254R-11-03P
+Supplier Footprint
+弯插,P=2.54mm
+JLCPCB Part Class
+Extended Part
+Datasheet
+https://item.szlcsc.com/datasheet/PZ254R-11-03P/502967.html
+Supplier
+LCSC
+3D Model Title
+HDR-TH_3P-P2.54-M-WI-1X3P
+Pin Structure
+1x3P
+Pitch
+2.54mm
+Row Spacing
+-
+Circluar Pins/Square Pins
+方针
+Mounting Type
+弯插
+Number of Rows
+单排
+Number of Pins
+3P
+Current Rating
+3A
+Voltage Rating (Max)
+250V
+Length of Mating Pin
+6mm
+Insulation Height
+2.5mm
+Length of End Connection Pin
+-
+Contact Material
+黄铜
+Contact Plating
+-
+Operating Temperature
+-40℃~+105℃
+Color
+黑色
+Description
+插针结构:1x3P;间距:2.54mm;行距:-;圆针/方针:方针;安装方式:弯插;排数:单排;总PIN位数:3P;额定电流:3A;额定电压:250V;配合针长度:6mm;塑高:2.5mm;端接针长度:-;触头材质:黄铜;触头镀层:-;工作温度:-40℃~+105℃;颜色:黑色;
+
+*
+]
+[
+DESIGNATOR
+Q17
+FOOTPRINT
+SOT-23-3_L2.9-W1.3-P1.90-LS2.4-BR
+PARTTYPE
+S9018_C41375130
+DESCRIPTION
+晶体管类型:NPN;集电极电流(Ic):50mA;集射极击穿电压(Vceo):15V;耗散功率(Pd):200mW;直流电流增益(hFE):200;
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Symbol
+S9018_C41375130
+Designator
+Q17
+Device
+S9018_C41375130
+Unique ID
+gge169
+Name
+S9018
+Reuse Block
+
+Group ID
+
+Channel ID
+
+LCSC Part Name
+NPN 电流:50mA 电压:15V
+Supplier Part
+C41375130
+Manufacturer
+R+O(宏嘉诚)
+Manufacturer Part
+S9018
+Supplier Footprint
+SOT-23
+JLCPCB Part Class
+Extended Part
+Datasheet
+https://item.szlcsc.com/datasheet/S9018/43142130.html
+Supplier
+LCSC
+3D Model Title
+SOT-23-3P_L2.9-W1.3-H1.0-LS2.4-P0.95
+type
+NPN
+Current - Collector(Ic)
+50mA
+Collector - Emitter Voltage VCEO
+15V
+Pd - Power Dissipation
+200mW
+DC Current Gain
+200
+Transition frequency(fT)
+800MHz
+Current - Collector Cutoff
+50nA
+Vce Saturation(VCE(sat))
+500mV
+Operating Temperature
+-55℃~+150℃
+Emitter-Base Voltage(Vebo)
+5V
+Number
+1个NPN
+Configuration
+独立式
+Description
+晶体管类型:NPN;集电极电流(Ic):50mA;集射极击穿电压(Vceo):15V;耗散功率(Pd):200mW;直流电流增益(hFE):200;
+
+*
+]
+[
+DESIGNATOR
+U12
+FOOTPRINT
+LQFP-48_L7.0-W7.0-P0.50-LS9.0-BL
+PARTTYPE
+STM32F103C8T6
+DESCRIPTION
+CPU内核:ARM Cortex-M3;CPU最大主频:72MHz;CPU位数:32 Bit;
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Symbol
+STM32F103C8T6
+Designator
+U12
+Device
+STM32F103C8T6
+Unique ID
+gge187
+Name
+STM32F103C8T6
+Reuse Block
+
+Group ID
+
+Channel ID
+
+LCSC Part Name
+主流增强型ARM Cortex-M3 MCU，具有64 KB Flash、72 MHz CPU、电机控制、USB和CAN
+Supplier Part
+C8734
+Manufacturer
+ST(意法半导体)
+Manufacturer Part
+STM32F103C8T6
+Supplier Footprint
+LQFP-48(7x7)
+JLCPCB Part Class
+Extended Part
+Datasheet
+https://item.szlcsc.com/datasheet/STM32F103C8T6/9243.html
+Supplier
+LCSC
+3D Model Title
+LQFP-48_L7.0-W7.0-H1.4-LS9.0-P0.50
+CPU Core
+ARM Cortex-M3
+CPU Maximum Speed
+72MHz
+Core Size
+32 Bit
+Program Storage Size
+64KB
+Program Memory Type
+FLASH
+RAM Size
+20KB
+EEPROM
+-
+Number of I/O
+37
+ADC (Bit)
+12bit
+Oscillator Type
+内置
+Voltage - Supply
+2V~3.6V
+Operating Temperature
+-40℃~+85℃
+Description
+CPU内核:ARM Cortex-M3;CPU最大主频:72MHz;CPU位数:32 Bit;
+
+*
+]
+[
+DESIGNATOR
+C11
+FOOTPRINT
+C0603
+PARTTYPE
+CAP_0603
+DESCRIPTION
+
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Designator
+C11
+Symbol
+Capacitance
+Device
+CAP_0603
+Value
+12pF
+Name
+12pF
+Unique ID
+gge18
+Reuse Block
+
+Group ID
+
+Channel ID
+
+Supplier Footprint
+0603
+3D Model Title
+C0603_L1.6-W0.8-H0.8
+Description
+
+Sim Model
+
+Sim Model Title
+
+Sim Model Path
+
+NGSpice Model
+
+NGSpice Model Title
+
+NGspice Model Path
+
+
+*
+]
+[
+DESIGNATOR
+C12
+FOOTPRINT
+C0603
+PARTTYPE
+CAP_0603
+DESCRIPTION
+
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Designator
+C12
+Symbol
+Capacitance
+Device
+CAP_0603
+Value
+12pF
+Name
+12pF
+Unique ID
+gge19
+Reuse Block
+
+Group ID
+
+Channel ID
+
+Supplier Footprint
+0603
+3D Model Title
+C0603_L1.6-W0.8-H0.8
+Description
+
+Sim Model
+
+Sim Model Title
+
+Sim Model Path
+
+NGSpice Model
+
+NGSpice Model Title
+
+NGspice Model Path
+
+
+*
+]
+[
+DESIGNATOR
+X2
+FOOTPRINT
+CRYSTAL-SMD_4P-L3.2-W2.5-BL
+PARTTYPE
+X32258MOB4SI
+DESCRIPTION
+晶振类型:贴片晶振;频率:8MHz;常温频差:±10ppm;负载电容:12pF;频率稳定度:±20ppm;
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Symbol
+X32258MOB4SI
+Designator
+X2
+Device
+X32258MOB4SI
+Unique ID
+gge17
+Name
+8MHz
+Reuse Block
+
+Group ID
+
+Channel ID
+
+LCSC Part Name
+YSX321SL 8MHZ 4P 3225 12PF ±10PPM -40~85℃ (±20PPM)
+Supplier Part
+C2682775
+Manufacturer
+YXC(扬兴晶振)
+Manufacturer Part
+X32258MOB4SI
+Supplier Footprint
+SMD3225-4P
+JLCPCB Part Class
+Extended Part
+Datasheet
+https://item.szlcsc.com/datasheet/X32258MOB4SI/2777872.html
+Supplier
+LCSC
+3D Model Title
+CRYSTAL-SMD_4P-L3.2-W2.5-BL
+Type
+贴片晶振
+Value
+8MHz
+Normal temperature Frequency Tolerance
+±10ppm
+Load Capacitance
+12pF
+Frequency Stability
+±20ppm
+Equivalent Series Resistance(ESR)
+150Ω
+Operating Temperature
+-40℃~+85℃
+Description
+晶振类型:贴片晶振;频率:8MHz;常温频差:±10ppm;负载电容:12pF;频率稳定度:±20ppm;
+
+*
+]
+[
+DESIGNATOR
+C13
+FOOTPRINT
+C0603
+PARTTYPE
+CAP_0603
+DESCRIPTION
+
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Designator
+C13
+Symbol
+Capacitance
+Device
+CAP_0603
+Unique ID
+gge177_1
+Supplier Footprint
+0603
+3D Model Title
+C0603_L1.6-W0.8-H0.8
+Value
+100nF
+Name
+100nF
+Description
+
+Sim Model
+
+Sim Model Title
+
+Sim Model Path
+
+NGSpice Model
+
+NGSpice Model Title
+
+NGspice Model Path
+
+Reuse Block
+
+Group ID
+
+Channel ID
+
+
+*
+]
+[
+DESIGNATOR
+SW1
+FOOTPRINT
+SW-SMD_L3.9-W3.0-P4.45
+PARTTYPE
+TS-1088-AR02016
+DESCRIPTION
+电路结构:单刀单掷;按钮形状:圆形按钮;作用力:1.6N;安装方式:立贴;开关长度:3.9mm;开关宽度:3mm;开关高度:2mm;带支架:不带支架;触点电流:50mA;额定电压:12V;带灯:-;工作寿命:10万次;
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Symbol
+TS-1088-AR02016
+Designator
+SW1
+Device
+TS-1088-AR02016
+Name
+TS-1088-AR02016
+Unique ID
+gge175_1
+Reuse Block
+
+Group ID
+
+Channel ID
+
+LCSC Part Name
+3.9*3*2mm 立贴 轻触开关
+Supplier Part
+C720477
+Manufacturer
+XUNPU(讯普)
+Manufacturer Part
+TS-1088-AR02016
+Supplier Footprint
+SMD,4x3mm
+JLCPCB Part Class
+Basic Part
+Datasheet
+https://item.szlcsc.com/datasheet/TS-1088-AR02016/763484.html
+Supplier
+LCSC
+3D Model Title
+SW-SMD_L3.9-W2.9-H2.0-LS4.8
+Circuit
+单刀单掷
+Actuator Style
+圆形按钮
+Operating Force
+1.6N
+Mounting Type
+立贴
+Length
+3.9mm
+Width
+3mm
+Switch Height
+2mm
+with Bracket
+不带支架
+Contact Current
+50mA
+Voltage Rating
+12V
+Actuator/Cap Color
+黑色
+With Lamp
+-
+IP Rating
+-
+Termination Style
+SMD接片
+Life
+10万次
+Operating Temperature
+-30℃~+80℃
+Description
+电路结构:单刀单掷;按钮形状:圆形按钮;作用力:1.6N;安装方式:立贴;开关长度:3.9mm;开关宽度:3mm;开关高度:2mm;带支架:不带支架;触点电流:50mA;额定电压:12V;带灯:-;工作寿命:10万次;
+
+*
+]
+[
+DESIGNATOR
+R20
+FOOTPRINT
+R0603
+PARTTYPE
+Res_0603
+DESCRIPTION
+
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Designator
+R20
+Symbol
+电阻
+Device
+Res_0603
+Unique ID
+gge176_1
+Supplier Footprint
+0603
+3D Model Title
+R0603
+Value
+10K
+Name
+10K
+Description
+
+Sim Model
+
+Sim Model Title
+
+Sim Model Path
+
+NGSpice Model
+
+NGSpice Model Title
+
+NGspice Model Path
+
+Reuse Block
+
+Group ID
+
+Channel ID
+
+
+*
+]
+[
+DESIGNATOR
+R21
+FOOTPRINT
+R0603
+PARTTYPE
+Res_0603
+DESCRIPTION
+
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Designator
+R21
+Symbol
+电阻
+Device
+Res_0603
+Unique ID
+gge188
+Supplier Footprint
+0603
+3D Model Title
+R0603
+Value
+100K
+Name
+100K
+Description
+
+Sim Model
+
+Sim Model Title
+
+Sim Model Path
+
+NGSpice Model
+
+NGSpice Model Title
+
+NGspice Model Path
+
+Reuse Block
+
+Group ID
+
+Channel ID
+
+
+*
+]
+[
+DESIGNATOR
+C5
+FOOTPRINT
+C0603
+PARTTYPE
+CAP_0603
+DESCRIPTION
+
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Designator
+C5
+Symbol
+Capacitance
+Device
+CAP_0603
+Unique ID
+gge33
+Supplier Footprint
+0603
+3D Model Title
+C0603_L1.6-W0.8-H0.8
+Value
+100nF
+Name
+100nF
+Description
+
+Sim Model
+
+Sim Model Title
+
+Sim Model Path
+
+NGSpice Model
+
+NGSpice Model Title
+
+NGspice Model Path
+
+Reuse Block
+
+Group ID
+
+Channel ID
+
+
+*
+]
+[
+DESIGNATOR
+C4
+FOOTPRINT
+C0603
+PARTTYPE
+CAP_0603
+DESCRIPTION
+
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Designator
+C4
+Symbol
+Capacitance
+Device
+CAP_0603
+Unique ID
+gge34
+Supplier Footprint
+0603
+3D Model Title
+C0603_L1.6-W0.8-H0.8
+Value
+10uF
+Name
+10uF
+Description
+
+Sim Model
+
+Sim Model Title
+
+Sim Model Path
+
+NGSpice Model
+
+NGSpice Model Title
+
+NGspice Model Path
+
+Reuse Block
+
+Group ID
+
+Channel ID
+
+
+*
+]
+[
+DESIGNATOR
+C17
+FOOTPRINT
+C0603
+PARTTYPE
+CAP_0603
+DESCRIPTION
+
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Designator
+C17
+Symbol
+Capacitance
+Device
+CAP_0603
+Unique ID
+gge36
+Supplier Footprint
+0603
+3D Model Title
+C0603_L1.6-W0.8-H0.8
+Value
+100nF
+Name
+100nF
+Description
+
+Sim Model
+
+Sim Model Title
+
+Sim Model Path
+
+NGSpice Model
+
+NGSpice Model Title
+
+NGspice Model Path
+
+Reuse Block
+
+Group ID
+
+Channel ID
+
+
+*
+]
+[
+DESIGNATOR
+C18
+FOOTPRINT
+C0603
+PARTTYPE
+CAP_0603
+DESCRIPTION
+
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Designator
+C18
+Symbol
+Capacitance
+Device
+CAP_0603
+Unique ID
+gge40
+Supplier Footprint
+0603
+3D Model Title
+C0603_L1.6-W0.8-H0.8
+Value
+100nF
+Name
+100nF
+Description
+
+Sim Model
+
+Sim Model Title
+
+Sim Model Path
+
+NGSpice Model
+
+NGSpice Model Title
+
+NGspice Model Path
+
+Reuse Block
+
+Group ID
+
+Channel ID
+
+
+*
+]
+[
+DESIGNATOR
+C20
+FOOTPRINT
+C0603
+PARTTYPE
+CAP_0603
+DESCRIPTION
+
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Designator
+C20
+Symbol
+Capacitance
+Device
+CAP_0603
+Unique ID
+gge43
+Supplier Footprint
+0603
+3D Model Title
+C0603_L1.6-W0.8-H0.8
+Value
+10uF
+Name
+10uF
+Description
+
+Sim Model
+
+Sim Model Title
+
+Sim Model Path
+
+NGSpice Model
+
+NGSpice Model Title
+
+NGspice Model Path
+
+Reuse Block
+
+Group ID
+
+Channel ID
+
+
+*
+]
+[
+DESIGNATOR
+C19
+FOOTPRINT
+C0603
+PARTTYPE
+CAP_0603
+DESCRIPTION
+
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Designator
+C19
+Symbol
+Capacitance
+Device
+CAP_0603
+Unique ID
+gge57
+Supplier Footprint
+0603
+3D Model Title
+C0603_L1.6-W0.8-H0.8
+Value
+100nF
+Name
+100nF
+Description
+
+Sim Model
+
+Sim Model Title
+
+Sim Model Path
+
+NGSpice Model
+
+NGSpice Model Title
+
+NGspice Model Path
+
+Reuse Block
+
+Group ID
+
+Channel ID
+
+
+*
+]
+[
+DESIGNATOR
+C25
+FOOTPRINT
+C0603
+PARTTYPE
+CAP_0603
+DESCRIPTION
+
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Designator
+C25
+Symbol
+Capacitance
+Device
+CAP_0603
+Unique ID
+gge58
+Supplier Footprint
+0603
+3D Model Title
+C0603_L1.6-W0.8-H0.8
+Value
+100nF
+Name
+100nF
+Description
+
+Sim Model
+
+Sim Model Title
+
+Sim Model Path
+
+NGSpice Model
+
+NGSpice Model Title
+
+NGspice Model Path
+
+Reuse Block
+
+Group ID
+
+Channel ID
+
+
+*
+]
+[
+DESIGNATOR
+C10
+FOOTPRINT
+C0603
+PARTTYPE
+CAP_0603
+DESCRIPTION
+
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Designator
+C10
+Symbol
+Capacitance
+Device
+CAP_0603
+Unique ID
+gge40_1
+Supplier Footprint
+0603
+3D Model Title
+C0603_L1.6-W0.8-H0.8
+Value
+100nF
+Name
+100nF
+Description
+
+Sim Model
+
+Sim Model Title
+
+Sim Model Path
+
+NGSpice Model
+
+NGSpice Model Title
+
+NGspice Model Path
+
+Reuse Block
+
+Group ID
+
+Channel ID
+
+
+*
+]
+[
+DESIGNATOR
+R9
+FOOTPRINT
+R0603
+PARTTYPE
+Res_0603
+DESCRIPTION
+
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Designator
+R9
+Symbol
+电阻
+Device
+Res_0603
+Unique ID
+gge35
+Supplier Footprint
+0603
+3D Model Title
+R0603
+Value
+200K
+Name
+200K
+Description
+
+Sim Model
+
+Sim Model Title
+
+Sim Model Path
+
+NGSpice Model
+
+NGSpice Model Title
+
+NGspice Model Path
+
+Reuse Block
+
+Group ID
+
+Channel ID
+
+
+*
+]
+[
+DESIGNATOR
+R8
+FOOTPRINT
+R0603
+PARTTYPE
+Res_0603
+DESCRIPTION
+
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Designator
+R8
+Symbol
+电阻
+Device
+Res_0603
+Unique ID
+gge42
+Supplier Footprint
+0603
+3D Model Title
+R0603
+Value
+10K
+Name
+10K
+Description
+
+Sim Model
+
+Sim Model Title
+
+Sim Model Path
+
+NGSpice Model
+
+NGSpice Model Title
+
+NGspice Model Path
+
+Reuse Block
+
+Group ID
+
+Channel ID
+
+
+*
+]
+[
+DESIGNATOR
+U8
+FOOTPRINT
+TSOT-23-8_L2.9-W1.6-P0.65-LS2.8-BR
+PARTTYPE
+SY8303AAIC_C2937216
+DESCRIPTION
+功能类型:降压型;输出类型:可调;工作电压:4.5V~40V;输出电压:-;输出电流:3A;
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Symbol
+SY8303AAIC_C2937216
+Designator
+U8
+Device
+SY8303AAIC_C2937216
+Unique ID
+gge32
+Name
+SY8303AAIC
+Reuse Block
+
+Group ID
+
+Channel ID
+
+LCSC Part Name
+高效率快速响应3A 40V输入同步降压调节器
+Supplier Part
+C2937216
+Manufacturer
+silergy(矽力杰)
+Manufacturer Part
+SY8303AAIC
+Supplier Footprint
+TSOT-23-8
+JLCPCB Part Class
+Extended Part
+Datasheet
+https://item.szlcsc.com/datasheet/SY8303AAIC/3292416.html
+Supplier
+LCSC
+3D Model Title
+TSOT-23-8_L2.9-W1.6-P0.65-LS2.8-BR
+Function
+降压型
+Output Type
+可调
+Voltage - Supply
+4.5V~40V
+Output Voltage
+-
+Output Current
+3A
+Frequency - Switching
+500kHz~2.5MHz
+Operating Temperature
+-40℃~+105℃@(TA)
+Synchronous Rectifier
+是
+Number of Outputs
+1
+Topology
+降压式
+Quiescent Current
+19uA
+Switch tube (built-in/external)
+内置
+Description
+功能类型:降压型;输出类型:可调;工作电压:4.5V~40V;输出电压:-;输出电流:3A;
+
+*
+]
+[
+DESIGNATOR
+L1
+FOOTPRINT
+IND-SMD_L4.4-W4.2
+PARTTYPE
+FXL0420-6R8-M
+DESCRIPTION
+电感值:6.8uH;精度:±20%;额定电流:2.4A;饱和电流(Isat):2.5A;类型:一体成型电感;
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Symbol
+FXL0420-6R8-M
+Designator
+L1
+Device
+FXL0420-6R8-M
+Unique ID
+gge39
+Name
+6.8uH
+Reuse Block
+
+Group ID
+
+Channel ID
+
+LCSC Part Name
+6.8uH ±20% 2.5A
+Supplier Part
+C177241
+Manufacturer
+cjiang(长江微电)
+Manufacturer Part
+FXL0420-6R8-M
+Supplier Footprint
+SMD,4.4x4.2mm
+JLCPCB Part Class
+Extended Part
+Datasheet
+https://item.szlcsc.com/datasheet/FXL0420-6R8-M/188633.html
+Supplier
+LCSC
+3D Model Title
+IND-SMD_L4.2-W4.4-H2.0
+Value
+6.8uH
+Tolerance
+±20%
+Current Rating
+2.4A
+Current - Saturation(Isat)
+2.5A
+DC Resistance(DCR)
+175mΩ
+Type
+一体成型电感
+Description
+电感值:6.8uH;精度:±20%;额定电流:2.4A;饱和电流(Isat):2.5A;类型:一体成型电感;
+
+*
+]
+[
+DESIGNATOR
+R10
+FOOTPRINT
+R0603
+PARTTYPE
+RT0603BRD0719K6L
+DESCRIPTION
+电阻类型:薄膜电阻;阻值:19.6kΩ;精度:±0.1%;功率:100mW;温度系数:±25ppm/℃;
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Symbol
+RT0603BRD0719K6L
+Designator
+R10
+Device
+RT0603BRD0719K6L
+Unique ID
+gge41
+Name
+73.2K
+Reuse Block
+
+Group ID
+
+Channel ID
+
+Value
+73.2K
+Supplier Part
+
+LCSC Part Name
+薄膜电阻 19.6kΩ ±0.1% 100mW
+Manufacturer
+YAGEO(国巨)
+Manufacturer Part
+RT0603BRD0719K6L
+Supplier Footprint
+0603
+JLCPCB Part Class
+Extended Part
+Datasheet
+https://atta.szlcsc.com/upload/public/pdf/source/20200610/C326738_5639A9F1B6EB6E4AE2197577D3456E7F.pdf
+Supplier
+LCSC
+3D Model Title
+R0603
+Type
+薄膜电阻
+Tolerance
+±0.1%
+Power(Watts)
+100mW
+Temperature Coefficient
+±25ppm/℃
+Operating Temperature Range
+-55℃~+155℃
+Description
+电阻类型:薄膜电阻;阻值:19.6kΩ;精度:±0.1%;功率:100mW;温度系数:±25ppm/℃;
+
+*
+]
+[
+DESIGNATOR
+F3
+FOOTPRINT
+F1206
+PARTTYPE
+TLC-NSMD100/24
+DESCRIPTION
+耐压(Vmax):24V;最大电流(Imax):100A;保持电流(Ihold):1A;跳闸电流(Itrip):2A;
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Symbol
+TLC-NSMD100/24
+Designator
+F3
+Device
+TLC-NSMD100/24
+Unique ID
+gge54
+Name
+30V 2A
+Reuse Block
+
+Group ID
+
+Channel ID
+
+Manufacturer Part
+30V 2A
+LCSC Part Name
+24V 1A 1206自恢复
+Supplier Part
+C2924939
+Manufacturer
+TLC(竞沃)
+Supplier Footprint
+1206
+JLCPCB Part Class
+Extended Part
+Datasheet
+https://item.szlcsc.com/datasheet/TLC-NSMD100%252F24/3242832.html
+Supplier
+LCSC
+3D Model Title
+F1206_L3.2-W1.7-H0.6
+Voltage - Max
+24V
+Current - Max
+100A
+Hold Current
+1A
+Trip Current
+2A
+Power Dissipation
+600mW
+Resistance - Initial (Ri) (Min)
+60mΩ
+Resistance - Post Trip (R1) (Max)
+280mΩ
+Time to Trip(Max)
+100ms
+Operating Temperature
+-40℃~+85℃
+Length
+3.4mm
+Width
+1.8mm
+Height
+1.4mm
+Pitch
+-
+Description
+耐压(Vmax):24V;最大电流(Imax):100A;保持电流(Ihold):1A;跳闸电流(Itrip):2A;
+
+*
+]
+[
+DESIGNATOR
+D2
+FOOTPRINT
+SOD-123FL_L2.8-W1.9-LS3.7-RD
+PARTTYPE
+SMF5.0A_C2857263
+DESCRIPTION
+极性:单向;反向截止电压(Vrwm):5V;钳位电压:9.2V;峰值脉冲电流(Ipp):21.7A;峰值脉冲功率(Ppp):200W@10/1000us;击穿电压:6.4V;
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Symbol
+SMF5.0A_C2857263
+Designator
+D2
+Device
+SMF5.0A_C2857263
+Unique ID
+gge98
+Name
+SMF5.0A
+Reuse Block
+
+Group ID
+
+Channel ID
+
+LCSC Part Name
+单向TVS 5V截止 峰值浪涌电流：21.7A
+Supplier Part
+C2857263
+Manufacturer
+JSMSEMI(杰盛微)
+Manufacturer Part
+SMF5.0A
+Supplier Footprint
+SOD-123FL
+JLCPCB Part Class
+Extended Part
+Datasheet
+https://item.szlcsc.com/datasheet/SMF5.0A/3057375.html
+Supplier
+LCSC
+3D Model Title
+SOD-123FL_L2.8-W1.9-LS3.7-RD
+Polarity
+单向
+Reverse Stand-Off Voltage (Vrwm)
+5V
+Clamping Voltage
+9.2V
+Peak Pulse Current (Ipp)
+21.7A
+Peak Pulse Power Dissipation (Ppp)
+200W@10/1000us
+Voltage - Breakdown
+6.4V
+Reverse Leakage Current (Ir)
+200uA
+Operating Temperature
+-55℃~+150℃
+Type
+TVS
+Description
+极性:单向;反向截止电压(Vrwm):5V;钳位电压:9.2V;峰值脉冲电流(Ipp):21.7A;峰值脉冲功率(Ppp):200W@10/1000us;击穿电压:6.4V;
+
+*
+]
+[
+DESIGNATOR
+C43
+FOOTPRINT
+C0603
+PARTTYPE
+CAP_0603
+DESCRIPTION
+
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Designator
+C43
+Symbol
+Capacitance
+Device
+CAP_0603
+Unique ID
+gge60_1
+Supplier Footprint
+0603
+3D Model Title
+C0603_L1.6-W0.8-H0.8
+Value
+1uF
+Name
+1uF
+Description
+
+Sim Model
+
+Sim Model Title
+
+Sim Model Path
+
+NGSpice Model
+
+NGSpice Model Title
+
+NGspice Model Path
+
+Reuse Block
+
+Group ID
+
+Channel ID
+
+
+*
+]
+[
+DESIGNATOR
+C44
+FOOTPRINT
+C0603
+PARTTYPE
+CAP_0603
+DESCRIPTION
+
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Designator
+C44
+Symbol
+Capacitance
+Device
+CAP_0603
+Unique ID
+gge61_1
+Supplier Footprint
+0603
+3D Model Title
+C0603_L1.6-W0.8-H0.8
+Value
+1uF
+Name
+1uF
+Description
+
+Sim Model
+
+Sim Model Title
+
+Sim Model Path
+
+NGSpice Model
+
+NGSpice Model Title
+
+NGspice Model Path
+
+Reuse Block
+
+Group ID
+
+Channel ID
+
+
+*
+]
+[
+DESIGNATOR
+U10
+FOOTPRINT
+SOT-23-5_L3.0-W1.7-P0.95-LS2.8-BR
+PARTTYPE
+TLV75533PDBVR
+DESCRIPTION
+输出类型:固定;工作电压:5.5V;输出电压:3.3V;输出电流:500mA;电源纹波抑制比(PSRR):46dB@(100kHz);输出极性:正极;
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Symbol
+TLV75533PDBVR
+Designator
+U10
+Device
+TLV75533PDBVR
+Unique ID
+gge59_1
+Name
+TLV75533PDBVR
+Reuse Block
+
+Group ID
+
+Channel ID
+
+LCSC Part Name
+3.3V 500mA 5.5V
+Supplier Part
+C404027
+Manufacturer
+TI(德州仪器)
+Manufacturer Part
+TLV75533PDBVR
+Supplier Footprint
+SOT-23-5
+JLCPCB Part Class
+Extended Part
+Datasheet
+https://www.ti.com/cn/lit/gpn/tlv755p
+Supplier
+LCSC
+3D Model Title
+SOT-23-5_L2.9-W1.6-H1.1-LS2.8-P0.95
+Output Type
+固定
+Voltage - Supply
+5.5V
+Output Voltage
+3.3V
+Output Current
+500mA
+Power Supply Rejection Ratio (PSRR)
+46dB@(100kHz)
+Voltage Dropout
+238mV@(500mA)
+standby current
+25uA
+Noise
+71.5uVrms
+Features
+欠压锁定；软启动；过热保护；过流保护
+Operating Temperature
+-40℃~+125℃@(Tj)
+Output Configuration
+正极
+Number of Outputs
+1
+Description
+输出类型:固定;工作电压:5.5V;输出电压:3.3V;输出电流:500mA;电源纹波抑制比(PSRR):46dB@(100kHz);输出极性:正极;
+
+*
+]
+[
+DESIGNATOR
+D1
+FOOTPRINT
+SOD-123FL_L2.6-W1.7-LS3.6-BI
+PARTTYPE
+SMF3.3CA_C19077496
+DESCRIPTION
+极性:双向;反向截止电压(Vrwm):3.3V;钳位电压:7.3V;峰值脉冲电流(Ipp):27.4A@10/1000us;峰值脉冲功率(Ppp):200W@10/1000us;击穿电压:5.3V;
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Symbol
+SMF3.3CA_C19077496
+Designator
+D1
+Device
+SMF3.3CA_C19077496
+Unique ID
+gge108_1
+Name
+SMF3.3CA
+Reuse Block
+
+Group ID
+
+Channel ID
+
+LCSC Part Name
+双向 3.3V 27.4A@10/1000us
+Supplier Part
+C19077496
+Manufacturer
+R+O(宏嘉诚)
+Manufacturer Part
+SMF3.3CA
+Supplier Footprint
+SOD-123FL
+JLCPCB Part Class
+Extended Part
+Datasheet
+https://item.szlcsc.com/datasheet/SMF3.3CA/20275581.html
+Supplier
+LCSC
+3D Model Title
+SOD-123FL_L2.6-W1.7-LS3.6-BI
+Polarity
+双向
+Reverse Stand-Off Voltage (Vrwm)
+3.3V
+Clamping Voltage
+7.3V
+Peak Pulse Current (Ipp)
+27.4A@10/1000us
+Peak Pulse Power Dissipation (Ppp)
+200W@10/1000us
+Voltage - Breakdown
+5.3V
+Reverse Leakage Current (Ir)
+500uA
+Operating Temperature
+-55℃~+150℃
+level of protection
+IEC 61000-4-2
+Type
+TVS
+Description
+极性:双向;反向截止电压(Vrwm):3.3V;钳位电压:7.3V;峰值脉冲电流(Ipp):27.4A@10/1000us;峰值脉冲功率(Ppp):200W@10/1000us;击穿电压:5.3V;
+
+*
+]
+[
+DESIGNATOR
+F1
+FOOTPRINT
+F1206
+PARTTYPE
+SMD1206-100-30
+DESCRIPTION
+耐压(Vmax):30V;最大电流(Imax):40A;保持电流(Ihold):1A;跳闸电流(Itrip):1.8A;
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Symbol
+SMD1206-100-30
+Designator
+F1
+Device
+SMD1206-100-30
+Unique ID
+gge171
+LCSC Part Name
+SMD1206-100-30
+Supplier Part
+C46641026
+Manufacturer
+R+O(宏嘉诚)
+Manufacturer Part
+SMD1206-100-30
+Supplier Footprint
+1206
+JLCPCB Part Class
+Extended Part
+Datasheet
+https://item.szlcsc.com/datasheet/SMD1206-100-30/48798732.html
+Supplier
+LCSC
+3D Model Title
+F1206_L3.2-W1.7-H0.6
+Voltage - Max
+30V
+Current - Max
+40A
+Hold Current
+1A
+Trip Current
+1.8A
+Power Dissipation
+1W
+Resistance - Initial (Ri) (Min)
+50mΩ
+Resistance - Post Trip (R1) (Max)
+300mΩ
+Time to Trip(Max)
+300ms
+Operating Temperature
+-40℃~+85℃
+Length
+3.6mm
+Width
+1.9mm
+Height
+1.3mm
+Name
+SMD1206-100-30
+Description
+耐压(Vmax):30V;最大电流(Imax):40A;保持电流(Ihold):1A;跳闸电流(Itrip):1.8A;
+Reuse Block
+
+Group ID
+
+Channel ID
+
+
+*
+]
+[
+DESIGNATOR
+C6
+FOOTPRINT
+C0603
+PARTTYPE
+CAP_0603
+DESCRIPTION
+
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Designator
+C6
+Symbol
+Capacitance
+Device
+CAP_0603
+Unique ID
+gge60_2
+Supplier Footprint
+0603
+3D Model Title
+C0603_L1.6-W0.8-H0.8
+Value
+1uF
+Name
+1uF
+Description
+
+Sim Model
+
+Sim Model Title
+
+Sim Model Path
+
+NGSpice Model
+
+NGSpice Model Title
+
+NGspice Model Path
+
+Reuse Block
+
+Group ID
+
+Channel ID
+
+
+*
+]
+[
+DESIGNATOR
+C8
+FOOTPRINT
+C0603
+PARTTYPE
+CAP_0603
+DESCRIPTION
+
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Designator
+C8
+Symbol
+Capacitance
+Device
+CAP_0603
+Unique ID
+gge61_2
+Supplier Footprint
+0603
+3D Model Title
+C0603_L1.6-W0.8-H0.8
+Value
+1uF
+Name
+1uF
+Description
+
+Sim Model
+
+Sim Model Title
+
+Sim Model Path
+
+NGSpice Model
+
+NGSpice Model Title
+
+NGspice Model Path
+
+Reuse Block
+
+Group ID
+
+Channel ID
+
+
+*
+]
+[
+DESIGNATOR
+U9
+FOOTPRINT
+SOT-23-5_L3.0-W1.7-P0.95-LS2.8-BR
+PARTTYPE
+TLV75533PDBVR
+DESCRIPTION
+输出类型:固定;工作电压:5.5V;输出电压:3.3V;输出电流:500mA;电源纹波抑制比(PSRR):46dB@(100kHz);输出极性:正极;
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Symbol
+TLV75533PDBVR
+Designator
+U9
+Device
+TLV75533PDBVR
+Unique ID
+gge59_2
+Name
+TLV75533PDBVR
+Reuse Block
+
+Group ID
+
+Channel ID
+
+LCSC Part Name
+3.3V 500mA 5.5V
+Supplier Part
+C404027
+Manufacturer
+TI(德州仪器)
+Manufacturer Part
+TLV75533PDBVR
+Supplier Footprint
+SOT-23-5
+JLCPCB Part Class
+Extended Part
+Datasheet
+https://www.ti.com/cn/lit/gpn/tlv755p
+Supplier
+LCSC
+3D Model Title
+SOT-23-5_L2.9-W1.6-H1.1-LS2.8-P0.95
+Output Type
+固定
+Voltage - Supply
+5.5V
+Output Voltage
+3.3V
+Output Current
+500mA
+Power Supply Rejection Ratio (PSRR)
+46dB@(100kHz)
+Voltage Dropout
+238mV@(500mA)
+standby current
+25uA
+Noise
+71.5uVrms
+Features
+欠压锁定；软启动；过热保护；过流保护
+Operating Temperature
+-40℃~+125℃@(Tj)
+Output Configuration
+正极
+Number of Outputs
+1
+Description
+输出类型:固定;工作电压:5.5V;输出电压:3.3V;输出电流:500mA;电源纹波抑制比(PSRR):46dB@(100kHz);输出极性:正极;
+
+*
+]
+[
+DESIGNATOR
+D3
+FOOTPRINT
+SOD-123FL_L2.6-W1.7-LS3.6-BI
+PARTTYPE
+SMF3.3CA_C19077496
+DESCRIPTION
+极性:双向;反向截止电压(Vrwm):3.3V;钳位电压:7.3V;峰值脉冲电流(Ipp):27.4A@10/1000us;峰值脉冲功率(Ppp):200W@10/1000us;击穿电压:5.3V;
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Symbol
+SMF3.3CA_C19077496
+Designator
+D3
+Device
+SMF3.3CA_C19077496
+Unique ID
+gge108_2
+Name
+SMF3.3CA
+Reuse Block
+
+Group ID
+
+Channel ID
+
+LCSC Part Name
+双向 3.3V 27.4A@10/1000us
+Supplier Part
+C19077496
+Manufacturer
+R+O(宏嘉诚)
+Manufacturer Part
+SMF3.3CA
+Supplier Footprint
+SOD-123FL
+JLCPCB Part Class
+Extended Part
+Datasheet
+https://item.szlcsc.com/datasheet/SMF3.3CA/20275581.html
+Supplier
+LCSC
+3D Model Title
+SOD-123FL_L2.6-W1.7-LS3.6-BI
+Polarity
+双向
+Reverse Stand-Off Voltage (Vrwm)
+3.3V
+Clamping Voltage
+7.3V
+Peak Pulse Current (Ipp)
+27.4A@10/1000us
+Peak Pulse Power Dissipation (Ppp)
+200W@10/1000us
+Voltage - Breakdown
+5.3V
+Reverse Leakage Current (Ir)
+500uA
+Operating Temperature
+-55℃~+150℃
+level of protection
+IEC 61000-4-2
+Type
+TVS
+Description
+极性:双向;反向截止电压(Vrwm):3.3V;钳位电压:7.3V;峰值脉冲电流(Ipp):27.4A@10/1000us;峰值脉冲功率(Ppp):200W@10/1000us;击穿电压:5.3V;
+
+*
+]
+[
+DESIGNATOR
+F2
+FOOTPRINT
+F1206
+PARTTYPE
+SMD1206-100-30
+DESCRIPTION
+耐压(Vmax):30V;最大电流(Imax):40A;保持电流(Ihold):1A;跳闸电流(Itrip):1.8A;
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Symbol
+SMD1206-100-30
+Designator
+F2
+Device
+SMD1206-100-30
+Unique ID
+gge171_1
+LCSC Part Name
+SMD1206-100-30
+Supplier Part
+C46641026
+Manufacturer
+R+O(宏嘉诚)
+Manufacturer Part
+SMD1206-100-30
+Supplier Footprint
+1206
+JLCPCB Part Class
+Extended Part
+Datasheet
+https://item.szlcsc.com/datasheet/SMD1206-100-30/48798732.html
+Supplier
+LCSC
+3D Model Title
+F1206_L3.2-W1.7-H0.6
+Voltage - Max
+30V
+Current - Max
+40A
+Hold Current
+1A
+Trip Current
+1.8A
+Power Dissipation
+1W
+Resistance - Initial (Ri) (Min)
+50mΩ
+Resistance - Post Trip (R1) (Max)
+300mΩ
+Time to Trip(Max)
+300ms
+Operating Temperature
+-40℃~+85℃
+Length
+3.6mm
+Width
+1.9mm
+Height
+1.3mm
+Name
+SMD1206-100-30
+Description
+耐压(Vmax):30V;最大电流(Imax):40A;保持电流(Ihold):1A;跳闸电流(Itrip):1.8A;
+Reuse Block
+
+Group ID
+
+Channel ID
+
+
+*
+]
+[
+DESIGNATOR
+D4
+FOOTPRINT
+SOD-123FL_L2.6-W1.7-LS3.6-BI
+PARTTYPE
+SMF3.3CA_C19077496
+DESCRIPTION
+极性:双向;反向截止电压(Vrwm):3.3V;钳位电压:7.3V;峰值脉冲电流(Ipp):27.4A@10/1000us;峰值脉冲功率(Ppp):200W@10/1000us;击穿电压:5.3V;
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Symbol
+SMF3.3CA_C19077496
+Designator
+D4
+Device
+SMF3.3CA_C19077496
+Unique ID
+gge108
+Name
+SMF3.3CA
+Reuse Block
+
+Group ID
+
+Channel ID
+
+LCSC Part Name
+双向 3.3V 27.4A@10/1000us
+Supplier Part
+C19077496
+Manufacturer
+R+O(宏嘉诚)
+Manufacturer Part
+SMF3.3CA
+Supplier Footprint
+SOD-123FL
+JLCPCB Part Class
+Extended Part
+Datasheet
+https://item.szlcsc.com/datasheet/SMF3.3CA/20275581.html
+Supplier
+LCSC
+3D Model Title
+SOD-123FL_L2.6-W1.7-LS3.6-BI
+Polarity
+双向
+Reverse Stand-Off Voltage (Vrwm)
+3.3V
+Clamping Voltage
+7.3V
+Peak Pulse Current (Ipp)
+27.4A@10/1000us
+Peak Pulse Power Dissipation (Ppp)
+200W@10/1000us
+Voltage - Breakdown
+5.3V
+Reverse Leakage Current (Ir)
+500uA
+Operating Temperature
+-55℃~+150℃
+level of protection
+IEC 61000-4-2
+Type
+TVS
+Description
+极性:双向;反向截止电压(Vrwm):3.3V;钳位电压:7.3V;峰值脉冲电流(Ipp):27.4A@10/1000us;峰值脉冲功率(Ppp):200W@10/1000us;击穿电压:5.3V;
+
+*
+]
+[
+DESIGNATOR
+C41
+FOOTPRINT
+C0603
+PARTTYPE
+CAP_0603
+DESCRIPTION
+
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Designator
+C41
+Symbol
+Capacitance
+Device
+CAP_0603
+Unique ID
+gge110
+Supplier Footprint
+0603
+3D Model Title
+C0603_L1.6-W0.8-H0.8
+Value
+100nF
+Name
+100nF
+Description
+
+Sim Model
+
+Sim Model Title
+
+Sim Model Path
+
+NGSpice Model
+
+NGSpice Model Title
+
+NGspice Model Path
+
+Reuse Block
+
+Group ID
+
+Channel ID
+
+
+*
+]
+[
+DESIGNATOR
+F4
+FOOTPRINT
+F1206
+PARTTYPE
+SMD1206-100-30
+DESCRIPTION
+耐压(Vmax):30V;最大电流(Imax):40A;保持电流(Ihold):1A;跳闸电流(Itrip):1.8A;
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Symbol
+SMD1206-100-30
+Designator
+F4
+Device
+SMD1206-100-30
+Unique ID
+gge107
+Name
+SMD1206-1A
+Reuse Block
+
+Group ID
+
+Channel ID
+
+Manufacturer Part
+SMD1206-1A
+LCSC Part Name
+SMD1206-100-30
+Supplier Part
+C46641026
+Manufacturer
+R+O(宏嘉诚)
+Supplier Footprint
+1206
+JLCPCB Part Class
+Extended Part
+Datasheet
+https://item.szlcsc.com/datasheet/SMD1206-100-30/48798732.html
+Supplier
+LCSC
+3D Model Title
+F1206_L3.2-W1.7-H0.6
+Voltage - Max
+30V
+Current - Max
+40A
+Hold Current
+1A
+Trip Current
+1.8A
+Power Dissipation
+1W
+Resistance - Initial (Ri) (Min)
+50mΩ
+Resistance - Post Trip (R1) (Max)
+300mΩ
+Time to Trip(Max)
+300ms
+Operating Temperature
+-40℃~+85℃
+Length
+3.6mm
+Width
+1.9mm
+Height
+1.3mm
+Description
+耐压(Vmax):30V;最大电流(Imax):40A;保持电流(Ihold):1A;跳闸电流(Itrip):1.8A;
+
+*
+]
+[
+DESIGNATOR
+CN6
+FOOTPRINT
+CONN-SMD_4P-P1.25-MX1.25-4P-WT
+PARTTYPE
+MH1.25-4AWB
+DESCRIPTION
+插针结构:1x4P;间距:1.25mm;安装方式:卧贴;参考系列:PicoBlade(MX 1.25);总PIN数:4P;排数:1;每排PIN数:4;额定电流:1A;触头材质:磷青铜;触头镀层:锡;工作温度:-25℃~+85℃;
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Symbol
+MH1.25-4AWB
+Designator
+CN6
+Device
+MH1.25-4AWB
+Unique ID
+gge106
+Name
+MH1.25-4AWB
+Reuse Block
+
+Group ID
+
+Channel ID
+
+LCSC Part Name
+1x4P 间距:1.25mm 卧贴 系列:PicoBlade(MX 1.25)
+Supplier Part
+C20613833
+Manufacturer
+DLL(德利)
+Manufacturer Part
+MH1.25-4AWB
+Supplier Footprint
+SMD,P=1.25mm,卧贴
+JLCPCB Part Class
+Extended Part
+Datasheet
+https://item.szlcsc.com/datasheet/MH1.25-4AWB/21976496.html
+Supplier
+LCSC
+3D Model Title
+CONN-SMD_4P-P1.25-MX1.25-4P-WT
+Pins Structure
+1x4P
+Pitch
+1.25mm
+Mounting Type
+卧贴
+Reference Series
+PicoBlade(MX 1.25)
+Number of Pins
+4P
+Number of Rows
+1
+Number of PINs Per Row
+4
+Current Rating
+1A
+Contact Material
+磷青铜
+Contact Plating
+锡
+Operating Temperature
+-25℃~+85℃
+Voltage Rating
+125V
+Plastic Material
+LCP
+Flame Retardant Rating
+UL94V-0
+Supplementary Features
+辅助焊脚
+Color
+米黄色
+Description
+插针结构:1x4P;间距:1.25mm;安装方式:卧贴;参考系列:PicoBlade(MX 1.25);总PIN数:4P;排数:1;每排PIN数:4;额定电流:1A;触头材质:磷青铜;触头镀层:锡;工作温度:-25℃~+85℃;
+
+*
+]
+[
+DESIGNATOR
+D5
+FOOTPRINT
+SOD-123FL_L2.6-W1.7-LS3.6-BI
+PARTTYPE
+SMF3.3CA_C19077496
+DESCRIPTION
+极性:双向;反向截止电压(Vrwm):3.3V;钳位电压:7.3V;峰值脉冲电流(Ipp):27.4A@10/1000us;峰值脉冲功率(Ppp):200W@10/1000us;击穿电压:5.3V;
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Symbol
+SMF3.3CA_C19077496
+Designator
+D5
+Device
+SMF3.3CA_C19077496
+Unique ID
+gge108_3
+Name
+SMF3.3CA
+Reuse Block
+
+Group ID
+
+Channel ID
+
+LCSC Part Name
+双向 3.3V 27.4A@10/1000us
+Supplier Part
+C19077496
+Manufacturer
+R+O(宏嘉诚)
+Manufacturer Part
+SMF3.3CA
+Supplier Footprint
+SOD-123FL
+JLCPCB Part Class
+Extended Part
+Datasheet
+https://item.szlcsc.com/datasheet/SMF3.3CA/20275581.html
+Supplier
+LCSC
+3D Model Title
+SOD-123FL_L2.6-W1.7-LS3.6-BI
+Polarity
+双向
+Reverse Stand-Off Voltage (Vrwm)
+3.3V
+Clamping Voltage
+7.3V
+Peak Pulse Current (Ipp)
+27.4A@10/1000us
+Peak Pulse Power Dissipation (Ppp)
+200W@10/1000us
+Voltage - Breakdown
+5.3V
+Reverse Leakage Current (Ir)
+500uA
+Operating Temperature
+-55℃~+150℃
+level of protection
+IEC 61000-4-2
+Type
+TVS
+Description
+极性:双向;反向截止电压(Vrwm):3.3V;钳位电压:7.3V;峰值脉冲电流(Ipp):27.4A@10/1000us;峰值脉冲功率(Ppp):200W@10/1000us;击穿电压:5.3V;
+
+*
+]
+[
+DESIGNATOR
+C14
+FOOTPRINT
+C0603
+PARTTYPE
+CAP_0603
+DESCRIPTION
+
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Designator
+C14
+Symbol
+Capacitance
+Device
+CAP_0603
+Unique ID
+gge110_1
+Supplier Footprint
+0603
+3D Model Title
+C0603_L1.6-W0.8-H0.8
+Value
+100nF
+Name
+100nF
+Description
+
+Sim Model
+
+Sim Model Title
+
+Sim Model Path
+
+NGSpice Model
+
+NGSpice Model Title
+
+NGspice Model Path
+
+Reuse Block
+
+Group ID
+
+Channel ID
+
+
+*
+]
+[
+DESIGNATOR
+F5
+FOOTPRINT
+F1206
+PARTTYPE
+SMD1206-100-30
+DESCRIPTION
+耐压(Vmax):30V;最大电流(Imax):40A;保持电流(Ihold):1A;跳闸电流(Itrip):1.8A;
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Symbol
+SMD1206-100-30
+Designator
+F5
+Device
+SMD1206-100-30
+Unique ID
+gge107_1
+Name
+SMD1206-1A
+Reuse Block
+
+Group ID
+
+Channel ID
+
+Manufacturer Part
+SMD1206-1A
+LCSC Part Name
+SMD1206-100-30
+Supplier Part
+C46641026
+Manufacturer
+R+O(宏嘉诚)
+Supplier Footprint
+1206
+JLCPCB Part Class
+Extended Part
+Datasheet
+https://item.szlcsc.com/datasheet/SMD1206-100-30/48798732.html
+Supplier
+LCSC
+3D Model Title
+F1206_L3.2-W1.7-H0.6
+Voltage - Max
+30V
+Current - Max
+40A
+Hold Current
+1A
+Trip Current
+1.8A
+Power Dissipation
+1W
+Resistance - Initial (Ri) (Min)
+50mΩ
+Resistance - Post Trip (R1) (Max)
+300mΩ
+Time to Trip(Max)
+300ms
+Operating Temperature
+-40℃~+85℃
+Length
+3.6mm
+Width
+1.9mm
+Height
+1.3mm
+Description
+耐压(Vmax):30V;最大电流(Imax):40A;保持电流(Ihold):1A;跳闸电流(Itrip):1.8A;
+
+*
+]
+[
+DESIGNATOR
+CN3
+FOOTPRINT
+CONN-SMD_4P-P1.25-MX1.25-4P-WT
+PARTTYPE
+MH1.25-4AWB
+DESCRIPTION
+插针结构:1x4P;间距:1.25mm;安装方式:卧贴;参考系列:PicoBlade(MX 1.25);总PIN数:4P;排数:1;每排PIN数:4;额定电流:1A;触头材质:磷青铜;触头镀层:锡;工作温度:-25℃~+85℃;
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Symbol
+MH1.25-4AWB
+Designator
+CN3
+Device
+MH1.25-4AWB
+Unique ID
+gge106_1
+Name
+MH1.25-4AWB
+Reuse Block
+
+Group ID
+
+Channel ID
+
+LCSC Part Name
+1x4P 间距:1.25mm 卧贴 系列:PicoBlade(MX 1.25)
+Supplier Part
+C20613833
+Manufacturer
+DLL(德利)
+Manufacturer Part
+MH1.25-4AWB
+Supplier Footprint
+SMD,P=1.25mm,卧贴
+JLCPCB Part Class
+Extended Part
+Datasheet
+https://item.szlcsc.com/datasheet/MH1.25-4AWB/21976496.html
+Supplier
+LCSC
+3D Model Title
+CONN-SMD_4P-P1.25-MX1.25-4P-WT
+Pins Structure
+1x4P
+Pitch
+1.25mm
+Mounting Type
+卧贴
+Reference Series
+PicoBlade(MX 1.25)
+Number of Pins
+4P
+Number of Rows
+1
+Number of PINs Per Row
+4
+Current Rating
+1A
+Contact Material
+磷青铜
+Contact Plating
+锡
+Operating Temperature
+-25℃~+85℃
+Voltage Rating
+125V
+Plastic Material
+LCP
+Flame Retardant Rating
+UL94V-0
+Supplementary Features
+辅助焊脚
+Color
+米黄色
+Description
+插针结构:1x4P;间距:1.25mm;安装方式:卧贴;参考系列:PicoBlade(MX 1.25);总PIN数:4P;排数:1;每排PIN数:4;额定电流:1A;触头材质:磷青铜;触头镀层:锡;工作温度:-25℃~+85℃;
+
+*
+]
+[
+DESIGNATOR
+H1
+FOOTPRINT
+CONN-TH_LAIL-PZ2.54-4P-L
+PARTTYPE
+LAIL-PZ2.54-4P-L
+DESCRIPTION
+插针结构:1x4P;间距:2.54mm;圆针/方针:方针;排数:单排;总PIN位数:4P;额定电流:3A;额定电压:250V;塑高:2.5mm;端接针长度:3mm;触头材质:黄铜;触头镀层:金;工作温度:-25℃~+80℃;颜色:黑色;
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Name
+LAIL-PZ2.54-4P-L
+Designator
+H1
+Symbol
+LAIL-PZ2.54-4P-L
+Device
+LAIL-PZ2.54-4P-L
+Unique ID
+gge189
+Reuse Block
+
+Group ID
+
+Channel ID
+
+LCSC Part Name
+1x4P 间距:2.54mm 方针
+Supplier Part
+C54950602
+Manufacturer
+莱联
+Manufacturer Part
+LAIL-PZ2.54-4P-L
+Supplier Footprint
+插件,P=2.54mm
+JLCPCB Part Class
+Extended Part
+Datasheet
+https://item.szlcsc.com/datasheet/LAIL-PZ2.54-4P-L/58519955.html
+Supplier
+LCSC
+3D Model Title
+CONN-TH_LAIL-PZ2.54-4P-L
+Pin Structure
+1x4P
+Pitch
+2.54mm
+Circluar Pins/Square Pins
+方针
+Number of Rows
+单排
+Number of Pins
+4P
+Current Rating
+3A
+Voltage Rating (Max)
+250V
+Insulation Height
+2.5mm
+Length of End Connection Pin
+3mm
+Contact Material
+黄铜
+Contact Plating
+金
+Operating Temperature
+-25℃~+80℃
+Color
+黑色
+Description
+插针结构:1x4P;间距:2.54mm;圆针/方针:方针;排数:单排;总PIN位数:4P;额定电流:3A;额定电压:250V;塑高:2.5mm;端接针长度:3mm;触头材质:黄铜;触头镀层:金;工作温度:-25℃~+80℃;颜色:黑色;
+
+*
+]
+[
+DESIGNATOR
+H2
+FOOTPRINT
+CONN-TH_LAIL-PZ2.54-4P-L
+PARTTYPE
+LAIL-PZ2.54-4P-L
+DESCRIPTION
+插针结构:1x4P;间距:2.54mm;圆针/方针:方针;排数:单排;总PIN位数:4P;额定电流:3A;额定电压:250V;塑高:2.5mm;端接针长度:3mm;触头材质:黄铜;触头镀层:金;工作温度:-25℃~+80℃;颜色:黑色;
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Name
+LAIL-PZ2.54-4P-L
+Designator
+H2
+Symbol
+LAIL-PZ2.54-4P-L
+Device
+LAIL-PZ2.54-4P-L
+Unique ID
+gge190
+Reuse Block
+
+Group ID
+
+Channel ID
+
+LCSC Part Name
+1x4P 间距:2.54mm 方针
+Supplier Part
+C54950602
+Manufacturer
+莱联
+Manufacturer Part
+LAIL-PZ2.54-4P-L
+Supplier Footprint
+插件,P=2.54mm
+JLCPCB Part Class
+Extended Part
+Datasheet
+https://item.szlcsc.com/datasheet/LAIL-PZ2.54-4P-L/58519955.html
+Supplier
+LCSC
+3D Model Title
+CONN-TH_LAIL-PZ2.54-4P-L
+Pin Structure
+1x4P
+Pitch
+2.54mm
+Circluar Pins/Square Pins
+方针
+Number of Rows
+单排
+Number of Pins
+4P
+Current Rating
+3A
+Voltage Rating (Max)
+250V
+Insulation Height
+2.5mm
+Length of End Connection Pin
+3mm
+Contact Material
+黄铜
+Contact Plating
+金
+Operating Temperature
+-25℃~+80℃
+Color
+黑色
+Description
+插针结构:1x4P;间距:2.54mm;圆针/方针:方针;排数:单排;总PIN位数:4P;额定电流:3A;额定电压:250V;塑高:2.5mm;端接针长度:3mm;触头材质:黄铜;触头镀层:金;工作温度:-25℃~+80℃;颜色:黑色;
+
+*
+]
+[
+DESIGNATOR
+R11
+FOOTPRINT
+R0603
+PARTTYPE
+Res_0603
+DESCRIPTION
+
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Designator
+R11
+Symbol
+电阻
+Device
+Res_0603
+Unique ID
+gge196
+Supplier Footprint
+0603
+3D Model Title
+R0603
+Value
+4.7K
+Name
+4.7K
+Description
+
+Sim Model
+
+Sim Model Title
+
+Sim Model Path
+
+NGSpice Model
+
+NGSpice Model Title
+
+NGspice Model Path
+
+Reuse Block
+
+Group ID
+
+Channel ID
+
+
+*
+]
+[
+DESIGNATOR
+R12
+FOOTPRINT
+R0603
+PARTTYPE
+Res_0603
+DESCRIPTION
+
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Designator
+R12
+Symbol
+电阻
+Device
+Res_0603
+Unique ID
+gge197
+Supplier Footprint
+0603
+3D Model Title
+R0603
+Value
+4.7K
+Name
+4.7K
+Description
+
+Sim Model
+
+Sim Model Title
+
+Sim Model Path
+
+NGSpice Model
+
+NGSpice Model Title
+
+NGspice Model Path
+
+Reuse Block
+
+Group ID
+
+Channel ID
+
+
+*
+]
+[
+DESIGNATOR
+R13
+FOOTPRINT
+R0603
+PARTTYPE
+Res_0603
+DESCRIPTION
+
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Designator
+R13
+Symbol
+电阻
+Device
+Res_0603
+Unique ID
+gge198
+Supplier Footprint
+0603
+3D Model Title
+R0603
+Value
+4.7K
+Name
+4.7K
+Description
+
+Sim Model
+
+Sim Model Title
+
+Sim Model Path
+
+NGSpice Model
+
+NGSpice Model Title
+
+NGspice Model Path
+
+Reuse Block
+
+Group ID
+
+Channel ID
+
+
+*
+]
+[
+DESIGNATOR
+R15
+FOOTPRINT
+R0603
+PARTTYPE
+Res_0603
+DESCRIPTION
+
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Designator
+R15
+Symbol
+电阻
+Device
+Res_0603
+Unique ID
+gge199
+Supplier Footprint
+0603
+3D Model Title
+R0603
+Value
+4.7K
+Name
+4.7K
+Description
+
+Sim Model
+
+Sim Model Title
+
+Sim Model Path
+
+NGSpice Model
+
+NGSpice Model Title
+
+NGspice Model Path
+
+Reuse Block
+
+Group ID
+
+Channel ID
+
+
+*
+]
+[
+DESIGNATOR
+R4
+FOOTPRINT
+R0603
+PARTTYPE
+Res_0603
+DESCRIPTION
+
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Designator
+R4
+Symbol
+电阻
+Device
+Res_0603
+Unique ID
+gge200
+Supplier Footprint
+0603
+3D Model Title
+R0603
+Value
+4.7K
+Name
+4.7K
+Description
+
+Sim Model
+
+Sim Model Title
+
+Sim Model Path
+
+NGSpice Model
+
+NGSpice Model Title
+
+NGspice Model Path
+
+Reuse Block
+
+Group ID
+
+Channel ID
+
+
+*
+]
+[
+DESIGNATOR
+R5
+FOOTPRINT
+R0603
+PARTTYPE
+Res_0603
+DESCRIPTION
+
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Designator
+R5
+Symbol
+电阻
+Device
+Res_0603
+Unique ID
+gge201
+Supplier Footprint
+0603
+3D Model Title
+R0603
+Value
+4.7K
+Name
+4.7K
+Description
+
+Sim Model
+
+Sim Model Title
+
+Sim Model Path
+
+NGSpice Model
+
+NGSpice Model Title
+
+NGspice Model Path
+
+Reuse Block
+
+Group ID
+
+Channel ID
+
+
+*
+]
+[
+DESIGNATOR
+R6
+FOOTPRINT
+R0603
+PARTTYPE
+Res_0603
+DESCRIPTION
+
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Designator
+R6
+Symbol
+电阻
+Device
+Res_0603
+Unique ID
+gge202
+Supplier Footprint
+0603
+3D Model Title
+R0603
+Value
+4.7K
+Name
+4.7K
+Description
+
+Sim Model
+
+Sim Model Title
+
+Sim Model Path
+
+NGSpice Model
+
+NGSpice Model Title
+
+NGspice Model Path
+
+Reuse Block
+
+Group ID
+
+Channel ID
+
+
+*
+]
+[
+DESIGNATOR
+R7
+FOOTPRINT
+R0603
+PARTTYPE
+Res_0603
+DESCRIPTION
+
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Designator
+R7
+Symbol
+电阻
+Device
+Res_0603
+Unique ID
+gge203
+Supplier Footprint
+0603
+3D Model Title
+R0603
+Value
+4.7K
+Name
+4.7K
+Description
+
+Sim Model
+
+Sim Model Title
+
+Sim Model Path
+
+NGSpice Model
+
+NGSpice Model Title
+
+NGspice Model Path
+
+Reuse Block
+
+Group ID
+
+Channel ID
+
+
+*
+]
+[
+DESIGNATOR
+C15
+FOOTPRINT
+C0603
+PARTTYPE
+CAP_0603
+DESCRIPTION
+
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Designator
+C15
+Symbol
+Capacitance
+Device
+CAP_0603
+Unique ID
+gge204
+Supplier Footprint
+0603
+3D Model Title
+C0603_L1.6-W0.8-H0.8
+Value
+100nF
+Name
+100nF
+Description
+
+Sim Model
+
+Sim Model Title
+
+Sim Model Path
+
+NGSpice Model
+
+NGSpice Model Title
+
+NGspice Model Path
+
+Reuse Block
+
+Group ID
+
+Channel ID
+
+
+*
+]
+[
+DESIGNATOR
+C16
+FOOTPRINT
+C0603
+PARTTYPE
+CAP_0603
+DESCRIPTION
+
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Designator
+C16
+Symbol
+Capacitance
+Device
+CAP_0603
+Unique ID
+gge205
+Supplier Footprint
+0603
+3D Model Title
+C0603_L1.6-W0.8-H0.8
+Value
+100nF
+Name
+100nF
+Description
+
+Sim Model
+
+Sim Model Title
+
+Sim Model Path
+
+NGSpice Model
+
+NGSpice Model Title
+
+NGspice Model Path
+
+Reuse Block
+
+Group ID
+
+Channel ID
+
+
+*
+]
+[
+DESIGNATOR
+C21
+FOOTPRINT
+C0603
+PARTTYPE
+CAP_0603
+DESCRIPTION
+
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Designator
+C21
+Symbol
+Capacitance
+Device
+CAP_0603
+Unique ID
+gge206
+Supplier Footprint
+0603
+3D Model Title
+C0603_L1.6-W0.8-H0.8
+Value
+100nF
+Name
+100nF
+Description
+
+Sim Model
+
+Sim Model Title
+
+Sim Model Path
+
+NGSpice Model
+
+NGSpice Model Title
+
+NGspice Model Path
+
+Reuse Block
+
+Group ID
+
+Channel ID
+
+
+*
+]
+[
+DESIGNATOR
+C22
+FOOTPRINT
+C0603
+PARTTYPE
+CAP_0603
+DESCRIPTION
+
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Designator
+C22
+Symbol
+Capacitance
+Device
+CAP_0603
+Unique ID
+gge207
+Supplier Footprint
+0603
+3D Model Title
+C0603_L1.6-W0.8-H0.8
+Value
+100nF
+Name
+100nF
+Description
+
+Sim Model
+
+Sim Model Title
+
+Sim Model Path
+
+NGSpice Model
+
+NGSpice Model Title
+
+NGspice Model Path
+
+Reuse Block
+
+Group ID
+
+Channel ID
+
+
+*
+]
+[
+DESIGNATOR
+C23
+FOOTPRINT
+C0603
+PARTTYPE
+CAP_0603
+DESCRIPTION
+
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Designator
+C23
+Symbol
+Capacitance
+Device
+CAP_0603
+Unique ID
+gge208
+Supplier Footprint
+0603
+3D Model Title
+C0603_L1.6-W0.8-H0.8
+Value
+100nF
+Name
+100nF
+Description
+
+Sim Model
+
+Sim Model Title
+
+Sim Model Path
+
+NGSpice Model
+
+NGSpice Model Title
+
+NGspice Model Path
+
+Reuse Block
+
+Group ID
+
+Channel ID
+
+
+*
+]
+[
+DESIGNATOR
+C24
+FOOTPRINT
+C0603
+PARTTYPE
+CAP_0603
+DESCRIPTION
+
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Designator
+C24
+Symbol
+Capacitance
+Device
+CAP_0603
+Unique ID
+gge209
+Supplier Footprint
+0603
+3D Model Title
+C0603_L1.6-W0.8-H0.8
+Value
+100nF
+Name
+100nF
+Description
+
+Sim Model
+
+Sim Model Title
+
+Sim Model Path
+
+NGSpice Model
+
+NGSpice Model Title
+
+NGspice Model Path
+
+Reuse Block
+
+Group ID
+
+Channel ID
+
+
+*
+]
+[
+DESIGNATOR
+C26
+FOOTPRINT
+C0603
+PARTTYPE
+CAP_0603
+DESCRIPTION
+
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Designator
+C26
+Symbol
+Capacitance
+Device
+CAP_0603
+Unique ID
+gge210
+Supplier Footprint
+0603
+3D Model Title
+C0603_L1.6-W0.8-H0.8
+Value
+100nF
+Name
+100nF
+Description
+
+Sim Model
+
+Sim Model Title
+
+Sim Model Path
+
+NGSpice Model
+
+NGSpice Model Title
+
+NGspice Model Path
+
+Reuse Block
+
+Group ID
+
+Channel ID
+
+
+*
+]
+[
+DESIGNATOR
+C27
+FOOTPRINT
+C0603
+PARTTYPE
+CAP_0603
+DESCRIPTION
+
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Designator
+C27
+Symbol
+Capacitance
+Device
+CAP_0603
+Unique ID
+gge211
+Supplier Footprint
+0603
+3D Model Title
+C0603_L1.6-W0.8-H0.8
+Value
+100nF
+Name
+100nF
+Description
+
+Sim Model
+
+Sim Model Title
+
+Sim Model Path
+
+NGSpice Model
+
+NGSpice Model Title
+
+NGspice Model Path
+
+Reuse Block
+
+Group ID
+
+Channel ID
+
+
+*
+]
+[
+DESIGNATOR
+C28
+FOOTPRINT
+C0603
+PARTTYPE
+CAP_0603
+DESCRIPTION
+
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Designator
+C28
+Symbol
+Capacitance
+Device
+CAP_0603
+Unique ID
+gge212
+Supplier Footprint
+0603
+3D Model Title
+C0603_L1.6-W0.8-H0.8
+Value
+100nF
+Name
+100nF
+Description
+
+Sim Model
+
+Sim Model Title
+
+Sim Model Path
+
+NGSpice Model
+
+NGSpice Model Title
+
+NGspice Model Path
+
+Reuse Block
+
+Group ID
+
+Channel ID
+
+
+*
+]
+[
+DESIGNATOR
+C31
+FOOTPRINT
+C0603
+PARTTYPE
+CAP_0603
+DESCRIPTION
+
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Designator
+C31
+Symbol
+Capacitance
+Device
+CAP_0603
+Unique ID
+gge215
+Supplier Footprint
+0603
+3D Model Title
+C0603_L1.6-W0.8-H0.8
+Value
+100nF
+Name
+100nF
+Description
+
+Sim Model
+
+Sim Model Title
+
+Sim Model Path
+
+NGSpice Model
+
+NGSpice Model Title
+
+NGspice Model Path
+
+Reuse Block
+
+Group ID
+
+Channel ID
+
+
+*
+]
+[
+DESIGNATOR
+C32
+FOOTPRINT
+C0603
+PARTTYPE
+CAP_0603
+DESCRIPTION
+
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Designator
+C32
+Symbol
+Capacitance
+Device
+CAP_0603
+Unique ID
+gge217
+Supplier Footprint
+0603
+3D Model Title
+C0603_L1.6-W0.8-H0.8
+Value
+100nF
+Name
+100nF
+Description
+
+Sim Model
+
+Sim Model Title
+
+Sim Model Path
+
+NGSpice Model
+
+NGSpice Model Title
+
+NGspice Model Path
+
+Reuse Block
+
+Group ID
+
+Channel ID
+
+
+*
+]
+[
+DESIGNATOR
+C35
+FOOTPRINT
+C0603
+PARTTYPE
+CAP_0603
+DESCRIPTION
+
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Designator
+C35
+Symbol
+Capacitance
+Device
+CAP_0603
+Unique ID
+gge218
+Supplier Footprint
+0603
+3D Model Title
+C0603_L1.6-W0.8-H0.8
+Value
+100nF
+Name
+100nF
+Description
+
+Sim Model
+
+Sim Model Title
+
+Sim Model Path
+
+NGSpice Model
+
+NGSpice Model Title
+
+NGspice Model Path
+
+Reuse Block
+
+Group ID
+
+Channel ID
+
+
+*
+]
+[
+DESIGNATOR
+C36
+FOOTPRINT
+C0603
+PARTTYPE
+CAP_0603
+DESCRIPTION
+
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Designator
+C36
+Symbol
+Capacitance
+Device
+CAP_0603
+Unique ID
+gge219
+Supplier Footprint
+0603
+3D Model Title
+C0603_L1.6-W0.8-H0.8
+Value
+100nF
+Name
+100nF
+Description
+
+Sim Model
+
+Sim Model Title
+
+Sim Model Path
+
+NGSpice Model
+
+NGSpice Model Title
+
+NGspice Model Path
+
+Reuse Block
+
+Group ID
+
+Channel ID
+
+
+*
+]
+[
+DESIGNATOR
+C37
+FOOTPRINT
+C0603
+PARTTYPE
+CAP_0603
+DESCRIPTION
+
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Designator
+C37
+Symbol
+Capacitance
+Device
+CAP_0603
+Unique ID
+gge220
+Supplier Footprint
+0603
+3D Model Title
+C0603_L1.6-W0.8-H0.8
+Value
+100nF
+Name
+100nF
+Description
+
+Sim Model
+
+Sim Model Title
+
+Sim Model Path
+
+NGSpice Model
+
+NGSpice Model Title
+
+NGspice Model Path
+
+Reuse Block
+
+Group ID
+
+Channel ID
+
+
+*
+]
+[
+DESIGNATOR
+C38
+FOOTPRINT
+C0603
+PARTTYPE
+CAP_0603
+DESCRIPTION
+
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Designator
+C38
+Symbol
+Capacitance
+Device
+CAP_0603
+Unique ID
+gge221
+Supplier Footprint
+0603
+3D Model Title
+C0603_L1.6-W0.8-H0.8
+Value
+100nF
+Name
+100nF
+Description
+
+Sim Model
+
+Sim Model Title
+
+Sim Model Path
+
+NGSpice Model
+
+NGSpice Model Title
+
+NGspice Model Path
+
+Reuse Block
+
+Group ID
+
+Channel ID
+
+
+*
+]
+[
+DESIGNATOR
+C39
+FOOTPRINT
+C0603
+PARTTYPE
+CAP_0603
+DESCRIPTION
+
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Designator
+C39
+Symbol
+Capacitance
+Device
+CAP_0603
+Unique ID
+gge222
+Supplier Footprint
+0603
+3D Model Title
+C0603_L1.6-W0.8-H0.8
+Value
+100nF
+Name
+100nF
+Description
+
+Sim Model
+
+Sim Model Title
+
+Sim Model Path
+
+NGSpice Model
+
+NGSpice Model Title
+
+NGspice Model Path
+
+Reuse Block
+
+Group ID
+
+Channel ID
+
+
+*
+]
+[
+DESIGNATOR
+C42
+FOOTPRINT
+C0603
+PARTTYPE
+CAP_0603
+DESCRIPTION
+
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Designator
+C42
+Symbol
+Capacitance
+Device
+CAP_0603
+Unique ID
+gge223
+Supplier Footprint
+0603
+3D Model Title
+C0603_L1.6-W0.8-H0.8
+Value
+100nF
+Name
+100nF
+Description
+
+Sim Model
+
+Sim Model Title
+
+Sim Model Path
+
+NGSpice Model
+
+NGSpice Model Title
+
+NGspice Model Path
+
+Reuse Block
+
+Group ID
+
+Channel ID
+
+
+*
+]
+[
+DESIGNATOR
+C45
+FOOTPRINT
+C0603
+PARTTYPE
+CAP_0603
+DESCRIPTION
+
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Designator
+C45
+Symbol
+Capacitance
+Device
+CAP_0603
+Unique ID
+gge224
+Supplier Footprint
+0603
+3D Model Title
+C0603_L1.6-W0.8-H0.8
+Value
+100nF
+Name
+100nF
+Description
+
+Sim Model
+
+Sim Model Title
+
+Sim Model Path
+
+NGSpice Model
+
+NGSpice Model Title
+
+NGspice Model Path
+
+Reuse Block
+
+Group ID
+
+Channel ID
+
+
+*
+]
+[
+DESIGNATOR
+C46
+FOOTPRINT
+C0603
+PARTTYPE
+CAP_0603
+DESCRIPTION
+
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Designator
+C46
+Symbol
+Capacitance
+Device
+CAP_0603
+Unique ID
+gge224_1
+Supplier Footprint
+0603
+3D Model Title
+C0603_L1.6-W0.8-H0.8
+Value
+100nF
+Name
+100nF
+Description
+
+Sim Model
+
+Sim Model Title
+
+Sim Model Path
+
+NGSpice Model
+
+NGSpice Model Title
+
+NGspice Model Path
+
+Reuse Block
+
+Group ID
+
+Channel ID
+
+
+*
+]
+[
+DESIGNATOR
+SCREW1
+FOOTPRINT
+M2螺丝
+PARTTYPE
+M2螺丝
+DESCRIPTION
+
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Designator
+SCREW1
+Symbol
+螺丝孔
+Device
+M2螺丝
+Unique ID
+gge225
+Name
+
+Reuse Block
+
+Group ID
+
+Channel ID
+
+Supplier Footprint
+插件
+Description
+
+
+*
+]
+[
+DESIGNATOR
+SCREW2
+FOOTPRINT
+M2螺丝
+PARTTYPE
+M2螺丝
+DESCRIPTION
+
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Designator
+SCREW2
+Symbol
+螺丝孔
+Device
+M2螺丝
+Unique ID
+gge226
+Name
+
+Reuse Block
+
+Group ID
+
+Channel ID
+
+Supplier Footprint
+插件
+Description
+
+
+*
+]
+[
+DESIGNATOR
+SCREW3
+FOOTPRINT
+M2螺丝
+PARTTYPE
+M2螺丝
+DESCRIPTION
+
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Designator
+SCREW3
+Symbol
+螺丝孔
+Device
+M2螺丝
+Unique ID
+gge227
+Name
+
+Reuse Block
+
+Group ID
+
+Channel ID
+
+Supplier Footprint
+插件
+Description
+
+
+*
+]
+[
+DESIGNATOR
+SCREW4
+FOOTPRINT
+M2螺丝
+PARTTYPE
+M2螺丝
+DESCRIPTION
+
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Designator
+SCREW4
+Symbol
+螺丝孔
+Device
+M2螺丝
+Unique ID
+gge228
+Name
+
+Reuse Block
+
+Group ID
+
+Channel ID
+
+Supplier Footprint
+插件
+Description
+
+
+*
+]
+[
+DESIGNATOR
+U13
+FOOTPRINT
+CONN-SMD_4P-P1.25_XUNPU_WAFER-GH1.25-4PWB
+PARTTYPE
+WAFER-GH1.25-4PWB
+DESCRIPTION
+插针结构:1x4P;间距:1.25mm;安装方式:卧贴;参考系列:GH;总PIN数:4P;排数:1;每排PIN数:4;行距:-;额定电流:1A;触头材质:黄铜;触头镀层:锡;工作温度:-25℃~+85℃;
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Symbol
+WAFER-GH1.25-4PWB
+Designator
+U13
+Device
+WAFER-GH1.25-4PWB
+Unique ID
+gge239_1
+Name
+WAFER-GH1.25-4PWB
+Reuse Block
+
+Group ID
+
+Channel ID
+
+LCSC Part Name
+1x4P 间距:1.25mm 卧贴 系列:GH
+Supplier Part
+C3029379
+Manufacturer
+XUNPU(讯普)
+Manufacturer Part
+WAFER-GH1.25-4PWB
+Supplier Footprint
+SMD,P=1.25mm,卧贴
+JLCPCB Part Class
+Extended Part
+Datasheet
+https://item.szlcsc.com/datasheet/WAFER-GH1.25-4PWB/3561391.html
+Supplier
+LCSC
+3D Model Title
+CONN-SMD_4P-P1.25_XUNPU_WAFER-GH1.25-4PWB
+Pins Structure
+1x4P
+Pitch
+1.25mm
+Mounting Type
+卧贴
+Reference Series
+GH
+Number of Pins
+4P
+Number of Rows
+1
+Number of PINs Per Row
+4
+Row Spacing
+-
+Current Rating
+1A
+Contact Material
+黄铜
+Contact Plating
+锡
+Operating Temperature
+-25℃~+85℃
+Voltage Rating
+125V
+Plastic Material
+LCP
+Flame Retardant Rating
+-
+Supplementary Features
+辅助焊脚
+Color
+米色
+Z-Height of the Board
+4.35mm
+X-Length of Bottom Edge on Board (Spacing Line)
+8.25mm
+Y-Width of Bottom Edge on Board
+5mm
+Description
+插针结构:1x4P;间距:1.25mm;安装方式:卧贴;参考系列:GH;总PIN数:4P;排数:1;每排PIN数:4;行距:-;额定电流:1A;触头材质:黄铜;触头镀层:锡;工作温度:-25℃~+85℃;
+
+*
+]
+[
+DESIGNATOR
+U11
+FOOTPRINT
+CONN-SMD_4P-P1.25_XUNPU_WAFER-GH1.25-4PWB
+PARTTYPE
+WAFER-GH1.25-4PWB
+DESCRIPTION
+插针结构:1x4P;间距:1.25mm;安装方式:卧贴;参考系列:GH;总PIN数:4P;排数:1;每排PIN数:4;行距:-;额定电流:1A;触头材质:黄铜;触头镀层:锡;工作温度:-25℃~+85℃;
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Symbol
+WAFER-GH1.25-4PWB
+Designator
+U11
+Device
+WAFER-GH1.25-4PWB
+Unique ID
+gge239
+Name
+WAFER-GH1.25-4PWB
+Reuse Block
+
+Group ID
+
+Channel ID
+
+LCSC Part Name
+1x4P 间距:1.25mm 卧贴 系列:GH
+Supplier Part
+C3029379
+Manufacturer
+XUNPU(讯普)
+Manufacturer Part
+WAFER-GH1.25-4PWB
+Supplier Footprint
+SMD,P=1.25mm,卧贴
+JLCPCB Part Class
+Extended Part
+Datasheet
+https://item.szlcsc.com/datasheet/WAFER-GH1.25-4PWB/3561391.html
+Supplier
+LCSC
+3D Model Title
+CONN-SMD_4P-P1.25_XUNPU_WAFER-GH1.25-4PWB
+Pins Structure
+1x4P
+Pitch
+1.25mm
+Mounting Type
+卧贴
+Reference Series
+GH
+Number of Pins
+4P
+Number of Rows
+1
+Number of PINs Per Row
+4
+Row Spacing
+-
+Current Rating
+1A
+Contact Material
+黄铜
+Contact Plating
+锡
+Operating Temperature
+-25℃~+85℃
+Voltage Rating
+125V
+Plastic Material
+LCP
+Flame Retardant Rating
+-
+Supplementary Features
+辅助焊脚
+Color
+米色
+Z-Height of the Board
+4.35mm
+X-Length of Bottom Edge on Board (Spacing Line)
+8.25mm
+Y-Width of Bottom Edge on Board
+5mm
+Description
+插针结构:1x4P;间距:1.25mm;安装方式:卧贴;参考系列:GH;总PIN数:4P;排数:1;每排PIN数:4;行距:-;额定电流:1A;触头材质:黄铜;触头镀层:锡;工作温度:-25℃~+85℃;
+
+*
+]
+[
+DESIGNATOR
+U14
+FOOTPRINT
+CONN-SMD_4P-P1.25_XUNPU_WAFER-GH1.25-4PWB
+PARTTYPE
+WAFER-GH1.25-4PWB
+DESCRIPTION
+插针结构:1x4P;间距:1.25mm;安装方式:卧贴;参考系列:GH;总PIN数:4P;排数:1;每排PIN数:4;行距:-;额定电流:1A;触头材质:黄铜;触头镀层:锡;工作温度:-25℃~+85℃;
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Symbol
+WAFER-GH1.25-4PWB
+Designator
+U14
+Device
+WAFER-GH1.25-4PWB
+Unique ID
+gge239_2
+Name
+WAFER-GH1.25-4PWB
+Reuse Block
+
+Group ID
+
+Channel ID
+
+LCSC Part Name
+1x4P 间距:1.25mm 卧贴 系列:GH
+Supplier Part
+C3029379
+Manufacturer
+XUNPU(讯普)
+Manufacturer Part
+WAFER-GH1.25-4PWB
+Supplier Footprint
+SMD,P=1.25mm,卧贴
+JLCPCB Part Class
+Extended Part
+Datasheet
+https://item.szlcsc.com/datasheet/WAFER-GH1.25-4PWB/3561391.html
+Supplier
+LCSC
+3D Model Title
+CONN-SMD_4P-P1.25_XUNPU_WAFER-GH1.25-4PWB
+Pins Structure
+1x4P
+Pitch
+1.25mm
+Mounting Type
+卧贴
+Reference Series
+GH
+Number of Pins
+4P
+Number of Rows
+1
+Number of PINs Per Row
+4
+Row Spacing
+-
+Current Rating
+1A
+Contact Material
+黄铜
+Contact Plating
+锡
+Operating Temperature
+-25℃~+85℃
+Voltage Rating
+125V
+Plastic Material
+LCP
+Flame Retardant Rating
+-
+Supplementary Features
+辅助焊脚
+Color
+米色
+Z-Height of the Board
+4.35mm
+X-Length of Bottom Edge on Board (Spacing Line)
+8.25mm
+Y-Width of Bottom Edge on Board
+5mm
+Description
+插针结构:1x4P;间距:1.25mm;安装方式:卧贴;参考系列:GH;总PIN数:4P;排数:1;每排PIN数:4;行距:-;额定电流:1A;触头材质:黄铜;触头镀层:锡;工作温度:-25℃~+85℃;
+
+*
+]
+[
+DESIGNATOR
+U15
+FOOTPRINT
+CONN-SMD_4P-P1.25_XUNPU_WAFER-GH1.25-4PWB
+PARTTYPE
+WAFER-GH1.25-4PWB
+DESCRIPTION
+插针结构:1x4P;间距:1.25mm;安装方式:卧贴;参考系列:GH;总PIN数:4P;排数:1;每排PIN数:4;行距:-;额定电流:1A;触头材质:黄铜;触头镀层:锡;工作温度:-25℃~+85℃;
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Symbol
+WAFER-GH1.25-4PWB
+Designator
+U15
+Device
+WAFER-GH1.25-4PWB
+Unique ID
+gge239_3
+Name
+WAFER-GH1.25-4PWB
+Reuse Block
+
+Group ID
+
+Channel ID
+
+LCSC Part Name
+1x4P 间距:1.25mm 卧贴 系列:GH
+Supplier Part
+C3029379
+Manufacturer
+XUNPU(讯普)
+Manufacturer Part
+WAFER-GH1.25-4PWB
+Supplier Footprint
+SMD,P=1.25mm,卧贴
+JLCPCB Part Class
+Extended Part
+Datasheet
+https://item.szlcsc.com/datasheet/WAFER-GH1.25-4PWB/3561391.html
+Supplier
+LCSC
+3D Model Title
+CONN-SMD_4P-P1.25_XUNPU_WAFER-GH1.25-4PWB
+Pins Structure
+1x4P
+Pitch
+1.25mm
+Mounting Type
+卧贴
+Reference Series
+GH
+Number of Pins
+4P
+Number of Rows
+1
+Number of PINs Per Row
+4
+Row Spacing
+-
+Current Rating
+1A
+Contact Material
+黄铜
+Contact Plating
+锡
+Operating Temperature
+-25℃~+85℃
+Voltage Rating
+125V
+Plastic Material
+LCP
+Flame Retardant Rating
+-
+Supplementary Features
+辅助焊脚
+Color
+米色
+Z-Height of the Board
+4.35mm
+X-Length of Bottom Edge on Board (Spacing Line)
+8.25mm
+Y-Width of Bottom Edge on Board
+5mm
+Description
+插针结构:1x4P;间距:1.25mm;安装方式:卧贴;参考系列:GH;总PIN数:4P;排数:1;每排PIN数:4;行距:-;额定电流:1A;触头材质:黄铜;触头镀层:锡;工作温度:-25℃~+85℃;
+
+*
+]
+[
+DESIGNATOR
+U16
+FOOTPRINT
+CONN-SMD_4P-P1.25_XUNPU_WAFER-GH1.25-4PWB
+PARTTYPE
+WAFER-GH1.25-4PWB
+DESCRIPTION
+插针结构:1x4P;间距:1.25mm;安装方式:卧贴;参考系列:GH;总PIN数:4P;排数:1;每排PIN数:4;行距:-;额定电流:1A;触头材质:黄铜;触头镀层:锡;工作温度:-25℃~+85℃;
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Symbol
+WAFER-GH1.25-4PWB
+Designator
+U16
+Device
+WAFER-GH1.25-4PWB
+Unique ID
+gge239_4
+Name
+WAFER-GH1.25-4PWB
+Reuse Block
+
+Group ID
+
+Channel ID
+
+LCSC Part Name
+1x4P 间距:1.25mm 卧贴 系列:GH
+Supplier Part
+C3029379
+Manufacturer
+XUNPU(讯普)
+Manufacturer Part
+WAFER-GH1.25-4PWB
+Supplier Footprint
+SMD,P=1.25mm,卧贴
+JLCPCB Part Class
+Extended Part
+Datasheet
+https://item.szlcsc.com/datasheet/WAFER-GH1.25-4PWB/3561391.html
+Supplier
+LCSC
+3D Model Title
+CONN-SMD_4P-P1.25_XUNPU_WAFER-GH1.25-4PWB
+Pins Structure
+1x4P
+Pitch
+1.25mm
+Mounting Type
+卧贴
+Reference Series
+GH
+Number of Pins
+4P
+Number of Rows
+1
+Number of PINs Per Row
+4
+Row Spacing
+-
+Current Rating
+1A
+Contact Material
+黄铜
+Contact Plating
+锡
+Operating Temperature
+-25℃~+85℃
+Voltage Rating
+125V
+Plastic Material
+LCP
+Flame Retardant Rating
+-
+Supplementary Features
+辅助焊脚
+Color
+米色
+Z-Height of the Board
+4.35mm
+X-Length of Bottom Edge on Board (Spacing Line)
+8.25mm
+Y-Width of Bottom Edge on Board
+5mm
+Description
+插针结构:1x4P;间距:1.25mm;安装方式:卧贴;参考系列:GH;总PIN数:4P;排数:1;每排PIN数:4;行距:-;额定电流:1A;触头材质:黄铜;触头镀层:锡;工作温度:-25℃~+85℃;
+
+*
+]
+[
+DESIGNATOR
+U17
+FOOTPRINT
+CONN-SMD_4P-P1.25_XUNPU_WAFER-GH1.25-4PWB
+PARTTYPE
+WAFER-GH1.25-4PWB
+DESCRIPTION
+插针结构:1x4P;间距:1.25mm;安装方式:卧贴;参考系列:GH;总PIN数:4P;排数:1;每排PIN数:4;行距:-;额定电流:1A;触头材质:黄铜;触头镀层:锡;工作温度:-25℃~+85℃;
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Symbol
+WAFER-GH1.25-4PWB
+Designator
+U17
+Device
+WAFER-GH1.25-4PWB
+Unique ID
+gge239_5
+Name
+WAFER-GH1.25-4PWB
+Reuse Block
+
+Group ID
+
+Channel ID
+
+LCSC Part Name
+1x4P 间距:1.25mm 卧贴 系列:GH
+Supplier Part
+C3029379
+Manufacturer
+XUNPU(讯普)
+Manufacturer Part
+WAFER-GH1.25-4PWB
+Supplier Footprint
+SMD,P=1.25mm,卧贴
+JLCPCB Part Class
+Extended Part
+Datasheet
+https://item.szlcsc.com/datasheet/WAFER-GH1.25-4PWB/3561391.html
+Supplier
+LCSC
+3D Model Title
+CONN-SMD_4P-P1.25_XUNPU_WAFER-GH1.25-4PWB
+Pins Structure
+1x4P
+Pitch
+1.25mm
+Mounting Type
+卧贴
+Reference Series
+GH
+Number of Pins
+4P
+Number of Rows
+1
+Number of PINs Per Row
+4
+Row Spacing
+-
+Current Rating
+1A
+Contact Material
+黄铜
+Contact Plating
+锡
+Operating Temperature
+-25℃~+85℃
+Voltage Rating
+125V
+Plastic Material
+LCP
+Flame Retardant Rating
+-
+Supplementary Features
+辅助焊脚
+Color
+米色
+Z-Height of the Board
+4.35mm
+X-Length of Bottom Edge on Board (Spacing Line)
+8.25mm
+Y-Width of Bottom Edge on Board
+5mm
+Description
+插针结构:1x4P;间距:1.25mm;安装方式:卧贴;参考系列:GH;总PIN数:4P;排数:1;每排PIN数:4;行距:-;额定电流:1A;触头材质:黄铜;触头镀层:锡;工作温度:-25℃~+85℃;
+
+*
+]
+[
+DESIGNATOR
+U18
+FOOTPRINT
+CONN-SMD_4P-P1.25_XUNPU_WAFER-GH1.25-4PWB
+PARTTYPE
+WAFER-GH1.25-4PWB
+DESCRIPTION
+插针结构:1x4P;间距:1.25mm;安装方式:卧贴;参考系列:GH;总PIN数:4P;排数:1;每排PIN数:4;行距:-;额定电流:1A;触头材质:黄铜;触头镀层:锡;工作温度:-25℃~+85℃;
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Symbol
+WAFER-GH1.25-4PWB
+Designator
+U18
+Device
+WAFER-GH1.25-4PWB
+Unique ID
+gge239_6
+Name
+WAFER-GH1.25-4PWB
+Reuse Block
+
+Group ID
+
+Channel ID
+
+LCSC Part Name
+1x4P 间距:1.25mm 卧贴 系列:GH
+Supplier Part
+C3029379
+Manufacturer
+XUNPU(讯普)
+Manufacturer Part
+WAFER-GH1.25-4PWB
+Supplier Footprint
+SMD,P=1.25mm,卧贴
+JLCPCB Part Class
+Extended Part
+Datasheet
+https://item.szlcsc.com/datasheet/WAFER-GH1.25-4PWB/3561391.html
+Supplier
+LCSC
+3D Model Title
+CONN-SMD_4P-P1.25_XUNPU_WAFER-GH1.25-4PWB
+Pins Structure
+1x4P
+Pitch
+1.25mm
+Mounting Type
+卧贴
+Reference Series
+GH
+Number of Pins
+4P
+Number of Rows
+1
+Number of PINs Per Row
+4
+Row Spacing
+-
+Current Rating
+1A
+Contact Material
+黄铜
+Contact Plating
+锡
+Operating Temperature
+-25℃~+85℃
+Voltage Rating
+125V
+Plastic Material
+LCP
+Flame Retardant Rating
+-
+Supplementary Features
+辅助焊脚
+Color
+米色
+Z-Height of the Board
+4.35mm
+X-Length of Bottom Edge on Board (Spacing Line)
+8.25mm
+Y-Width of Bottom Edge on Board
+5mm
+Description
+插针结构:1x4P;间距:1.25mm;安装方式:卧贴;参考系列:GH;总PIN数:4P;排数:1;每排PIN数:4;行距:-;额定电流:1A;触头材质:黄铜;触头镀层:锡;工作温度:-25℃~+85℃;
+
+*
+]
+[
+DESIGNATOR
+U19
+FOOTPRINT
+CONN-SMD_4P-P1.25_XUNPU_WAFER-GH1.25-4PWB
+PARTTYPE
+WAFER-GH1.25-4PWB
+DESCRIPTION
+插针结构:1x4P;间距:1.25mm;安装方式:卧贴;参考系列:GH;总PIN数:4P;排数:1;每排PIN数:4;行距:-;额定电流:1A;触头材质:黄铜;触头镀层:锡;工作温度:-25℃~+85℃;
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Symbol
+WAFER-GH1.25-4PWB
+Designator
+U19
+Device
+WAFER-GH1.25-4PWB
+Unique ID
+gge239_7
+Name
+WAFER-GH1.25-4PWB
+Reuse Block
+
+Group ID
+
+Channel ID
+
+LCSC Part Name
+1x4P 间距:1.25mm 卧贴 系列:GH
+Supplier Part
+C3029379
+Manufacturer
+XUNPU(讯普)
+Manufacturer Part
+WAFER-GH1.25-4PWB
+Supplier Footprint
+SMD,P=1.25mm,卧贴
+JLCPCB Part Class
+Extended Part
+Datasheet
+https://item.szlcsc.com/datasheet/WAFER-GH1.25-4PWB/3561391.html
+Supplier
+LCSC
+3D Model Title
+CONN-SMD_4P-P1.25_XUNPU_WAFER-GH1.25-4PWB
+Pins Structure
+1x4P
+Pitch
+1.25mm
+Mounting Type
+卧贴
+Reference Series
+GH
+Number of Pins
+4P
+Number of Rows
+1
+Number of PINs Per Row
+4
+Row Spacing
+-
+Current Rating
+1A
+Contact Material
+黄铜
+Contact Plating
+锡
+Operating Temperature
+-25℃~+85℃
+Voltage Rating
+125V
+Plastic Material
+LCP
+Flame Retardant Rating
+-
+Supplementary Features
+辅助焊脚
+Color
+米色
+Z-Height of the Board
+4.35mm
+X-Length of Bottom Edge on Board (Spacing Line)
+8.25mm
+Y-Width of Bottom Edge on Board
+5mm
+Description
+插针结构:1x4P;间距:1.25mm;安装方式:卧贴;参考系列:GH;总PIN数:4P;排数:1;每排PIN数:4;行距:-;额定电流:1A;触头材质:黄铜;触头镀层:锡;工作温度:-25℃~+85℃;
+
+*
+]
+[
+DESIGNATOR
+U20
+FOOTPRINT
+CONN-SMD_4P-P1.25_XUNPU_WAFER-GH1.25-4PWB
+PARTTYPE
+WAFER-GH1.25-4PWB
+DESCRIPTION
+插针结构:1x4P;间距:1.25mm;安装方式:卧贴;参考系列:GH;总PIN数:4P;排数:1;每排PIN数:4;行距:-;额定电流:1A;触头材质:黄铜;触头镀层:锡;工作温度:-25℃~+85℃;
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Symbol
+WAFER-GH1.25-4PWB
+Designator
+U20
+Device
+WAFER-GH1.25-4PWB
+Unique ID
+gge239_8
+Name
+WAFER-GH1.25-4PWB
+Reuse Block
+
+Group ID
+
+Channel ID
+
+LCSC Part Name
+1x4P 间距:1.25mm 卧贴 系列:GH
+Supplier Part
+C3029379
+Manufacturer
+XUNPU(讯普)
+Manufacturer Part
+WAFER-GH1.25-4PWB
+Supplier Footprint
+SMD,P=1.25mm,卧贴
+JLCPCB Part Class
+Extended Part
+Datasheet
+https://item.szlcsc.com/datasheet/WAFER-GH1.25-4PWB/3561391.html
+Supplier
+LCSC
+3D Model Title
+CONN-SMD_4P-P1.25_XUNPU_WAFER-GH1.25-4PWB
+Pins Structure
+1x4P
+Pitch
+1.25mm
+Mounting Type
+卧贴
+Reference Series
+GH
+Number of Pins
+4P
+Number of Rows
+1
+Number of PINs Per Row
+4
+Row Spacing
+-
+Current Rating
+1A
+Contact Material
+黄铜
+Contact Plating
+锡
+Operating Temperature
+-25℃~+85℃
+Voltage Rating
+125V
+Plastic Material
+LCP
+Flame Retardant Rating
+-
+Supplementary Features
+辅助焊脚
+Color
+米色
+Z-Height of the Board
+4.35mm
+X-Length of Bottom Edge on Board (Spacing Line)
+8.25mm
+Y-Width of Bottom Edge on Board
+5mm
+Description
+插针结构:1x4P;间距:1.25mm;安装方式:卧贴;参考系列:GH;总PIN数:4P;排数:1;每排PIN数:4;行距:-;额定电流:1A;触头材质:黄铜;触头镀层:锡;工作温度:-25℃~+85℃;
+
+*
+]
+[
+DESIGNATOR
+U21
+FOOTPRINT
+CONN-SMD_4P-P1.25_XUNPU_WAFER-GH1.25-4PWB
+PARTTYPE
+WAFER-GH1.25-4PWB
+DESCRIPTION
+插针结构:1x4P;间距:1.25mm;安装方式:卧贴;参考系列:GH;总PIN数:4P;排数:1;每排PIN数:4;行距:-;额定电流:1A;触头材质:黄铜;触头镀层:锡;工作温度:-25℃~+85℃;
+Component Kind
+Standard
+Add into BOM
+yes
+Convert to PCB
+yes
+Symbol
+WAFER-GH1.25-4PWB
+Designator
+U21
+Device
+WAFER-GH1.25-4PWB
+Unique ID
+gge239_9
+Name
+WAFER-GH1.25-4PWB
+Reuse Block
+
+Group ID
+
+Channel ID
+
+LCSC Part Name
+1x4P 间距:1.25mm 卧贴 系列:GH
+Supplier Part
+C3029379
+Manufacturer
+XUNPU(讯普)
+Manufacturer Part
+WAFER-GH1.25-4PWB
+Supplier Footprint
+SMD,P=1.25mm,卧贴
+JLCPCB Part Class
+Extended Part
+Datasheet
+https://item.szlcsc.com/datasheet/WAFER-GH1.25-4PWB/3561391.html
+Supplier
+LCSC
+3D Model Title
+CONN-SMD_4P-P1.25_XUNPU_WAFER-GH1.25-4PWB
+Pins Structure
+1x4P
+Pitch
+1.25mm
+Mounting Type
+卧贴
+Reference Series
+GH
+Number of Pins
+4P
+Number of Rows
+1
+Number of PINs Per Row
+4
+Row Spacing
+-
+Current Rating
+1A
+Contact Material
+黄铜
+Contact Plating
+锡
+Operating Temperature
+-25℃~+85℃
+Voltage Rating
+125V
+Plastic Material
+LCP
+Flame Retardant Rating
+-
+Supplementary Features
+辅助焊脚
+Color
+米色
+Z-Height of the Board
+4.35mm
+X-Length of Bottom Edge on Board (Spacing Line)
+8.25mm
+Y-Width of Bottom Edge on Board
+5mm
+Description
+插针结构:1x4P;间距:1.25mm;安装方式:卧贴;参考系列:GH;总PIN数:4P;排数:1;每排PIN数:4;行距:-;额定电流:1A;触头材质:黄铜;触头镀层:锡;工作温度:-25℃~+85℃;
+
+*
+]
+(
+TIM15_CH1N 
+U1-3 STM32H743VIT6-PE4 Passive 
+)
+(
+TIM15_CH1 
+U1-4 STM32H743VIT6-PE5 Passive 
+)
+(
+GND 
+U1-10 STM32H743VIT6-VSS Passive 
+U1-19 STM32H743VIT6-VSSA Passive 
+U1-26 STM32H743VIT6-VSS Passive 
+U1-49 STM32H743VIT6-VSS Passive 
+U1-74 STM32H743VIT6-VSS Passive 
+U1-99 STM32H743VIT6-VSS Passive 
+U7-1 HI04MX-GND Passive 
+U7-8 HI04MX-GND Passive 
+U7-13 HI04MX-GND Passive 
+C33-2 CAP_0603-2 Input   
+C34-1 CAP_0603-1 Input   
+X1-4 X322525MOB4SI-GND Passive 
+X1-2 X322525MOB4SI-GND Passive 
+C7-1 CAP_0603-1 Input   
+SW5-2 TS-1088-AR02016-2 Passive 
+R1-2 Res_0603-2 Input   
+C1-2 CAP_0603-2 Input   
+C2-1 CAP_0603-1 Input   
+U3-2 SIT3051TK-GND Passive 
+U3-8 SIT3051TK-RS Passive 
+U3-9 SIT3051TK-EP Passive 
+U4-2 SIT3051TK-GND Passive 
+U4-8 SIT3051TK-RS Passive 
+U4-9 SIT3051TK-EP Passive 
+U5-2 ICM-42688-P-RESV Passive 
+U5-3 ICM-42688-P-RESV Passive 
+U5-6 ICM-42688-P-GND Passive 
+U5-7 ICM-42688-P-RESV Passive 
+U5-9 ICM-42688-P-INT2/FSYNC/CLKIN Passive 
+U5-10 ICM-42688-P-RESV Passive 
+U5-11 ICM-42688-P-RESV Passive 
+U2-11 IST8310_C2683055-VSS Passive 
+U2-9 IST8310_C2683055-VSS Passive 
+U2-6 IST8310_C2683055-CAD1 Passive 
+U2-5 IST8310_C2683055-CAD0 Passive 
+C3-2 CAP_0603-2 Input   
+U6-1 SPA06-003-GND Passive 
+U6-7 SPA06-003-GND Passive 
+CN1-4 WAFER-GH1.25-2PWB-4 Passive 
+CN1-3 WAFER-GH1.25-2PWB-3 Passive 
+CN2-4 WAFER-GH1.25-2PWB-4 Passive 
+CN2-3 WAFER-GH1.25-2PWB-3 Passive 
+H14-3 PZ254R-11-03P-3 Passive 
+Q17-2 S9018_C41375130-E Input   
+U12-8 STM32F103C8T6-VSSA Passive 
+U12-23 STM32F103C8T6-VSS_1 Passive 
+U12-35 STM32F103C8T6-VSS_2 Passive 
+U12-47 STM32F103C8T6-VSS_3 Passive 
+C11-2 CAP_0603-2 Input   
+C12-1 CAP_0603-1 Input   
+X2-4 X32258MOB4SI-GND Input   
+X2-2 X32258MOB4SI-GND Input   
+C13-1 CAP_0603-1 Input   
+SW1-2 TS-1088-AR02016-2 Passive 
+R21-2 Res_0603-2 Input   
+C5-1 CAP_0603-1 Input   
+C4-1 CAP_0603-1 Input   
+C18-1 CAP_0603-1 Input   
+C20-1 CAP_0603-1 Input   
+C19-1 CAP_0603-1 Input   
+C25-2 CAP_0603-2 Input   
+C10-1 CAP_0603-1 Input   
+R9-2 Res_0603-2 Input   
+R8-1 Res_0603-1 Input   
+U8-3 SY8303AAIC_C2937216-GND Passive 
+U8-4 SY8303AAIC_C2937216-GND Passive 
+D2-2 SMF5.0A_C2857263-A Passive 
+C43-2 CAP_0603-2 Input   
+C44-2 CAP_0603-2 Input   
+U10-2 TLV75533PDBVR-GND Passive 
+D1-1 SMF3.3CA_C19077496-K Passive 
+C6-2 CAP_0603-2 Input   
+C8-2 CAP_0603-2 Input   
+U9-2 TLV75533PDBVR-GND Passive 
+D3-1 SMF3.3CA_C19077496-K Passive 
+D4-1 SMF3.3CA_C19077496-K Passive 
+C41-1 CAP_0603-1 Input   
+CN6-3 MH1.25-4AWB-3 Passive 
+CN6-5 MH1.25-4AWB-5 Passive 
+CN6-6 MH1.25-4AWB-6 Passive 
+D5-1 SMF3.3CA_C19077496-K Passive 
+C14-1 CAP_0603-1 Input   
+CN3-3 MH1.25-4AWB-3 Passive 
+CN3-5 MH1.25-4AWB-5 Passive 
+CN3-6 MH1.25-4AWB-6 Passive 
+H1-4 LAIL-PZ2.54-4P-L-4 Passive 
+H2-4 LAIL-PZ2.54-4P-L-4 Passive 
+C15-1 CAP_0603-1 Input   
+C16-1 CAP_0603-1 Input   
+C21-1 CAP_0603-1 Input   
+C22-1 CAP_0603-1 Input   
+C23-1 CAP_0603-1 Input   
+C24-1 CAP_0603-1 Input   
+C26-1 CAP_0603-1 Input   
+C27-1 CAP_0603-1 Input   
+C28-1 CAP_0603-1 Input   
+C31-2 CAP_0603-2 Input   
+C32-1 CAP_0603-1 Input   
+C35-1 CAP_0603-1 Input   
+C36-1 CAP_0603-1 Input   
+C37-1 CAP_0603-1 Input   
+C38-2 CAP_0603-2 Input   
+C39-2 CAP_0603-2 Input   
+C42-2 CAP_0603-2 Input   
+C45-2 CAP_0603-2 Input   
+C46-1 CAP_0603-1 Input   
+U13-4 WAFER-GH1.25-4PWB-4 Passive 
+U13-5 WAFER-GH1.25-4PWB-5 Passive 
+U13-6 WAFER-GH1.25-4PWB-6 Passive 
+U11-4 WAFER-GH1.25-4PWB-4 Passive 
+U11-5 WAFER-GH1.25-4PWB-5 Passive 
+U11-6 WAFER-GH1.25-4PWB-6 Passive 
+U14-4 WAFER-GH1.25-4PWB-4 Passive 
+U14-5 WAFER-GH1.25-4PWB-5 Passive 
+U14-6 WAFER-GH1.25-4PWB-6 Passive 
+U15-4 WAFER-GH1.25-4PWB-4 Passive 
+U15-5 WAFER-GH1.25-4PWB-5 Passive 
+U15-6 WAFER-GH1.25-4PWB-6 Passive 
+U16-4 WAFER-GH1.25-4PWB-4 Passive 
+U16-5 WAFER-GH1.25-4PWB-5 Passive 
+U16-6 WAFER-GH1.25-4PWB-6 Passive 
+U17-4 WAFER-GH1.25-4PWB-4 Passive 
+U17-5 WAFER-GH1.25-4PWB-5 Passive 
+U17-6 WAFER-GH1.25-4PWB-6 Passive 
+U18-4 WAFER-GH1.25-4PWB-4 Passive 
+U18-5 WAFER-GH1.25-4PWB-5 Passive 
+U18-6 WAFER-GH1.25-4PWB-6 Passive 
+U19-4 WAFER-GH1.25-4PWB-4 Passive 
+U19-5 WAFER-GH1.25-4PWB-5 Passive 
+U19-6 WAFER-GH1.25-4PWB-6 Passive 
+U20-4 WAFER-GH1.25-4PWB-4 Passive 
+U20-5 WAFER-GH1.25-4PWB-5 Passive 
+U20-6 WAFER-GH1.25-4PWB-6 Passive 
+U21-4 WAFER-GH1.25-4PWB-4 Passive 
+U21-5 WAFER-GH1.25-4PWB-5 Passive 
+U21-6 WAFER-GH1.25-4PWB-6 Passive 
+)
+(
+3.3V_H7 
+U1-11 STM32H743VIT6-VDD Passive 
+U1-21 STM32H743VIT6-VDDA Passive 
+U1-27 STM32H743VIT6-VDD Passive 
+U1-50 STM32H743VIT6-VDD Passive 
+U1-75 STM32H743VIT6-VDD Passive 
+U1-100 STM32H743VIT6-VDD Passive 
+U7-2 HI04MX-VDD Passive 
+R14-1 Res_0603-1 Input   
+U3-3 SIT3051TK-VCC Passive 
+U4-3 SIT3051TK-VCC Passive 
+U5-5 ICM-42688-P-VDDIO Passive 
+U5-8 ICM-42688-P-VDD Passive 
+U2-13 IST8310_C2683055-DVDD Passive 
+U2-2 IST8310_C2683055-AVDD Passive 
+U6-6 SPA06-003-VDDIO Passive 
+U6-8 SPA06-003-VDD Passive 
+R19-2 Res_0603-2 Input   
+C44-1 CAP_0603-1 Input   
+U10-5 TLV75533PDBVR-OUT Passive 
+D1-2 SMF3.3CA_C19077496-A Passive 
+D4-2 SMF3.3CA_C19077496-A Passive 
+C41-2 CAP_0603-2 Input   
+F4-2 SMD1206-100-30-2 Passive 
+R11-2 Res_0603-2 Input   
+R12-2 Res_0603-2 Input   
+R13-2 Res_0603-2 Input   
+R15-2 Res_0603-2 Input   
+C23-2 CAP_0603-2 Input   
+C24-2 CAP_0603-2 Input   
+C26-2 CAP_0603-2 Input   
+C27-2 CAP_0603-2 Input   
+C28-2 CAP_0603-2 Input   
+C32-2 CAP_0603-2 Input   
+C35-2 CAP_0603-2 Input   
+C36-2 CAP_0603-2 Input   
+C37-2 CAP_0603-2 Input   
+C38-1 CAP_0603-1 Input   
+C39-1 CAP_0603-1 Input   
+C42-1 CAP_0603-1 Input   
+C45-1 CAP_0603-1 Input   
+C46-2 CAP_0603-2 Input   
+)
+(
+OSC7_IN 
+U1-12 STM32H743VIT6-PH0-OSC_IN Passive 
+C33-1 CAP_0603-1 Input   
+X1-1 X322525MOB4SI-OSC1 Passive 
+)
+(
+OSC7_OUT 
+U1-13 STM32H743VIT6-PH1-OSC_OUT Passive 
+C34-2 CAP_0603-2 Input   
+X1-3 X322525MOB4SI-OSC2 Passive 
+)
+(
+NRST7 
+U1-14 STM32H743VIT6-NRST Passive 
+C7-2 CAP_0603-2 Input   
+SW5-1 TS-1088-AR02016-1 Passive 
+R14-2 Res_0603-2 Input   
+)
+(
+ADC1_IN10 
+U1-15 STM32H743VIT6-PC0 Passive 
+U13-1 WAFER-GH1.25-4PWB-1 Passive 
+)
+(
+ADC1_IN11 
+U1-16 STM32H743VIT6-PC1 Passive 
+U11-1 WAFER-GH1.25-4PWB-1 Passive 
+)
+(
+SPI2_MISO 
+U1-17 STM32H743VIT6-PC2_C Passive 
+H1-3 LAIL-PZ2.54-4P-L-3 Passive 
+)
+(
+SPI2_MOSI 
+U1-18 STM32H743VIT6-PC3_C Passive 
+H1-2 LAIL-PZ2.54-4P-L-2 Passive 
+)
+(
+$1N493 
+U1-20 STM32H743VIT6-VREF+ Passive 
+C31-1 CAP_0603-1 Input   
+)
+(
+TIM5_CH1 
+U1-22 STM32H743VIT6-PA0 Passive 
+)
+(
+TIM5_CH2 
+U1-23 STM32H743VIT6-PA1 Passive 
+)
+(
+TIM5_CH3 
+U1-24 STM32H743VIT6-PA2 Passive 
+)
+(
+USART12_TX 
+U1-25 STM32H743VIT6-PA3 Passive 
+U12-12 STM32F103C8T6-PA2 Passive 
+)
+(
+SPI1_MISO 
+U1-30 STM32H743VIT6-PA6 Passive 
+U5-1 ICM-42688-P-AP_SDO/AP_AD0 Passive 
+)
+(
+ADC1_IN4 
+U1-32 STM32H743VIT6-PC4 Passive 
+U14-1 WAFER-GH1.25-4PWB-1 Passive 
+)
+(
+ADC2_IN8 
+U1-33 STM32H743VIT6-PC5 Passive 
+U15-1 WAFER-GH1.25-4PWB-1 Passive 
+)
+(
+TIM3_CH4 
+U1-35 STM32H743VIT6-PB1 Passive 
+)
+(
+SPI3_MOSI 
+U1-36 STM32H743VIT6-PB2 Passive 
+H2-3 LAIL-PZ2.54-4P-L-3 Passive 
+)
+(
+UART7_RX 
+U1-37 STM32H743VIT6-PE7 Passive 
+U14-2 WAFER-GH1.25-4PWB-2 Passive 
+U18-2 WAFER-GH1.25-4PWB-2 Passive 
+)
+(
+UART7_TX 
+U1-38 STM32H743VIT6-PE8 Passive 
+U18-3 WAFER-GH1.25-4PWB-3 Passive 
+)
+(
+ESC_DSHOT1 
+U1-41 STM32H743VIT6-PE11 Passive 
+U13-3 WAFER-GH1.25-4PWB-3 Passive 
+)
+(
+ESC_DSHOT2 
+U1-43 STM32H743VIT6-PE13 Passive 
+U11-3 WAFER-GH1.25-4PWB-3 Passive 
+)
+(
+TIM1_CH4 
+U1-44 STM32H743VIT6-PE14 Passive 
+)
+(
+SPA_INT 
+U1-45 STM32H743VIT6-PE15 Passive 
+U6-5 SPA06-003-SDO Passive 
+)
+(
+IIC2_SCL 
+U1-46 STM32H743VIT6-PB10 Passive 
+U6-4 SPA06-003-SCK Passive 
+R12-1 Res_0603-1 Input   
+)
+(
+IIC2_SDA 
+U1-47 STM32H743VIT6-PB11 Passive 
+U6-3 SPA06-003-SDA Passive 
+R11-1 Res_0603-1 Input   
+)
+(
+$1N118 
+U1-48 STM32H743VIT6-VCAP Passive 
+C2-2 CAP_0603-2 Input   
+)
+(
+CAN2_RX 
+U1-51 STM32H743VIT6-PB12 Passive 
+U4-4 SIT3051TK-R Passive 
+)
+(
+CAN2_TX 
+U1-52 STM32H743VIT6-PB13 Passive 
+U4-1 SIT3051TK-D Passive 
+)
+(
+USART3_TX 
+U1-55 STM32H743VIT6-PD8 Passive 
+U17-2 WAFER-GH1.25-4PWB-2 Passive 
+)
+(
+USART3_RX 
+U1-56 STM32H743VIT6-PD9 Passive 
+U17-3 WAFER-GH1.25-4PWB-3 Passive 
+)
+(
+IIC4_SCL 
+U1-59 STM32H743VIT6-PD12 Passive 
+U2-1 IST8310_C2683055-SCL Passive 
+R13-1 Res_0603-1 Input   
+)
+(
+IIC4_SDA 
+U1-60 STM32H743VIT6-PD13 Passive 
+U2-16 IST8310_C2683055-SDA Passive 
+R15-1 Res_0603-1 Input   
+)
+(
+MAG_OUT 
+U1-61 STM32H743VIT6-PD14 Passive 
+U2-15 IST8310_C2683055-DRDY Passive 
+)
+(
+MAG_RSTN 
+U1-62 STM32H743VIT6-PD15 Passive 
+U2-14 IST8310_C2683055-RSTN Passive 
+)
+(
+USART6_TX 
+U1-63 STM32H743VIT6-PC6 Passive 
+U20-3 WAFER-GH1.25-4PWB-3 Passive 
+)
+(
+USART6_RX 
+U1-64 STM32H743VIT6-PC7 Passive 
+U11-2 WAFER-GH1.25-4PWB-2 Passive 
+U20-2 WAFER-GH1.25-4PWB-2 Passive 
+)
+(
+ESC_DSHOT3 
+U1-65 STM32H743VIT6-PC8 Passive 
+U14-3 WAFER-GH1.25-4PWB-3 Passive 
+)
+(
+ESC_DSHOT4 
+U1-66 STM32H743VIT6-PC9 Passive 
+U15-3 WAFER-GH1.25-4PWB-3 Passive 
+)
+(
+TIM1_CH1 
+U1-67 STM32H743VIT6-PA8 Passive 
+)
+(
+SYNC_IN 
+U1-68 STM32H743VIT6-PA9 Passive 
+U7-6 HI04MX-IO1(SYNC_IN/PPS) Passive 
+)
+(
+USART1_RX 
+U1-69 STM32H743VIT6-PA10 Passive 
+U7-5 HI04MX-UART1_TX Passive 
+)
+(
+UART4_RX 
+U1-70 STM32H743VIT6-PA11 Passive 
+U13-2 WAFER-GH1.25-4PWB-2 Passive 
+U21-2 WAFER-GH1.25-4PWB-2 Passive 
+)
+(
+UART4_TX 
+U1-71 STM32H743VIT6-PA12 Passive 
+U21-3 WAFER-GH1.25-4PWB-3 Passive 
+)
+(
+SWDIO 
+U1-72 STM32H743VIT6-PA13 Passive 
+CN6-1 MH1.25-4AWB-1 Passive 
+)
+(
+$1N116 
+U1-73 STM32H743VIT6-VCAP Passive 
+C1-1 CAP_0603-1 Input   
+)
+(
+SWCLK 
+U1-76 STM32H743VIT6-PA14 Passive 
+CN6-2 MH1.25-4AWB-2 Passive 
+)
+(
+SYNC_OUT 
+U1-77 STM32H743VIT6-PA15 Passive 
+U7-3 HI04MX-IO2(SYNC_OUT) Passive 
+)
+(
+SPI3_SCK 
+U1-78 STM32H743VIT6-PC10 Passive 
+H2-1 LAIL-PZ2.54-4P-L-1 Passive 
+)
+(
+SPI3_MISO 
+U1-79 STM32H743VIT6-PC11 Passive 
+H2-2 LAIL-PZ2.54-4P-L-2 Passive 
+)
+(
+UART5_TX 
+U1-80 STM32H743VIT6-PC12 Passive 
+U16-2 WAFER-GH1.25-4PWB-2 Passive 
+)
+(
+CAN1_RX 
+U1-81 STM32H743VIT6-PD0 Passive 
+U3-4 SIT3051TK-R Passive 
+)
+(
+CAN1_TX 
+U1-82 STM32H743VIT6-PD1 Passive 
+U3-1 SIT3051TK-D Passive 
+)
+(
+UART5_RX 
+U1-83 STM32H743VIT6-PD2 Passive 
+R19-1 Res_0603-1 Input   
+Q17-3 S9018_C41375130-C Input   
+U16-3 WAFER-GH1.25-4PWB-3 Passive 
+)
+(
+SPI2_SCK 
+U1-84 STM32H743VIT6-PD3 Passive 
+H1-1 LAIL-PZ2.54-4P-L-1 Passive 
+)
+(
+USART12_RX 
+U1-86 STM32H743VIT6-PD5 Passive 
+U12-13 STM32F103C8T6-PA3 Passive 
+)
+(
+GYRO_INT1 
+U1-87 STM32H743VIT6-PD6 Passive 
+U5-4 ICM-42688-P-INT1/INT Passive 
+)
+(
+SPI1_MOSI 
+U1-88 STM32H743VIT6-PD7 Passive 
+U5-14 ICM-42688-P-AP_SDA/AP_SDIO/AP_SDI Passive 
+)
+(
+SPI1_SCK 
+U1-89 STM32H743VIT6-PB3 Passive 
+U5-13 ICM-42688-P-AP_SCL/AP_SCLK Passive 
+)
+(
+GYRO_CS 
+U1-90 STM32H743VIT6-PB4 Passive 
+U5-12 ICM-42688-P-AP_CS Passive 
+)
+(
+USART1_TX 
+U1-92 STM32H743VIT6-PB6 Passive 
+U7-4 HI04MX-UART1_RX Passive 
+)
+(
+TIM17_CH1N 
+U1-93 STM32H743VIT6-PB7 Passive 
+)
+(
+$1N108 
+U1-94 STM32H743VIT6-BOOT0 Passive 
+R1-1 Res_0603-1 Input   
+)
+(
+TIM16_CH1 
+U1-95 STM32H743VIT6-PB8 Passive 
+)
+(
+UART8_RX 
+U1-97 STM32H743VIT6-PE0 Passive 
+U15-2 WAFER-GH1.25-4PWB-2 Passive 
+U19-2 WAFER-GH1.25-4PWB-2 Passive 
+)
+(
+UART8_TX 
+U1-98 STM32H743VIT6-PE1 Passive 
+U19-3 WAFER-GH1.25-4PWB-3 Passive 
+)
+(
+CAN1_H 
+R3-2 Res_0603-2 Input   
+U3-7 SIT3051TK-CANH Passive 
+CN1-2 WAFER-GH1.25-2PWB-2 Passive 
+)
+(
+CAN1_L 
+R3-1 Res_0603-1 Input   
+U3-6 SIT3051TK-CANL Passive 
+CN1-1 WAFER-GH1.25-2PWB-1 Passive 
+)
+(
+CAN2_L 
+U4-6 SIT3051TK-CANL Passive 
+R2-1 Res_0603-1 Input   
+CN2-1 WAFER-GH1.25-2PWB-1 Passive 
+)
+(
+CAN2_H 
+U4-7 SIT3051TK-CANH Passive 
+R2-2 Res_0603-2 Input   
+CN2-2 WAFER-GH1.25-2PWB-2 Passive 
+)
+(
+$1N218 
+U2-10 IST8310_C2683055-C1 Passive 
+C3-1 CAP_0603-1 Input   
+)
+(
+DUS 
+H14-1 PZ254R-11-03P-1 Passive 
+Q17-1 S9018_C41375130-B Input   
+)
+(
+5V 
+H14-2 PZ254R-11-03P-2 Passive 
+C18-2 CAP_0603-2 Input   
+C20-2 CAP_0603-2 Input   
+C19-2 CAP_0603-2 Input   
+C25-1 CAP_0603-1 Input   
+C10-2 CAP_0603-2 Input   
+L1-2 FXL0420-6R8-M-2 Passive 
+R10-1 RT0603BRD0719K6L-1 Passive 
+D2-1 SMF5.0A_C2857263-C Passive 
+F1-1 SMD1206-100-30-1 Passive 
+F2-1 SMD1206-100-30-1 Passive 
+U16-1 WAFER-GH1.25-4PWB-1 Passive 
+U17-1 WAFER-GH1.25-4PWB-1 Passive 
+U18-1 WAFER-GH1.25-4PWB-1 Passive 
+U19-1 WAFER-GH1.25-4PWB-1 Passive 
+U20-1 WAFER-GH1.25-4PWB-1 Passive 
+U21-1 WAFER-GH1.25-4PWB-1 Passive 
+)
+(
+OSC1_IN 
+U12-5 STM32F103C8T6-PD0-OSC_IN Passive 
+C11-1 CAP_0603-1 Input   
+X2-1 X32258MOB4SI-1 Input   
+)
+(
+OSC1_OUT 
+U12-6 STM32F103C8T6-PD1-OSC_OUT Passive 
+C12-2 CAP_0603-2 Input   
+X2-3 X32258MOB4SI-3 Input   
+)
+(
+NRST1 
+U12-7 STM32F103C8T6-NRST Passive 
+C13-2 CAP_0603-2 Input   
+SW1-1 TS-1088-AR02016-1 Passive 
+R20-2 Res_0603-2 Input   
+)
+(
+3.3V_F1 
+U12-9 STM32F103C8T6-VDDA Passive 
+U12-24 STM32F103C8T6-VDD_1 Passive 
+U12-36 STM32F103C8T6-VDD_2 Passive 
+U12-48 STM32F103C8T6-VDD_3 Passive 
+R20-1 Res_0603-1 Input   
+C8-1 CAP_0603-1 Input   
+U9-5 TLV75533PDBVR-OUT Passive 
+D3-2 SMF3.3CA_C19077496-A Passive 
+D5-2 SMF3.3CA_C19077496-A Passive 
+C14-2 CAP_0603-2 Input   
+F5-2 SMD1206-100-30-2 Passive 
+R4-2 Res_0603-2 Input   
+R5-2 Res_0603-2 Input   
+R6-2 Res_0603-2 Input   
+R7-2 Res_0603-2 Input   
+C15-2 CAP_0603-2 Input   
+C16-2 CAP_0603-2 Input   
+C21-2 CAP_0603-2 Input   
+C22-2 CAP_0603-2 Input   
+)
+(
+SPI11_SCK 
+U12-15 STM32F103C8T6-PA5 Passive 
+)
+(
+TIM31_CH1 
+U12-16 STM32F103C8T6-PA6 Passive 
+)
+(
+TIM31_CH2 
+U12-17 STM32F103C8T6-PA7 Passive 
+)
+(
+TIM31_CH3 
+U12-18 STM32F103C8T6-PB0 Passive 
+)
+(
+TIM31_CH4 
+U12-19 STM32F103C8T6-PB1 Passive 
+)
+(
+IIC12_SCL 
+U12-21 STM32F103C8T6-PB10 Passive 
+R4-1 Res_0603-1 Input   
+)
+(
+IIC12_SDA 
+U12-22 STM32F103C8T6-PB11 Passive 
+R5-1 Res_0603-1 Input   
+)
+(
+SPI12_SCK 
+U12-26 STM32F103C8T6-PB13 Passive 
+)
+(
+SPI12_MISO 
+U12-27 STM32F103C8T6-PB14 Passive 
+)
+(
+SPI12_MOSI 
+U12-28 STM32F103C8T6-PB15 Passive 
+)
+(
+TIM11_CH1 
+U12-29 STM32F103C8T6-PA8 Passive 
+)
+(
+TIM11_CH2 
+U12-30 STM32F103C8T6-PA9 Passive 
+)
+(
+TIM11_CH3 
+U12-31 STM32F103C8T6-PA10 Passive 
+)
+(
+TIM11_CH4 
+U12-32 STM32F103C8T6-PA11 Passive 
+)
+(
+SWDIO1 
+U12-34 STM32F103C8T6-PA13 Passive 
+CN3-1 MH1.25-4AWB-1 Passive 
+)
+(
+SWCLK1 
+U12-37 STM32F103C8T6-PA14 Passive 
+CN3-2 MH1.25-4AWB-2 Passive 
+)
+(
+SPI11_MISO 
+U12-40 STM32F103C8T6-PB4 Passive 
+)
+(
+SPI11_MOSI 
+U12-41 STM32F103C8T6-PB5 Passive 
+)
+(
+USART11_TX 
+U12-42 STM32F103C8T6-PB6 Passive 
+)
+(
+USART11_RX 
+U12-43 STM32F103C8T6-PB7 Passive 
+)
+(
+$1N355 
+U12-44 STM32F103C8T6-BOOT0 Passive 
+R21-1 Res_0603-1 Input   
+)
+(
+IIC11_SCL 
+U12-45 STM32F103C8T6-PB8 Passive 
+R6-1 Res_0603-1 Input   
+)
+(
+IIC11_SDA 
+U12-46 STM32F103C8T6-PB9 Passive 
+R7-1 Res_0603-1 Input   
+)
+(
+$1N403 
+C5-2 CAP_0603-2 Input   
+C4-2 CAP_0603-2 Input   
+U8-5 SY8303AAIC_C2937216-IN Passive 
+U8-8 SY8303AAIC_C2937216-EN Passive 
+F3-2 TLC-NSMD100/24-2 Passive 
+)
+(
+$1N405 
+C17-1 CAP_0603-1 Input   
+U8-6 SY8303AAIC_C2937216-LX Passive 
+L1-1 FXL0420-6R8-M-1 Passive 
+)
+(
+$1N406 
+C17-2 CAP_0603-2 Input   
+U8-7 SY8303AAIC_C2937216-BS Passive 
+)
+(
+$1N407 
+R9-1 Res_0603-1 Input   
+U8-2 SY8303AAIC_C2937216-FS Passive 
+)
+(
+$1N401 
+R8-2 Res_0603-2 Input   
+U8-1 SY8303AAIC_C2937216-FB Passive 
+R10-2 RT0603BRD0719K6L-2 Passive 
+)
+(
+V2S 
+F3-1 TLC-NSMD100/24-1 Passive 
+)
+(
+$1N411 
+C43-1 CAP_0603-1 Input   
+U10-1 TLV75533PDBVR-IN Passive 
+U10-3 TLV75533PDBVR-EN Passive 
+F1-2 SMD1206-100-30-2 Passive 
+)
+(
+$1N418 
+C6-1 CAP_0603-1 Input   
+U9-1 TLV75533PDBVR-IN Passive 
+U9-3 TLV75533PDBVR-EN Passive 
+F2-2 SMD1206-100-30-2 Passive 
+)
+(
+$1N426 
+F4-1 SMD1206-100-30-1 Passive 
+CN6-4 MH1.25-4AWB-4 Passive 
+)
+(
+$1N432 
+F5-1 SMD1206-100-30-1 Passive 
+CN3-4 MH1.25-4AWB-4 Passive 
+)
